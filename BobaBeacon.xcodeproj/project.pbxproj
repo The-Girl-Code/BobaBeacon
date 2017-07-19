@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00C00B5E6D7FBC6A96E68713 /* Pods_BobaBeacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */; };
+		A66C3BB21F20031D00648917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BB11F20031D00648917 /* GoogleService-Info.plist */; };
 		C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674731F1FDA7F0029985C /* AppDelegate.swift */; };
 		C0A674761F1FDA7F0029985C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674751F1FDA7F0029985C /* ViewController.swift */; };
 		C0A674791F1FDA7F0029985C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A674771F1FDA7F0029985C /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A66C3BB11F20031D00648917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A674701F1FDA7F0029985C /* BobaBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobaBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A674731F1FDA7F0029985C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				C0A6747D1F1FDA7F0029985C /* Assets.xcassets */,
 				C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */,
 				C0A674821F1FDA7F0029985C /* Info.plist */,
+				A66C3BB11F20031D00648917 /* GoogleService-Info.plist */,
 				C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */,
 			);
 			path = BobaBeacon;
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A674811F1FDA7F0029985C /* LaunchScreen.storyboard in Resources */,
+				A66C3BB21F20031D00648917 /* GoogleService-Info.plist in Resources */,
 				C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */,
 				C0A674791F1FDA7F0029985C /* Main.storyboard in Resources */,
 			);
@@ -380,6 +384,7 @@
 				C0A674871F1FDA7F0029985C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
