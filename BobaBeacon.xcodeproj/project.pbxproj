@@ -9,8 +9,22 @@
 /* Begin PBXBuildFile section */
 		00C00B5E6D7FBC6A96E68713 /* Pods_BobaBeacon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */; };
 		A66C3BB41F20047C00648917 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BB31F20047C00648917 /* GoogleService-Info.plist */; };
+		A66C3BB71F21155400648917 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BB61F21155400648917 /* Login.storyboard */; };
+		A66C3BBA1F21158A00648917 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BB91F21158A00648917 /* LoginViewController.swift */; };
+		A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */; };
+		A66C3BC21F2115FE00648917 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BC11F2115FE00648917 /* User.swift */; };
+		A66C3BC41F21163000648917 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BC31F21163000648917 /* UserService.swift */; };
+		A66C3BC61F211D1300648917 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BC51F211D1300648917 /* Constants.swift */; };
+		A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BC71F211D3900648917 /* Storyboard+Utility.swift */; };
+		A66C3BCB1F21219300648917 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCA1F21219300648917 /* PostViewController.swift */; };
+		A66C3BCD1F2121A600648917 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCC1F2121A600648917 /* ProfileViewController.swift */; };
+		A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCE1F21222800648917 /* FeedViewController.swift */; };
+		A66C3BD21F21238100648917 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD01F21238100648917 /* Feed.storyboard */; };
+		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
+		A66C3BD71F2123AC00648917 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD51F2123AC00648917 /* Add.storyboard */; };
+		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
 		C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674731F1FDA7F0029985C /* AppDelegate.swift */; };
-		C0A674761F1FDA7F0029985C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674751F1FDA7F0029985C /* ViewController.swift */; };
+		C0A674761F1FDA7F0029985C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674751F1FDA7F0029985C /* MapViewController.swift */; };
 		C0A674791F1FDA7F0029985C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A674771F1FDA7F0029985C /* Main.storyboard */; };
 		C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */; };
 		C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747D1F1FDA7F0029985C /* Assets.xcassets */; };
@@ -19,10 +33,24 @@
 
 /* Begin PBXFileReference section */
 		A66C3BB31F20047C00648917 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A66C3BB61F21155400648917 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A66C3BB91F21158A00648917 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		A66C3BC11F2115FE00648917 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A66C3BC31F21163000648917 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A66C3BC51F211D1300648917 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A66C3BC71F211D3900648917 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		A66C3BCA1F21219300648917 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		A66C3BCC1F2121A600648917 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A66C3BCE1F21222800648917 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A66C3BD11F21238100648917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
+		A66C3BD31F21239100648917 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		A66C3BD61F2123AC00648917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Add.storyboard; sourceTree = "<group>"; };
+		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A674701F1FDA7F0029985C /* BobaBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobaBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A674731F1FDA7F0029985C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0A674751F1FDA7F0029985C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0A674751F1FDA7F0029985C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C0A674781F1FDA7F0029985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0A6747B1F1FDA7F0029985C /* BobaBeacon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BobaBeacon.xcdatamodel; sourceTree = "<group>"; };
 		C0A6747D1F1FDA7F0029985C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +89,67 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A66C3BB81F21156000648917 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */,
+				C0A674771F1FDA7F0029985C /* Main.storyboard */,
+				A66C3BD81F2123C000648917 /* Profile.storyboard */,
+				A66C3BD51F2123AC00648917 /* Add.storyboard */,
+				A66C3BD31F21239100648917 /* Search.storyboard */,
+				A66C3BD01F21238100648917 /* Feed.storyboard */,
+				A66C3BB61F21155400648917 /* Login.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A66C3BBD1F2115A500648917 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0A674751F1FDA7F0029985C /* MapViewController.swift */,
+				A66C3BB91F21158A00648917 /* LoginViewController.swift */,
+				A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */,
+				A66C3BCA1F21219300648917 /* PostViewController.swift */,
+				A66C3BCC1F2121A600648917 /* ProfileViewController.swift */,
+				A66C3BCE1F21222800648917 /* FeedViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A66C3BBE1F2115D300648917 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0A674821F1FDA7F0029985C /* Info.plist */,
+				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
+				A66C3BC51F211D1300648917 /* Constants.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A66C3BBF1F2115EF00648917 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A66C3BC31F21163000648917 /* UserService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A66C3BC01F2115F400648917 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A66C3BC11F2115FE00648917 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A66C3BC91F211D3E00648917 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A66C3BC71F211D3900648917 /* Storyboard+Utility.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		C0A674671F1FDA7F0029985C = {
 			isa = PBXGroup;
 			children = (
@@ -83,13 +172,14 @@
 			isa = PBXGroup;
 			children = (
 				C0A674731F1FDA7F0029985C /* AppDelegate.swift */,
-				C0A674751F1FDA7F0029985C /* ViewController.swift */,
-				C0A674771F1FDA7F0029985C /* Main.storyboard */,
+				A66C3BC01F2115F400648917 /* Models */,
+				A66C3BBF1F2115EF00648917 /* Services */,
+				A66C3BBD1F2115A500648917 /* View Controllers */,
+				A66C3BB81F21156000648917 /* Storyboards */,
 				C0A6747D1F1FDA7F0029985C /* Assets.xcassets */,
-				C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */,
-				C0A674821F1FDA7F0029985C /* Info.plist */,
-				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
+				A66C3BBE1F2115D300648917 /* Supporting Files */,
 				C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */,
+				A66C3BC91F211D3E00648917 /* Extensions */,
 			);
 			path = BobaBeacon;
 			sourceTree = "<group>";
@@ -129,6 +219,7 @@
 				TargetAttributes = {
 					C0A6746F1F1FDA7F0029985C = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 44L7Q6TC3X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -158,7 +249,12 @@
 			files = (
 				C0A674811F1FDA7F0029985C /* LaunchScreen.storyboard in Resources */,
 				A66C3BB41F20047C00648917 /* GoogleService-Info.plist in Resources */,
+				A66C3BD21F21238100648917 /* Feed.storyboard in Resources */,
 				C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */,
+				A66C3BD41F21239100648917 /* Search.storyboard in Resources */,
+				A66C3BB71F21155400648917 /* Login.storyboard in Resources */,
+				A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */,
+				A66C3BD71F2123AC00648917 /* Add.storyboard in Resources */,
 				C0A674791F1FDA7F0029985C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,15 +314,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0A674761F1FDA7F0029985C /* ViewController.swift in Sources */,
+				A66C3BC41F21163000648917 /* UserService.swift in Sources */,
+				A66C3BBA1F21158A00648917 /* LoginViewController.swift in Sources */,
+				C0A674761F1FDA7F0029985C /* MapViewController.swift in Sources */,
+				A66C3BC21F2115FE00648917 /* User.swift in Sources */,
+				A66C3BCB1F21219300648917 /* PostViewController.swift in Sources */,
 				C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */,
+				A66C3BCD1F2121A600648917 /* ProfileViewController.swift in Sources */,
+				A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */,
+				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
 				C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */,
+				A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */,
+				A66C3BC61F211D1300648917 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A66C3BD01F21238100648917 /* Feed.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66C3BD11F21238100648917 /* Base */,
+			);
+			name = Feed.storyboard;
+			sourceTree = "<group>";
+		};
+		A66C3BD51F2123AC00648917 /* Add.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A66C3BD61F2123AC00648917 /* Base */,
+			);
+			name = Add.storyboard;
+			sourceTree = "<group>";
+		};
 		C0A674771F1FDA7F0029985C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -344,7 +465,9 @@
 			baseConfigurationReference = EC577DCFF6224C3320C9A63E /* Pods-BobaBeacon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = BobaBeacon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.BobaBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,7 +480,9 @@
 			baseConfigurationReference = C7135521FCB12812F68DE740 /* Pods-BobaBeacon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44L7Q6TC3X;
 				INFOPLIST_FILE = BobaBeacon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.BobaBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";

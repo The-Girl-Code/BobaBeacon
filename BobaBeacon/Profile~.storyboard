@@ -21,13 +21,32 @@
                     <connections>
                         <segue destination="4bX-HU-ob4" kind="relationship" relationship="viewControllers" id="j2e-5u-AFv"/>
                         <segue destination="B7O-f3-VOV" kind="relationship" relationship="viewControllers" id="KIt-ml-B73"/>
-                        <segue destination="pfN-dT-Kcq" kind="relationship" relationship="viewControllers" id="OI8-ZB-U2D"/>
+                        <segue destination="ryu-XZ-SZa" kind="relationship" relationship="viewControllers" id="OI8-ZB-U2D"/>
                         <segue destination="Z5q-Jr-iDw" kind="relationship" relationship="viewControllers" id="qqd-Xc-fsE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AE3-pd-o4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="107.49625187406298"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="eI2-jV-0jf">
+            <objects>
+                <viewController id="ryu-XZ-SZa" customClass="ProfileViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zs7-bg-x8L"/>
+                        <viewControllerLayoutGuide type="bottom" id="riC-V7-1ec"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qc9-8q-qpq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.42149342569999998" green="0.82425719990000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="OdP-Yg-wQ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBb-49-UeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="910"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Afu-kh-c9b">
@@ -37,7 +56,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulj-sW-3d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-643" y="562"/>
+            <point key="canvasLocation" x="-1199" y="910"/>
         </scene>
         <!--Search-->
         <scene sceneID="ivd-AR-rX8">
@@ -47,7 +66,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQC-iE-Svr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-228" y="563"/>
+            <point key="canvasLocation" x="-354" y="910"/>
         </scene>
         <!--Add-->
         <scene sceneID="tc9-SW-82s">
@@ -57,17 +76,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPw-h7-wYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="562"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="2dK-cr-LBa">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="pfN-dT-Kcq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BVW-3B-JHL"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cCc-KX-BDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="662" y="562"/>
+            <point key="canvasLocation" x="526" y="910"/>
         </scene>
     </scenes>
 </document>
