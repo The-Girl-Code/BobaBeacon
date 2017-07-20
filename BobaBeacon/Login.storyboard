@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="TQ5-TU-Cct">
             <objects>
-                <viewController id="mAC-qV-uZ3" customClass="LoginViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="mAC-qV-uZ3" customClass="LoginViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dna-Nd-pzc"/>
                         <viewControllerLayoutGuide type="bottom" id="BOr-uY-Ydk"/>

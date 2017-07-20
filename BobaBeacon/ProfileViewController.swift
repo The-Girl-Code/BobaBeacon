@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseAuthUI
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+            do{
+                try? Auth.auth().signOut()
+                
+                if Auth.auth().currentUser == nil {
+                    let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginViewController
+                
+                self.present(loginVC, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
