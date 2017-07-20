@@ -29,6 +29,7 @@
 		C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */; };
 		C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747D1F1FDA7F0029985C /* Assets.xcassets */; };
 		C0A674811F1FDA7F0029985C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */; };
+		C0EF9D7E1F21280D00F102EC /* BobaPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C0A6747D1F1FDA7F0029985C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A674801F1FDA7F0029985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0A674821F1FDA7F0029985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BobaPlace.swift; sourceTree = "<group>"; };
 		C7135521FCB12812F68DE740 /* Pods-BobaBeacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.release.xcconfig"; sourceTree = "<group>"; };
 		EC577DCFF6224C3320C9A63E /* Pods-BobaBeacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				C0A674821F1FDA7F0029985C /* Info.plist */,
 				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
 				A66C3BC51F211D1300648917 /* Constants.swift */,
+				C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4C9200B39FD8F8EC94CFB088 /* [CP] Embed Pods Frameworks */ = {
@@ -317,6 +320,7 @@
 				A66C3BC41F21163000648917 /* UserService.swift in Sources */,
 				A66C3BBA1F21158A00648917 /* LoginViewController.swift in Sources */,
 				C0A674761F1FDA7F0029985C /* MapViewController.swift in Sources */,
+				C0EF9D7E1F21280D00F102EC /* BobaPlace.swift in Sources */,
 				A66C3BC21F2115FE00648917 /* User.swift in Sources */,
 				A66C3BCB1F21219300648917 /* PostViewController.swift in Sources */,
 				C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */,
