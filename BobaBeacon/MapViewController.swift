@@ -48,11 +48,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             let locValue:CLLocationCoordinate2D = manager.location!.coordinate
             print("locations = \(locValue.latitude) \(locValue.longitude)")
             mapView?.animate(toLocation: locValue)
-           // updateMarkers(location: locValue)
+           updateMarkers(location: locValue)
         }
     }
     
-
+    func updateMarkers(location: CLLocationCoordinate2D) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578)
+        marker.title = "Hacker Dojo"
+        marker.snippet = "Santa Clara"
+        marker.icon = UIImage(named: "boba3.png")
+        marker.map = self.mapView
+    
+    
+    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error)")
@@ -83,7 +92,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         print("You long pressed at \(coordinate.latitude), \(coordinate.longitude)")
         self.addPlaceTarget = coordinate
-        self.performSegue(withIdentifier: "addplace", sender: self)
+        //self.performSegue(withIdentifier: "addplace", sender: self)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
