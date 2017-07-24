@@ -48,27 +48,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             let locValue:CLLocationCoordinate2D = manager.location!.coordinate
             print("locations = \(locValue.latitude) \(locValue.longitude)")
             mapView?.animate(toLocation: locValue)
-            updateMarkers(location: locValue)
+           // updateMarkers(location: locValue)
         }
     }
     
-    func updateMarkers(location: CLLocationCoordinate2D) {
-        let myLocation = PFGeoPoint(latitude: location.latitude, longitude: location.longitude)
-        BobaPlace.nearByPlaces(location: myLocation) { places, error in
-            if error == nil {
-                self.mapView?.clear()
-                for place in places! {
-                    let marker = GMSMarker()
-                    marker.position = CLLocationCoordinate2D(latitude: (place.location?.latitude)!,
-                                                             longitude: (place.location?.longitude)!)
-                    marker.title = place.Name
-                    marker.snippet = place.City
-                    marker.icon = UIImage(named: "boba3.png")
-                    marker.map = self.mapView
-                }
-            }
-        }
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error)")
@@ -87,14 +71,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition){
         if(lastPosition == nil) {
             lastPosition = position.target
-            updateMarkers(location: position.target)
         }
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition){
         if(lastPosition == nil || CLLocation.distance(from:lastPosition!, to: position.target) > 500) {
             lastPosition = position.target
-            updateMarkers(location: position.target)
         }
     }
     
@@ -119,11 +101,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "addplace" {
-            let apc = segue.destination as! AddPlaceController
-            apc.coordinate = self.addPlaceTarget
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+//        if segue.identifier == "addplace" {
+//            let apc = segue.destination as! AddPlaceController
+//            apc.coordinate = self.addPlaceTarget
+//        }
+//    }
 }
 
