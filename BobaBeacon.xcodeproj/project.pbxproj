@@ -21,7 +21,6 @@
 		A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCE1F21222800648917 /* FeedViewController.swift */; };
 		A66C3BD21F21238100648917 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD01F21238100648917 /* Feed.storyboard */; };
 		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
-		A66C3BD71F2123AC00648917 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD51F2123AC00648917 /* Add.storyboard */; };
 		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
 		C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674731F1FDA7F0029985C /* AppDelegate.swift */; };
 		C0A674761F1FDA7F0029985C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674751F1FDA7F0029985C /* MapViewController.swift */; };
@@ -29,7 +28,11 @@
 		C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */; };
 		C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747D1F1FDA7F0029985C /* Assets.xcassets */; };
 		C0A674811F1FDA7F0029985C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */; };
-		C0EF9D7E1F21280D00F102EC /* BobaPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */; };
+		C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8CFEA1F26B04500475585 /* MainTabBarController.swift */; };
+		C0E8CFEF1F26B1BA00475585 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8CFEC1F26B1BA00475585 /* PhotoViewController.swift */; };
+		C0E8CFF01F26B1BA00475585 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8CFED1F26B1BA00475585 /* RecommendationViewController.swift */; };
+		C0E8CFF11F26B1BA00475585 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8CFEE1F26B1BA00475585 /* ReviewViewController.swift */; };
+		C0E8CFF31F26B1DC00475585 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8CFF21F26B1DC00475585 /* Add.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +49,6 @@
 		A66C3BCE1F21222800648917 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A66C3BD11F21238100648917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Feed.storyboard; sourceTree = "<group>"; };
 		A66C3BD31F21239100648917 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
-		A66C3BD61F2123AC00648917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Add.storyboard; sourceTree = "<group>"; };
 		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A674701F1FDA7F0029985C /* BobaBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BobaBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +59,11 @@
 		C0A6747D1F1FDA7F0029985C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A674801F1FDA7F0029985C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0A674821F1FDA7F0029985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BobaPlace.swift; sourceTree = "<group>"; };
+		C0E8CFEA1F26B04500475585 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C0E8CFEC1F26B1BA00475585 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C0E8CFED1F26B1BA00475585 /* RecommendationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		C0E8CFEE1F26B1BA00475585 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		C0E8CFF21F26B1DC00475585 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		C7135521FCB12812F68DE740 /* Pods-BobaBeacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.release.xcconfig"; sourceTree = "<group>"; };
 		EC577DCFF6224C3320C9A63E /* Pods-BobaBeacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +103,7 @@
 				C0A6747F1F1FDA7F0029985C /* LaunchScreen.storyboard */,
 				C0A674771F1FDA7F0029985C /* Main.storyboard */,
 				A66C3BD81F2123C000648917 /* Profile.storyboard */,
-				A66C3BD51F2123AC00648917 /* Add.storyboard */,
+				C0E8CFF21F26B1DC00475585 /* Add.storyboard */,
 				A66C3BD31F21239100648917 /* Search.storyboard */,
 				A66C3BD01F21238100648917 /* Feed.storyboard */,
 				A66C3BB61F21155400648917 /* Login.storyboard */,
@@ -108,6 +114,10 @@
 		A66C3BBD1F2115A500648917 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C0E8CFEC1F26B1BA00475585 /* PhotoViewController.swift */,
+				C0E8CFED1F26B1BA00475585 /* RecommendationViewController.swift */,
+				C0E8CFEE1F26B1BA00475585 /* ReviewViewController.swift */,
+				C0E8CFEA1F26B04500475585 /* MainTabBarController.swift */,
 				C0A674751F1FDA7F0029985C /* MapViewController.swift */,
 				A66C3BB91F21158A00648917 /* LoginViewController.swift */,
 				A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */,
@@ -124,7 +134,6 @@
 				C0A674821F1FDA7F0029985C /* Info.plist */,
 				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
 				A66C3BC51F211D1300648917 /* Constants.swift */,
-				C0EF9D7D1F21280D00F102EC /* BobaPlace.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,12 +261,12 @@
 			files = (
 				C0A674811F1FDA7F0029985C /* LaunchScreen.storyboard in Resources */,
 				A66C3BB41F20047C00648917 /* GoogleService-Info.plist in Resources */,
+				C0E8CFF31F26B1DC00475585 /* Add.storyboard in Resources */,
 				A66C3BD21F21238100648917 /* Feed.storyboard in Resources */,
 				C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */,
 				A66C3BD41F21239100648917 /* Search.storyboard in Resources */,
 				A66C3BB71F21155400648917 /* Login.storyboard in Resources */,
 				A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */,
-				A66C3BD71F2123AC00648917 /* Add.storyboard in Resources */,
 				C0A674791F1FDA7F0029985C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,14 +329,17 @@
 				A66C3BC41F21163000648917 /* UserService.swift in Sources */,
 				A66C3BBA1F21158A00648917 /* LoginViewController.swift in Sources */,
 				C0A674761F1FDA7F0029985C /* MapViewController.swift in Sources */,
-				C0EF9D7E1F21280D00F102EC /* BobaPlace.swift in Sources */,
 				A66C3BC21F2115FE00648917 /* User.swift in Sources */,
 				A66C3BCB1F21219300648917 /* PostViewController.swift in Sources */,
 				C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */,
+				C0E8CFF11F26B1BA00475585 /* ReviewViewController.swift in Sources */,
 				A66C3BCD1F2121A600648917 /* ProfileViewController.swift in Sources */,
+				C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */,
 				A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */,
 				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
 				C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */,
+				C0E8CFEF1F26B1BA00475585 /* PhotoViewController.swift in Sources */,
+				C0E8CFF01F26B1BA00475585 /* RecommendationViewController.swift in Sources */,
 				A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */,
 				A66C3BC61F211D1300648917 /* Constants.swift in Sources */,
 			);
@@ -342,14 +354,6 @@
 				A66C3BD11F21238100648917 /* Base */,
 			);
 			name = Feed.storyboard;
-			sourceTree = "<group>";
-		};
-		A66C3BD51F2123AC00648917 /* Add.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A66C3BD61F2123AC00648917 /* Base */,
-			);
-			name = Add.storyboard;
 			sourceTree = "<group>";
 		};
 		C0A674771F1FDA7F0029985C /* Main.storyboard */ = {
