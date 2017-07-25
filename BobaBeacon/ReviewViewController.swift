@@ -9,6 +9,12 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
+    
+  
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        print("cancel button tapped")
+         self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,6 +9,10 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+    
+    @IBAction func unwindToFeed(segue: UIStoryboardSegue){
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
