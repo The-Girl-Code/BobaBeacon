@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZ4-fN-evD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recommendation View Controller-->
+        <scene sceneID="Fet-Ys-nbe">
+            <objects>
+                <viewController storyboardIdentifier="RecommendationViewController" id="IZ4-fN-evD" customClass="RecommendationViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5vL-4d-2sw"/>
+                        <viewControllerLayoutGuide type="bottom" id="9vT-8K-kfU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pj3-f4-6bt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lba-64-3RA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                <items>
+                                    <navigationItem title="Recommendation" id="uU0-s7-yKv">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Yh-Qr-JXm">
+                                            <connections>
+                                                <segue destination="myp-l8-4uw" kind="unwind" unwindAction="unwindToFeedWithSegue:" id="9Kh-9i-14l"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.42149342569999998" green="0.82425719990000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="Yhb-Ly-rN9"/>
+                            <constraint firstItem="9vT-8K-kfU" firstAttribute="top" secondItem="lba-64-3RA" secondAttribute="bottom" constant="615" id="buS-Pm-YdK"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="bzA-y7-oao"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="qhP-cJ-Bha"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmq-oB-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="myp-l8-4uw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3876" y="470.91454272863569"/>
+        </scene>
+    </scenes>
+</document>

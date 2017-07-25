@@ -12,6 +12,7 @@ pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod "Former"
 
 
 end
