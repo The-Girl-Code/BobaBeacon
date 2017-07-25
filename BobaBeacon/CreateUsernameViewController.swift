@@ -2,8 +2,8 @@
 //  CreateUsernameViewController.swift
 //  BobaBeacon
 //
-//  Created by Ananya Bhat on 7/20/17.
-//  Copyright © 2017 The Girl Code. All rights reserved.
+//  Created by TheGirlCode on 7/20/17.
+//  Copyright © 2017 TheGirlCode. All rights reserved.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  MainTabBarController.swift
 //  BobaBeacon
 //
-//  Copyright © 2017 The Girl Code. All rights reserved.
+//  Copyright © 2017 TheGirlCode. All rights reserved.
 //
 
 import UIKit
