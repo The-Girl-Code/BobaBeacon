@@ -1,6 +1,6 @@
 //
 //  FloatRatingView.swift
-//  BobaBeacon
+//  BobaBeacon!
 //
 //  Used from https://github.com/glenyi/FloatRatingView
 //  Copyright © 2017 The Girl Code. All rights reserved.
