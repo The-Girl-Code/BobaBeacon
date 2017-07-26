@@ -22,7 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lba-64-3RA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="892-eR-CPI"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Recommendation" id="uU0-s7-yKv">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Yh-Qr-JXm">
@@ -37,7 +40,6 @@
                         <color key="backgroundColor" red="0.42149342569999998" green="0.82425719990000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="Yhb-Ly-rN9"/>
-                            <constraint firstItem="9vT-8K-kfU" firstAttribute="top" secondItem="lba-64-3RA" secondAttribute="bottom" constant="615" id="buS-Pm-YdK"/>
                             <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="bzA-y7-oao"/>
                             <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="qhP-cJ-Bha"/>
                         </constraints>

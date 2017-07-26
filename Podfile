@@ -12,7 +12,8 @@ pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod "Former"
+  pod 'Former'
+  pod 'FloatRatingView', '~> 2.0.0'
 
 
 end

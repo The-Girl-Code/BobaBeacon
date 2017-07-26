@@ -1,32 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NfX-cN-8ZE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Review View Controller-->
-        <scene sceneID="edy-Dd-xqs">
+        <scene sceneID="fcV-d3-n2p">
             <objects>
-                <viewController storyboardIdentifier="ReviewViewController" id="dZx-5F-TiJ" customClass="ReviewViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="NfX-cN-8ZE" customClass="ReviewViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mOS-00-V69"/>
-                        <viewControllerLayoutGuide type="bottom" id="UZB-Bd-xBg"/>
+                        <viewControllerLayoutGuide type="top" id="NOq-fv-sSe"/>
+                        <viewControllerLayoutGuide type="bottom" id="LOa-Gh-aiQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9a1-Qi-Xmg">
+                    <view key="view" contentMode="scaleToFill" id="0CO-J0-sBN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.6937349993883698" green="0.90265499220750589" blue="0.96028315355329952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pab-tK-oBu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uuC-mb-KNL"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="oy2-d0-kbt">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qfe-ug-8bk">
+                                            <connections>
+                                                <segue destination="Xrz-VU-lCx" kind="unwind" unwindAction="unwindToFeedWithSegue:" id="gIw-Ce-agh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="bpZ-Q6-Xhb"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1U-X1-2OM" customClass="FloatRatingView" customModule="BobaBeacon" customModuleProvider="target">
+                                <rect key="frame" x="17.5" y="76" width="340" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="6Tf-of-zci"/>
+                                    <constraint firstAttribute="height" constant="80" id="VCb-Tt-bBa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Cs-vMU">
+                                <rect key="frame" x="21" y="161" width="84" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="aZU-2X-xQ1"/>
+                                    <constraint firstAttribute="height" constant="36" id="i56-oj-XVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw7-ep-aeH">
+                                <rect key="frame" x="101" y="161" width="79" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="EHG-Nz-8DF"/>
+                                    <constraint firstAttribute="width" constant="79" id="MbJ-aR-B5g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69373499940000005" green="0.90265499220000001" blue="0.96028315360000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w1U-X1-2OM" firstAttribute="top" secondItem="Pab-tK-oBu" secondAttribute="bottom" constant="26" id="8Jj-m4-qnc"/>
+                            <constraint firstItem="2PE-Cs-vMU" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" constant="5" id="BMA-OT-Y7m"/>
+                            <constraint firstAttribute="trailing" secondItem="Pab-tK-oBu" secondAttribute="trailing" id="MtJ-YJ-HOF"/>
+                            <constraint firstItem="yw7-ep-aeH" firstAttribute="top" secondItem="w1U-X1-2OM" secondAttribute="bottom" constant="5" id="Pyc-cn-HBl"/>
+                            <constraint firstItem="2PE-Cs-vMU" firstAttribute="top" secondItem="w1U-X1-2OM" secondAttribute="bottom" constant="5" id="QZU-Ba-f8y"/>
+                            <constraint firstItem="Pab-tK-oBu" firstAttribute="top" secondItem="0CO-J0-sBN" secondAttribute="top" id="TEu-v2-jWK"/>
+                            <constraint firstItem="Pab-tK-oBu" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leading" id="Zkf-Lo-c9k"/>
+                            <constraint firstItem="w1U-X1-2OM" firstAttribute="centerX" secondItem="0CO-J0-sBN" secondAttribute="centerX" id="bob-g6-Fc8"/>
+                            <constraint firstItem="yw7-ep-aeH" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" constant="85" id="lft-Ms-6UG"/>
+                        </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="liveLabel" destination="yw7-ep-aeH" id="FNt-OM-nFo"/>
+                        <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EoC-jN-Qam" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PT6-nl-ETj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Xrz-VU-lCx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3218.4000000000001" y="336.88155922038982"/>
+            <point key="canvasLocation" x="3704.8000000000002" y="342.27886056971516"/>
         </scene>
     </scenes>
 </document>

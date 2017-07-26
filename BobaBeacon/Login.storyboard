@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,32 +18,32 @@
                         <viewControllerLayoutGuide type="bottom" id="BOr-uY-Ydk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x9m-7t-oPa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drM-DB-Q9Q">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fu-By-bWn">
+                                        <rect key="frame" x="89" y="496" width="142" height="34"/>
+                                        <color key="backgroundColor" red="0.63800052452314537" green="0.97287436548223349" blue="0.61167334479198354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Register or Log In"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="mAC-qV-uZ3" eventType="touchUpInside" id="6Rw-KR-Ls5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.78082006047218433" green="0.79254387224132383" blue="0.9649230647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0fu-By-bWn" secondAttribute="bottom" id="FP4-KS-0dG"/>
                                     <constraint firstAttribute="height" constant="530" id="fQW-g6-lVs"/>
+                                    <constraint firstItem="0fu-By-bWn" firstAttribute="centerX" secondItem="drM-DB-Q9Q" secondAttribute="centerX" id="fVa-q2-MVP"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fu-By-bWn">
-                                <rect key="frame" x="103" y="574" width="169" height="45"/>
-                                <color key="backgroundColor" red="0.63800052452314537" green="0.97287436548223349" blue="0.61167334479198354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Register or Log In"/>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="mAC-qV-uZ3" eventType="touchUpInside" id="6Rw-KR-Ls5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BOr-uY-Ydk" firstAttribute="top" secondItem="0fu-By-bWn" secondAttribute="bottom" constant="48" id="K8J-ID-CSu"/>
                             <constraint firstAttribute="trailing" secondItem="drM-DB-Q9Q" secondAttribute="trailing" id="OiG-vl-YDt"/>
-                            <constraint firstItem="0fu-By-bWn" firstAttribute="leading" secondItem="x9m-7t-oPa" secondAttribute="leadingMargin" constant="87" id="aqm-uE-SMc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0fu-By-bWn" secondAttribute="trailing" constant="87" id="bDY-4x-1Sy"/>
-                            <constraint firstItem="0fu-By-bWn" firstAttribute="top" secondItem="drM-DB-Q9Q" secondAttribute="bottom" constant="44" id="epL-gm-KO8"/>
                             <constraint firstItem="drM-DB-Q9Q" firstAttribute="top" secondItem="x9m-7t-oPa" secondAttribute="top" id="joc-j9-Td0"/>
                             <constraint firstItem="drM-DB-Q9Q" firstAttribute="leading" secondItem="x9m-7t-oPa" secondAttribute="leading" id="mOo-Ae-7LH"/>
                         </constraints>
@@ -68,7 +67,7 @@
                         <viewControllerLayoutGuide type="bottom" id="onX-Ch-n54"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aE4-hM-fPT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0G1-RV-UUa">
