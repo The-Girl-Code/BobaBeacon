@@ -10,11 +10,15 @@ import UIKit
 import FloatRatingView
 import Former
 
-class ReviewViewController: FormViewController, FloatRatingViewDelegate {
+
+class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var ratingView: FloatRatingView!
     
     @IBOutlet weak var liveLabel: UILabel!
+    
+    
+    @IBOutlet weak var locationTextField: UITextField!
     
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
@@ -24,6 +28,9 @@ class ReviewViewController: FormViewController, FloatRatingViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationTextField.delegate = self
+
         
         self.ratingView.emptyImage = UIImage(named: "StarEmpty")
         self.ratingView.fullImage = UIImage(named: "StarFull")
@@ -39,33 +46,17 @@ class ReviewViewController: FormViewController, FloatRatingViewDelegate {
         
         self.liveLabel.text = NSString(format: "%.2f", self.ratingView.rating) as String
 
-
-//        let labelRow = LabelRowFormer<FormLabelCell>()
-//            .configure { row in
-//                row.text = "Label Cell"
-//            }.onSelected { row in
-//                // Do Something
-//        }
-//        //labelRow.constraint(equalTo: self.widthAnchor, multiplier: 2.0).isActive = true
-//        let inlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
-//            $0.titleLabel.text = "Inline Picker Cell"
-//            }.configure { row in
-//                row.pickerItems = (1...5).map {
-//                    InlinePickerItem(title: "Option\($0)", value: Int($0))
-//                }
-//            }.onValueChanged { item in
-//                // Do Something
-//        }
-//        let header = LabelViewFormer<FormLabelHeaderView>() { view in
-//            view.titleLabel.text = "Label Header"
-//        }
-//        let section = SectionFormer(rowFormer: labelRow, inlinePickerRow)
-//            .set(headerViewFormer: header)
-//        former.append(sectionFormer: section)
-
-        // Do any additional setup after loading the view.
     }
 
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    
+    performSegue(withIdentifier: "openSearch", sender: self)
+    
+    return false
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,6 +66,7 @@ class ReviewViewController: FormViewController, FloatRatingViewDelegate {
         self.liveLabel.text = NSString(format: "%.2f", self.ratingView.rating) as String
     }
     
+ 
 
     /*
     // MARK: - Navigation
