@@ -1,68 +1,76 @@
-//
-//  LocationViewController.swift
-//  BobaBeacon
-//
-//  Created by Ananya Bhat on 7/27/17.
-//  Copyright © 2017 The Girl Code. All rights reserved.
-//
-
 
 
 
 
 import UIKit
 
-class LocationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
+class LocationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     
-    var isSearching = false
-    var data = ["San Francisco","New York","San Jose","Chicago","Los Angeles","Austin","Seattle"]
-    var filteredData = [String]()
+    var dataPassed : String?
+
+    
+    struct Cake {
+        var name = String()
+        var size = String()
+    }
+    
+    var cakes = [Cake(name: "Red Velvet", size: "Small"),
+                 Cake(name: "Brownie", size: "Medium"),
+                 Cake(name: "Bannna Bread", size: "Large"),
+                 Cake(name: "Vanilla", size: "Small"),
+                 Cake(name: "Minty", size: "Medium")]
+    
+    var filteredCakes = [Cake]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /* Setup delegates */
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchBar.delegate = self
+        filteredCakes = cakes
         
-        searchBar.returnKeyType = UIReturnKeyType.done
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
         
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-   
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func updateSearchResults(for searchController: UISearchController) {
+        // If we haven't typed anything into the search bar then do not filter the results
+        if searchController.searchBar.text! == "" {
+            filteredCakes = cakes
+        } else {
+            // Filter the results
+            filteredCakes = cakes.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        
+        self.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearching{
-            return filteredData.count
-        }
-        
-        return data.count
+        return self.filteredCakes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UITableViewCell;
-        if isSearching{
-            cell.textLabel?.text = filteredData[indexPath.row]
-        } else {
-            cell.textLabel?.text = data[indexPath.row];
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 	{
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = self.filteredCakes[indexPath.row].name
+        cell.detailTextLabel?.text = self.filteredCakes[indexPath.row].size
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentCell = tableView.cellForRow(at: indexPath) as! UITableViewCell
+        
+        dataPassed = (currentCell.textLabel!.text)!
+        
+        
+    }
     
 }
+

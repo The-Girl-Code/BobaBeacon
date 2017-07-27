@@ -26,6 +26,18 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
          self.performSegue(withIdentifier: "unwindToFeed", sender: self)
     }
 
+    @IBAction func unwindToReview(segue: UIStoryboardSegue){
+        if let sourceViewController = segue.source as? LocationViewController {
+            dataRecieved = sourceViewController.dataPassed
+        }
+    }
+    
+    var dataRecieved: String? {
+        willSet {
+            locationTextField.text = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
