@@ -34,7 +34,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
     var dataRecieved: String? {
         willSet {
-            locationTextField.text = newValue
+            locationTextField.text = "  \(newValue!)"
         }
     }
     

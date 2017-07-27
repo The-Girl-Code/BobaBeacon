@@ -27,28 +27,123 @@
                                     <constraint firstAttribute="height" constant="50" id="892-eR-CPI"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Recommendation" id="uU0-s7-yKv">
+                                    <navigationItem title="Recommend a flavor" id="uU0-s7-yKv">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Yh-Qr-JXm">
                                             <connections>
-                                                <segue destination="myp-l8-4uw" kind="unwind" unwindAction="unwindToFeedWithSegue:" id="9Kh-9i-14l"/>
+                                                <action selector="cancelButtonTapped:" destination="IZ4-fN-evD" id="yR0-hV-aiS"/>
+                                                <segue destination="myp-l8-4uw" kind="unwind" unwindAction="unwindToFeedWithSegue:" id="Njz-G4-aFX"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="Iw3-BA-TNv"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiE-N0-Yie">
+                                <rect key="frame" x="19" y="104" width="338" height="30"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="338" id="niD-lD-aA2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <segue destination="UFk-Hq-O8A" kind="show" identifier="toStores" id="PJC-0g-DaY"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erg-NB-5i9">
+                                <rect key="frame" x="241" y="172" width="116" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="23b-KB-DNk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="boba3"/>
+                                <connections>
+                                    <action selector="bobaFlavorButtonTapped:" destination="IZ4-fN-evD" eventType="touchUpInside" id="IbO-CY-0AK"/>
+                                    <segue destination="SmW-Wb-nza" kind="show" id="IqN-qT-SLh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write about your favorite flavor here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0C-T3-Ouw">
+                                <rect key="frame" x="19" y="325" width="338" height="128"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the button to select a flavor!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-zQ-Z0x">
+                                <rect key="frame" x="19" y="206" width="214" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="9Ei-TJ-mNT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.42149342569999998" green="0.82425719990000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="Yhb-Ly-rN9"/>
-                            <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="bzA-y7-oao"/>
-                            <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="qhP-cJ-Bha"/>
+                            <constraint firstItem="NZE-zQ-Z0x" firstAttribute="top" secondItem="UiE-N0-Yie" secondAttribute="bottom" constant="72" id="1ay-LI-KCW"/>
+                            <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="3fI-vM-uC5"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="AaY-gl-7kB"/>
+                            <constraint firstItem="K0C-T3-Ouw" firstAttribute="top" secondItem="NZE-zQ-Z0x" secondAttribute="bottom" constant="65" id="B4z-o2-Qlw"/>
+                            <constraint firstItem="Erg-NB-5i9" firstAttribute="trailing" secondItem="K0C-T3-Ouw" secondAttribute="trailing" id="Jup-6n-Cdc"/>
+                            <constraint firstItem="K0C-T3-Ouw" firstAttribute="top" secondItem="Erg-NB-5i9" secondAttribute="bottom" constant="46" id="KCF-5c-GVd"/>
+                            <constraint firstItem="9vT-8K-kfU" firstAttribute="top" secondItem="K0C-T3-Ouw" secondAttribute="bottom" constant="214" id="LEV-Bv-9Qc"/>
+                            <constraint firstItem="NZE-zQ-Z0x" firstAttribute="leading" secondItem="UiE-N0-Yie" secondAttribute="leading" id="cqy-dg-fHa"/>
+                            <constraint firstItem="Erg-NB-5i9" firstAttribute="leading" secondItem="NZE-zQ-Z0x" secondAttribute="trailing" constant="8" symbolic="YES" id="eQy-Jr-1Pc"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="h6o-Tt-78F"/>
+                            <constraint firstItem="UiE-N0-Yie" firstAttribute="centerX" secondItem="Pj3-f4-6bt" secondAttribute="centerX" id="jdu-u8-QNI"/>
+                            <constraint firstItem="NZE-zQ-Z0x" firstAttribute="leading" secondItem="K0C-T3-Ouw" secondAttribute="leading" id="n9J-Gf-dBS"/>
+                            <constraint firstItem="Erg-NB-5i9" firstAttribute="trailing" secondItem="UiE-N0-Yie" secondAttribute="trailing" id="pzn-yX-lnA"/>
+                            <constraint firstItem="UiE-N0-Yie" firstAttribute="top" secondItem="lba-64-3RA" secondAttribute="bottom" constant="54" id="qCl-kk-uss"/>
+                            <constraint firstItem="Erg-NB-5i9" firstAttribute="top" secondItem="UiE-N0-Yie" secondAttribute="bottom" constant="38" id="xPL-oF-nYX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="storeTextField" destination="UiE-N0-Yie" id="8cl-3q-rpY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmq-oB-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="myp-l8-4uw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3876" y="470.91454272863569"/>
+            <point key="canvasLocation" x="3720.8000000000002" y="471.8140929535233"/>
+        </scene>
+        <!--Stores View Controller-->
+        <scene sceneID="Q1H-OO-Drb">
+            <objects>
+                <viewController id="UFk-Hq-O8A" customClass="StoresViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uk1-xl-dAk"/>
+                        <viewControllerLayoutGuide type="bottom" id="P1y-1V-rVy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iTW-e7-yI5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.81998437639999999" green="0.56426274779999996" blue="0.65246862169999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZT5-Lb-yLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4444" y="472"/>
+        </scene>
+        <!--Flavors View Controller-->
+        <scene sceneID="XGb-Rt-7Ff">
+            <objects>
+                <viewController id="SmW-Wb-nza" customClass="FlavorsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Lp-gz-8bQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="DVj-fZ-Rpf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZQZ-ee-xhe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.21960784310000001" green="0.59215686270000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EI2-VN-bbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3721" y="1175"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="boba3" width="20" height="31"/>
+    </resources>
 </document>

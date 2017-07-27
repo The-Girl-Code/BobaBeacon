@@ -8,12 +8,29 @@
 
 import UIKit
 
-class RecommendationViewController: UIViewController {
+class RecommendationViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var storeTextField: UITextField!
+    
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
+    
+    @IBAction func bobaFlavorButtonTapped(_ sender: UIButton) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        storeTextField.delegate = self
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        performSegue(withIdentifier: "toStores", sender: self)
+        
+        return false
     }
 
     override func didReceiveMemoryWarning() {

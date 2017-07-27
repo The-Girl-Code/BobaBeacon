@@ -64,10 +64,15 @@ class LocationViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    deinit {
+        self.searchController.view.removeFromSuperview()
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! UITableViewCell
         
         dataPassed = (currentCell.textLabel!.text)!
+        performSegue(withIdentifier: "unwindToReview", sender: currentCell)
         
         
     }

@@ -64,7 +64,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Select the store you're reviewing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-ik-tp2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Look for the store you're reviewing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-ik-tp2">
                                 <rect key="frame" x="16" y="199" width="343" height="30"/>
                                 <color key="backgroundColor" white="0.9695063035" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -132,6 +132,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="98R-dS-Urg">
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="5HM-Dk-YT0">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5HM-Dk-YT0" id="kyN-eV-gyZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Gcm-8N-epv" kind="unwind" identifier="unwindToReview" unwindAction="unwindToReviewWithSegue:" id="leD-pM-2kP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="8jz-e0-zYA" id="eHb-FR-O1e"/>
                                     <outlet property="delegate" destination="8jz-e0-zYA" id="NXA-8A-Ca4"/>
@@ -152,6 +165,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyI-ag-hXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Gcm-8N-epv" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="Bpt-mT-ZEk">
                     <connections>
                         <outlet property="delegate" destination="8jz-e0-zYA" id="02T-3B-Zom"/>
