@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SmW-Wb-nza">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flavors View Controller-->
+        <scene sceneID="XGb-Rt-7Ff">
+            <objects>
+                <viewController id="SmW-Wb-nza" customClass="FlavorsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Lp-gz-8bQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="DVj-fZ-Rpf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZQZ-ee-xhe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x6Q-Sa-8N7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oPf-PH-onn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlavorsImageView" id="7yh-GV-eIf" customClass="FlavorsImageView" customModule="BobaBeacon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Gq-sm-q5b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="2Gq-sm-q5b" firstAttribute="top" secondItem="7yh-GV-eIf" secondAttribute="top" id="8IN-1e-tAV"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Gq-sm-q5b" secondAttribute="trailing" id="ClW-N5-2kR"/>
+                                            <constraint firstItem="2Gq-sm-q5b" firstAttribute="leading" secondItem="7yh-GV-eIf" secondAttribute="leading" id="OAv-FU-bjp"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Gq-sm-q5b" secondAttribute="bottom" id="OXH-a7-Uk7"/>
+                                        </constraints>
+                                        <size key="customSize" width="124" height="124"/>
+                                        <connections>
+                                            <outlet property="flavorImage" destination="2Gq-sm-q5b" id="p6Z-um-IOy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="SmW-Wb-nza" id="QeH-uJ-763"/>
+                                    <outlet property="delegate" destination="SmW-Wb-nza" id="wNp-43-KhB"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DVj-fZ-Rpf" firstAttribute="top" secondItem="x6Q-Sa-8N7" secondAttribute="bottom" id="B8C-2a-TuR"/>
+                            <constraint firstItem="x6Q-Sa-8N7" firstAttribute="leading" secondItem="ZQZ-ee-xhe" secondAttribute="leading" id="Hc8-Hx-d8n"/>
+                            <constraint firstItem="x6Q-Sa-8N7" firstAttribute="top" secondItem="5Lp-gz-8bQ" secondAttribute="bottom" id="nE3-4x-2yS"/>
+                            <constraint firstAttribute="trailing" secondItem="x6Q-Sa-8N7" secondAttribute="trailing" id="oQ6-GY-He9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="x6Q-Sa-8N7" id="gPD-FE-bD6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EI2-VN-bbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3698" y="1274"/>
+        </scene>
+    </scenes>
+</document>
