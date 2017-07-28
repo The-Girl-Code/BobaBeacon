@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>AlamofireNetworkActivityIndicator.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>FirebaseUI-FirebaseAuthUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -35,12 +50,22 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-BobaBeacon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
@@ -57,6 +82,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>115FA0D867E07C04838493890DBD8D29</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F0C0F810568D3E82219429D9D870F04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3380590F973AFAFA30255D504B7DEDAC</key>
 		<dict>
 			<key>primary</key>
@@ -67,7 +102,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>43C62E8D88BD5DD5DD35527F78EC67C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A2DAF9576371DFFA51E831857563479</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9C71470549D80FAC6F72715E5F0B93F7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E93B1559173E2BC558BED6F210F3A0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
 		<dict>
 			<key>primary</key>
 			<true/>
