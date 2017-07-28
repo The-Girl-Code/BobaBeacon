@@ -16,6 +16,10 @@ target 'BobaBeacon' do
     pod 'Former'
     pod 'FloatRatingView', '~> 2.0.0'
     pod 'Kingfisher', '~> 3.0'
+    pod ‘Alamofire’
+    pod ’SwiftyJSON’
+    pod ‘AlamofireImage’
+    pod ‘AlamofireNetworkActivityIndicator’
 
 
 end
