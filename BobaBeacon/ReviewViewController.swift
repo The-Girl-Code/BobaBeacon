@@ -68,6 +68,12 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         self.ratingView.floatRatings = false
         
         self.liveLabel.text = NSString(format: "%.2f", self.ratingView.rating) as String
+
+        
+        reviewTextView.text = "How was your experience?"
+        reviewTextView.textColor = UIColor.lightGray
+        reviewTextView.delegate = self
+
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -76,6 +82,19 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     return false
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "How was your experience?"
+            textView.textColor = UIColor.lightGray
+        }
+    }
     
     func postReview(){
         let dateFormatter = ISO8601DateFormatter()
