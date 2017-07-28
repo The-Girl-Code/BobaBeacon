@@ -8,22 +8,30 @@
 
 import UIKit
 
-class RecommendationViewController: UIViewController, UITextFieldDelegate {
+class RecommendationViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var storeTextField: UITextField!
     
+    @IBOutlet weak var textView: UITextView!
     
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "unwindToFeed", sender: self)
     }
     
-    @IBAction func bobaFlavorButtonTapped(_ sender: UIButton) {
+    @IBAction func unwindToRecommendation(segue: UIStoryboardSegue){
+        if let sourceViewController = segue.source as? FlavorsViewController {
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.text = "Write a short description about your favorite flavor here..."
+        textView.textColor = UIColor.lightGray
 
         storeTextField.delegate = self
+        textView.delegate = self
+        
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -32,6 +40,21 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate {
         
         return false
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Placeholder"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -10,6 +10,11 @@ import UIKit
 
 class StoresViewController: UIViewController {
 
+    @IBAction func unwindToRecommendation(segue: UIStoryboardSegue){
+        if let sourceViewController = segue.source as? StoresViewController {
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
