@@ -15,6 +15,7 @@ target 'BobaBeacon' do
     pod 'GoogleMaps'
     pod 'Former'
     pod 'FloatRatingView', '~> 2.0.0'
+    pod 'Kingfisher', '~> 3.0'
 
 
 end

@@ -70,7 +70,21 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bx8-5F-XEv" id="ZJH-8Q-Zdv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mxp-gf-CsY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Mxp-gf-CsY" secondAttribute="trailing" id="1dh-aY-hbs"/>
+                                                <constraint firstItem="Mxp-gf-CsY" firstAttribute="leading" secondItem="ZJH-8Q-Zdv" secondAttribute="leading" id="Med-cf-IBo"/>
+                                                <constraint firstItem="Mxp-gf-CsY" firstAttribute="top" secondItem="ZJH-8Q-Zdv" secondAttribute="top" id="nIP-XJ-HRF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mxp-gf-CsY" secondAttribute="bottom" id="pD0-rK-2AZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postImageView" destination="Mxp-gf-CsY" id="Wma-WM-N7i"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostActionCell" id="puV-ei-SLq" customClass="PostActionCell" customModule="BobaBeacon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -145,7 +159,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="7DU-5V-sfC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUh-Lh-0gN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUh-Lh-0gN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
