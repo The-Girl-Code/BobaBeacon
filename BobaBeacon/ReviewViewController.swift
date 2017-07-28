@@ -9,6 +9,9 @@
 import UIKit
 import FloatRatingView
 import Former
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 
 class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFieldDelegate, UITextViewDelegate {
@@ -21,6 +24,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
     @IBOutlet weak var locationTextField: UITextField!
     
+    var ref : DatabaseReference!
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         print("cancel button tapped")
@@ -33,6 +37,12 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         }
     }
     
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        postReview()
+        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
+    
     var dataRecieved: String? {
         willSet {
             locationTextField.text = "  \(newValue!)"
@@ -43,7 +53,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         super.viewDidLoad()
         
         locationTextField.delegate = self
-
+        reviewTextView.delegate = self
         
         self.ratingView.emptyImage = UIImage(named: "StarEmpty")
         self.ratingView.fullImage = UIImage(named: "StarFull")
@@ -58,6 +68,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         self.ratingView.floatRatings = false
         
         self.liveLabel.text = NSString(format: "%.2f", self.ratingView.rating) as String
+
         
         reviewTextView.text = "How was your experience?"
         reviewTextView.textColor = UIColor.lightGray
@@ -68,7 +79,6 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     
     performSegue(withIdentifier: "openSearch", sender: self)
-    
     return false
     }
     
@@ -86,6 +96,15 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         }
     }
     
+    func postReview(){
+        let dateFormatter = ISO8601DateFormatter()
+        let timeStamp = dateFormatter.string(from: Date())
+        let timeCreated = timeStamp.description
+        ref = Database.database().reference()
+        ref.child("posts").child(User.current.uid).child("reviews").child(locationTextField.text!).setValue(["Rating":self.liveLabel.text, "Location": locationTextField.text, "Review": reviewTextView.text])
+
+    }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
