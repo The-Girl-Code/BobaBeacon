@@ -34,7 +34,11 @@
                                                 <segue destination="Xrz-VU-lCx" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="gIw-Ce-agh"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Post" id="bpZ-Q6-Xhb"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="bpZ-Q6-Xhb">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="NfX-cN-8ZE" id="MaT-Ww-CSo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -83,6 +87,9 @@
                                 <color key="textColor" red="0.73116527326099634" green="0.73661102744106177" blue="0.74026411802030456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NfX-cN-8ZE" id="oEx-am-oD5"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,6 +117,7 @@
                         <outlet property="liveLabel" destination="yw7-ep-aeH" id="FNt-OM-nFo"/>
                         <outlet property="locationTextField" destination="cRz-ik-tp2" id="x3V-hq-Cqw"/>
                         <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
+                        <outlet property="reviewTextView" destination="MBY-D9-XKT" id="X61-u6-Pui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PT6-nl-ETj" userLabel="First Responder" sceneMemberID="firstResponder"/>
