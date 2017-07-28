@@ -110,6 +110,7 @@
                         <outlet property="liveLabel" destination="yw7-ep-aeH" id="FNt-OM-nFo"/>
                         <outlet property="locationTextField" destination="cRz-ik-tp2" id="x3V-hq-Cqw"/>
                         <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
+                        <outlet property="reviewTextView" destination="MBY-D9-XKT" id="d26-qd-wyz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PT6-nl-ETj" userLabel="First Responder" sceneMemberID="firstResponder"/>

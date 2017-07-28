@@ -18,8 +18,15 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         self.performSegue(withIdentifier: "unwindToFeed", sender: self)
     }
     
-    @IBAction func unwindToRecommendation(segue: UIStoryboardSegue){
-        if let sourceViewController = segue.source as? FlavorsViewController {
+    @IBAction func unwind2Recommendation(segue: UIStoryboardSegue){
+        if let sourceViewController = segue.source as? StoresViewController {
+            dataRecieved = sourceViewController.dataPassed
+        }
+    }
+    
+    var dataRecieved: String? {
+        willSet {
+            storeTextField.text = "  \(newValue!)"
         }
     }
 
@@ -50,7 +57,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "Placeholder"
+            textView.text = "Write a short description about your favorite flavor here..."
             textView.textColor = UIColor.lightGray
         }
     }

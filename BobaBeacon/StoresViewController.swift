@@ -7,34 +7,132 @@
 //
 
 import UIKit
+import Firebase
 
-class StoresViewController: UIViewController {
-
-    @IBAction func unwindToRecommendation(segue: UIStoryboardSegue){
-        if let sourceViewController = segue.source as? StoresViewController {
-        }
+class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var dataPassed : String?
+    
+    var allPlaces : [Place] = []
+    
+    struct Place {
+        var name = String()
+        var address = String()
     }
+    
+    func appendPlaces() -> [Place]{
+        var places : [Place] = []
+        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
+            let count = snapshot.childrenCount
+            print("snapshot: \(snapshot)")
+            for i in 1...count {
+                let place = snapshot.childSnapshot(forPath: String(i))
+                
+                let name = place.childSnapshot(forPath: "placeName")
+                var nameString = String(describing: name)
+                let nameIndex = nameString.index(nameString.startIndex, offsetBy: 17)
+                nameString = nameString.substring(from: nameIndex)
+                
+                let address = place.childSnapshot(forPath: "address")
+                var addressString = String(describing: address)
+                let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
+                addressString = addressString.substring(from: addressIndex)
+                
+                places.append(Place(name: nameString, address: addressString))
+                
+            }
+            self.allPlaces = places
+            self.filteredPlaces = self.allPlaces
+            self.tableView.reloadData()
+        })
+        return places
+    }
+    
+    //    func appendAddresses() -> [String]{
+    //        var addresses : [String] = []
+    //        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
+    //            let count = snapshot.childrenCount
+    //            //print("snapshot: \(snapshot)")
+    //            for i in 1...count {
+    //                let place = snapshot.childSnapshot(forPath: String(i))
+    //
+    //                let address = place.childSnapshot(forPath: "address")
+    //                var addressString = String(describing: address)
+    //                let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
+    //                addressString = addressString.substring(from: addressIndex)
+    //                //print("name: \(nameString)")
+    //                addresses.append(addressString)
+    //            }
+    //            self.placeAddresses = addresses
+    //            print(self.placeAddresses)
+    //            self.tableView.reloadData()
+    //        })
+    //        return addresses
+    //    }
+    
+    
+    var filteredPlaces = [Place]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        allPlaces = appendPlaces()
+        //        placeAddresses = appendAddresses()
+        
+        filteredPlaces = allPlaces
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateSearchResults(for searchController: UISearchController) {
+        // If we haven't typed anything into the search bar then do not filter the results
+        if searchController.searchBar.text! == "" {
+            filteredPlaces = allPlaces
+        } else {
+            // Filter the results
+            filteredPlaces = allPlaces.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        
+        self.tableView.reloadData()
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.filteredPlaces.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 	{
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
+        
+        cell.textLabel?.text = self.filteredPlaces[indexPath.row].name
+        cell.detailTextLabel?.text = self.filteredPlaces[indexPath.row].address
+        
+        
+        return cell
+    }
+    
+    deinit {
+        self.searchController.view.removeFromSuperview()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentCell = tableView.cellForRow(at: indexPath) as! UITableViewCell
+        
+        dataPassed = (currentCell.textLabel!.text)!
+        performSegue(withIdentifier: "unwind2Recommendation", sender: currentCell)
+        
+        
+    }
+    
 }
+
+
