@@ -10,7 +10,7 @@ import UIKit
 
 class PostItemCell: UITableViewCell {
     
-    //@IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postImageView: UIImageView!
     
     
     override func awakeFromNib() {

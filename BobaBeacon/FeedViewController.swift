@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedViewController: UIViewController {
+    
+    
+    var posts = [Post]()
     
     @IBAction func unwindToFeed(segue: UIStoryboardSegue){
         
@@ -28,7 +32,10 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-
+        UserService.posts(for: User.current) { (posts) in
+            self.posts = posts
+            self.tableView.reloadData()
+        }
        
         // Do any additional setup after loading the view.
     }
@@ -59,7 +66,7 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,9 +77,10 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
         case 1:
+            let post = posts[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostItemCell", for: indexPath) as! PostItemCell
-            //let imageURL = URL(string: post.imageURL)
-            //cell.postImageView.kf.setImage(with: imageURL)
+            let imageURL = URL(string: post.imageURL)
+            cell.postImageView.kf.setImage(with: imageURL)
             cell.backgroundColor = .red
             
             return cell
@@ -92,10 +100,10 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return PostHeaderCell.height
         case 1:
-            //let post = posts[indexPath.section]
-            return 124//post.imageHeight
+            let post = posts[indexPath.section]
+            return post.imageHeight
         case 2:
-            return PostActionCell.height
+            return 124//PostActionCell.height
         default:
             fatalError()
         }

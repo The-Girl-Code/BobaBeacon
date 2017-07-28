@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController {
         
         photoHelper.completionHandler = { image in
             print("handle image")
+            PostService.create(for: image)
         }
         
         delegate = self as! UITabBarControllerDelegate

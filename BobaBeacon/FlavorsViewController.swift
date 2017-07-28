@@ -2,7 +2,7 @@
 //  FlavorsViewController.swift
 //  BobaBeacon
 //
-//  Created by Aditi Gnanasekar on 7/27/17.
+//  Created by TheGirlCode on 7/27/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 
