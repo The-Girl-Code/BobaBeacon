@@ -10,6 +10,11 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 import CoreLocation
+import Firebase
+import SwiftyJSON
+import Alamofire
+import AlamofireImage
+import AlamofireNetworkActivityIndicator
 
 extension CLLocation {
     //in meteres
@@ -28,7 +33,65 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var lastPosition: CLLocationCoordinate2D? = nil
     var addPlaceTarget: CLLocationCoordinate2D? = nil
     
+    var places : [[String:String]] = []
     
+    var json : JSON?
+    lazy var geocoder = CLGeocoder()
+    
+
+    func appendData() -> [[String : String]] {
+        var places = [[String: String]]()
+        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
+            let count = snapshot.childrenCount
+            for i in 1...count {
+                let place = snapshot.childSnapshot(forPath: String(i))
+                let address = place.childSnapshot(forPath: "address")
+                var addressString = String(describing: address)
+                let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
+                addressString = addressString.substring(from: addressIndex)
+                
+                let name = place.childSnapshot(forPath: "placeName")
+                var nameString = String(describing: name)
+                let nameIndex = nameString.index(nameString.startIndex, offsetBy: 17)
+                nameString = nameString.substring(from: nameIndex)
+                print("\(nameString) : \(addressString)")
+                places.append([addressString: nameString])
+            }
+        })
+        return places
+    }
+    
+    func getCoordinates() {
+        
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCqrOwp8IQL05noo4vfdMs0nrDUrv0_jy0"
+        
+        Alamofire.request(urlString).validate().responseJSON() { response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    self.json = JSON(value)
+                    let latitude = self.json?["results"][0]["geometry"]["location"]["lat"].doubleValue
+                    let longitude = self.json?["results"][0]["geometry"]["location"]["lng"].doubleValue
+                    print("latitude: \(latitude!)")
+                    print("longitude: \(longitude!)")
+                    self.updateMarkers(location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
+                }
+            case .failure(let error):
+            print(error)
+                
+            }
+        }
+        
+//        geocoder.geocodeAddressString("1600 Amphitheatre Parkway, Mountain View, CA") { (placemarks, error) in
+//            self.processResponse(withPlacemarks: placemarks, error: error)
+//        }
+        
+    }
+    
+//    func processResponse(placemarks: CLPlacemark, error: Error?){
+//        
+//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -37,6 +100,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
+        updateMarkers(location: CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578))
+        places = appendData()
+        print("places: \(places)")
+        getCoordinates()
+        
+//        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
+//            print("this is the snapshot: \(snapshot)")
+//        })
 
     }
     
@@ -54,7 +125,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func updateMarkers(location: CLLocationCoordinate2D) {
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578)
+        marker.position = CLLocationCoordinate2D(latitude: (location.latitude),
+                                                 longitude: (
+                                                    location.longitude))
         marker.title = "Hacker Dojo"
         marker.snippet = "Santa Clara"
         marker.icon = UIImage(named: "boba3.png")
@@ -109,12 +182,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-//        if segue.identifier == "addplace" {
-//            let apc = segue.destination as! AddPlaceController
-//            apc.coordinate = self.addPlaceTarget
-//        }
-//    }
 }
 
