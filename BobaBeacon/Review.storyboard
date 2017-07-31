@@ -158,12 +158,30 @@
                                     <outlet property="delegate" destination="8jz-e0-zYA" id="NXA-8A-Ca4"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-Rj-2Bb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DNc-rJ-EVH"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="aWr-T5-mxF">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lh8-MY-UNu">
+                                            <connections>
+                                                <segue destination="Gcm-8N-epv" kind="unwind" unwindAction="unwindFromSearchCancelWithSegue:" id="fLn-mw-Jld"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="98R-dS-Urg" firstAttribute="top" secondItem="Ucd-29-MBx" secondAttribute="top" constant="50" id="8Ut-TB-Qhq"/>
+                            <constraint firstItem="J4O-Rj-2Bb" firstAttribute="top" secondItem="Ucd-29-MBx" secondAttribute="top" id="NjS-OD-sFx"/>
                             <constraint firstItem="98R-dS-Urg" firstAttribute="leading" secondItem="Ucd-29-MBx" secondAttribute="leading" id="ZcS-og-Oc5"/>
                             <constraint firstAttribute="trailing" secondItem="98R-dS-Urg" secondAttribute="trailing" id="hqA-cA-ha9"/>
+                            <constraint firstItem="J4O-Rj-2Bb" firstAttribute="leading" secondItem="Ucd-29-MBx" secondAttribute="leading" id="qaH-3h-7pP"/>
+                            <constraint firstAttribute="trailing" secondItem="J4O-Rj-2Bb" secondAttribute="trailing" id="tLP-1I-ypd"/>
                             <constraint firstItem="cDA-uF-yrj" firstAttribute="top" secondItem="98R-dS-Urg" secondAttribute="bottom" id="tyf-jX-6vv"/>
                         </constraints>
                     </view>

@@ -37,6 +37,10 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         }
     }
     
+    @IBAction func unwindFromSearchCancel(segue: UIStoryboardSegue){
+        
+    }
+    
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         postReview()

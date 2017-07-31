@@ -14,19 +14,39 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     
     @IBOutlet weak var textView: UITextView!
     
-    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+
+    @IBOutlet weak var bobaImage: UIButton!
+    @IBOutlet weak var drinkLabel: UILabel!
+    
+    @IBAction func unwindFromCancel(segue: UIStoryboardSegue){
+        
     }
     
+    
     @IBAction func unwind2Recommendation(segue: UIStoryboardSegue){
-        if let sourceViewController = segue.source as? StoresViewController {
+       if let sourceViewController = segue.source as? StoresViewController {
             dataRecieved = sourceViewController.dataPassed
+        print(dataRecieved)
+        }
+        
+        else if let sourceViewController = segue.source as? FlavorsViewController {
+            flavorSelected = sourceViewController.flavor
+            print(flavorSelected)
         }
     }
+    
+    
     
     var dataRecieved: String? {
         willSet {
             storeTextField.text = "  \(newValue!)"
+        }
+    }
+    
+    var flavorSelected: String? {
+        willSet {
+            drinkLabel.text = "\(newValue!)"
+            bobaImage.setImage(UIImage(named: newValue!), for: .normal)
         }
     }
 

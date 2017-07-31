@@ -66,9 +66,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func getCoordinatesAndUpdateMap(address: String, name: String) {
 
-            print(name)
             let addressString = address.replacingOccurrences(of: " ", with: "+")
-            print(addressString)
             let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addressString)&key=AIzaSyCqrOwp8IQL05noo4vfdMs0nrDUrv0_jy0"
 
             Alamofire.request(urlString).validate().responseJSON() { response in
@@ -89,6 +87,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView?.settings.myLocationButton = true
+        mapView?.isMyLocationEnabled = true
+        if mapView?.isMyLocationEnabled == true{
+            print("location is true")
+        }else{
+            print("location is false")
+        }
         locationManager.delegate = self
         locationManager.requestLocation()
         locationManager.requestWhenInUseAuthorization()
@@ -97,9 +102,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.startUpdatingLocation()
         //updateMarkers(location: CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578))
         places = appendData()
-//        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
-//            print("this is the snapshot: \(snapshot)")
-//        })
 
     }
     
@@ -109,7 +111,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         if(lastlocation == nil || manager.location!.distance(from: lastlocation!) > 508) {
             lastlocation = manager.location
             let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
             mapView?.animate(toLocation: locValue)
            //updateMarkers(location: locValue)
         }
@@ -117,15 +118,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func updateMarkers(name: String, address: String, location: CLLocationCoordinate2D) {
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: (location.latitude),
-                                                 longitude: (
-                                                    location.longitude))
+        marker.position = CLLocationCoordinate2D(latitude: (location.latitude),longitude: (location.longitude))
         marker.title = "\(name)"
         marker.snippet = "\(address)"
         marker.icon = UIImage(named: "boba3.png")
         marker.map = self.mapView
-    
-    
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -135,6 +132,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
+        
         let camera = GMSCameraPosition.camera(withLatitude: 37.393678, longitude: -122.079944, zoom: 14.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView!.isMyLocationEnabled = true

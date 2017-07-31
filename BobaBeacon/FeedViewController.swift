@@ -40,6 +40,14 @@ class FeedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        UserService.posts(for: User.current) { (posts) in
+//            self.posts = posts
+//            self.tableView.reloadData()
+//        }
+    }
+    
     func configureTableView() {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
@@ -66,7 +74,7 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,6 +93,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
         case 2:
+            //let post = posts[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell", for: indexPath) as! PostActionCell
             //cell.likeCountLabel.text = "\(post.likeCount) likes"
             
@@ -104,13 +113,14 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             return post.imageHeight
         case 2:
             return 124//PostActionCell.height
-        default:
-            fatalError()
+        default: break
+            //fatalError()
         }
+        return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return posts.count
     }
     
 }
