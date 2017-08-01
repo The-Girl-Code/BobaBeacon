@@ -1,5 +1,5 @@
 //
-//  StoresViewController.swift
+//  PlaceViewController.swift
 //  BobaBeacon
 //
 //  Created by TheGirlCode on 7/27/17.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     @IBOutlet var tableView: UITableView!
     
@@ -26,7 +26,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var places : [Place] = []
         Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
             let count = snapshot.childrenCount
-            print("snapshot: \(snapshot)")
             for i in 1...count {
                 let place = snapshot.childSnapshot(forPath: String(i))
                 
@@ -39,7 +38,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 var addressString = String(describing: address)
                 let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
                 addressString = addressString.substring(from: addressIndex)
-                
                 places.append(Place(name: nameString, address: addressString))
                 
             }
@@ -50,28 +48,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return places
     }
     
-    //    func appendAddresses() -> [String]{
-    //        var addresses : [String] = []
-    //        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
-    //            let count = snapshot.childrenCount
-    //            //print("snapshot: \(snapshot)")
-    //            for i in 1...count {
-    //                let place = snapshot.childSnapshot(forPath: String(i))
-    //
-    //                let address = place.childSnapshot(forPath: "address")
-    //                var addressString = String(describing: address)
-    //                let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
-    //                addressString = addressString.substring(from: addressIndex)
-    //                //print("name: \(nameString)")
-    //                addresses.append(addressString)
-    //            }
-    //            self.placeAddresses = addresses
-    //            print(self.placeAddresses)
-    //            self.tableView.reloadData()
-    //        })
-    //        return addresses
-    //    }
-    
     
     var filteredPlaces = [Place]()
     
@@ -80,8 +56,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         allPlaces = appendPlaces()
-        //        placeAddresses = appendAddresses()
-        
         filteredPlaces = allPlaces
         
         searchController.searchResultsUpdater = self
@@ -114,8 +88,7 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.textLabel?.text = self.filteredPlaces[indexPath.row].name
         cell.detailTextLabel?.text = self.filteredPlaces[indexPath.row].address
-        
-        
+    
         return cell
     }
     
@@ -124,10 +97,9 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentCell = tableView.cellForRow(at: indexPath) as! UITableViewCell
-        
+        let currentCell = tableView.cellForRow(at: indexPath)!
         dataPassed = (currentCell.textLabel!.text)!
-        performSegue(withIdentifier: "unwind2Recommendation", sender: currentCell)
+        performSegue(withIdentifier: "unwind2Profile", sender: currentCell)
         
     }
     
