@@ -54,7 +54,7 @@ struct UserService {
 //    }
     
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let ref = Database.database().reference().child("posts").child(user.uid)
+        let ref = Database.database().reference().child("posts").child("photos")
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
@@ -105,7 +105,7 @@ struct UserService {
                 
                 dispatchGroup.enter()
                 
-                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+                PostService.show(forKey: postSnap.key) { (post) in
                     if let post = post {
                         posts.append(post)
                     }

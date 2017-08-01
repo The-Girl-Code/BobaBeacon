@@ -29,14 +29,14 @@ struct PostService {
         let currentUser = User.current
         let post = Post(imageURL: urlString, imageHeight: aspectHeight)
         let dict = post.dictValue
-        let postRef = Database.database().reference().child("posts").child(currentUser.uid).childByAutoId()
+        let postRef = Database.database().reference().child("posts").child("photos").childByAutoId()
         postRef.updateChildValues(dict)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
 
     }
     
-    static func show(forKey postKey: String, posterUID: String, completion: @escaping (Post?) -> Void) {
-        let ref = Database.database().reference().child("posts").child(posterUID).child(postKey)
+    static func show(forKey postKey: String, completion: @escaping (Post?) -> Void) {
+        let ref = Database.database().reference().child("posts").child("photos").child(postKey)
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let post = Post(snapshot: snapshot) else {

@@ -105,7 +105,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         let storeText = storeTextField.text
         let drink = drinkLabel.text
         let rec = textView.text
-        ref.child("posts").child(User.current.uid).child("recommendations").child(storeTextField.text!).setValue(["User ID": userId,"Location": storeText, "Flavor" : drink, "Recommendation": rec])
+        ref.child("posts").child("recommendations").childByAutoId().setValue(["User ID": userId,"Location": storeText, "Flavor" : drink, "Recommendation": rec])
         }
 
     override func didReceiveMemoryWarning() {

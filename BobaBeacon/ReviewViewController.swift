@@ -101,8 +101,13 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     }
     
     func postReview(){
+        let userId = User.current.uid
+        let location = locationTextField.text
+        let rating = liveLabel.text
+        let rev = reviewTextView.text
+        
         ref = Database.database().reference()
-        ref.child("posts").child(User.current.uid).child("reviews").child(locationTextField.text!).setValue(["Rating":self.liveLabel.text, "Location": locationTextField.text, "Review": reviewTextView.text])
+        ref.child("posts").child("reviews").childByAutoId().setValue(["User ID": userId, "Rating": rating, "Location": location, "Review": rev])
 
     }
    
