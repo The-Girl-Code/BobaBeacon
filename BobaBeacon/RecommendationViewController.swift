@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class RecommendationViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
@@ -18,9 +21,22 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var bobaImage: UIButton!
     @IBOutlet weak var drinkLabel: UILabel!
     
+    var ref : DatabaseReference!
+
+    
     @IBAction func unwindFromCancel(segue: UIStoryboardSegue){
         
     }
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
+    
+    @IBAction func postButtonTapped(_ sender: UIBarButtonItem) {
+        postRec()
+        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+    }
+    
+    
     
     
     @IBAction func unwind2Recommendation(segue: UIStoryboardSegue){
@@ -82,12 +98,22 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         }
     }
 
+    
+    func postRec(){
+        ref = Database.database().reference()
+        let userId = User.current.uid
+        let storeText = storeTextField.text
+        let drink = drinkLabel.text
+        let rec = textView.text
+        ref.child("posts").child(User.current.uid).child("recommendations").child(storeTextField.text!).setValue(["User ID": userId,"Location": storeText, "Flavor" : drink, "Recommendation": rec])
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+ 
 
     /*
     // MARK: - Navigation

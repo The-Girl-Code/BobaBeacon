@@ -59,13 +59,13 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         locationTextField.delegate = self
         reviewTextView.delegate = self
         
-        self.ratingView.emptyImage = UIImage(named: "StarEmpty")
-        self.ratingView.fullImage = UIImage(named: "StarFull")
+        self.ratingView.emptyImage = UIImage(named: "boba-empty")
+        self.ratingView.fullImage = UIImage(named: "Regular")
         // Optional params
         self.ratingView.delegate = self
         self.ratingView.contentMode = UIViewContentMode.scaleAspectFit
         self.ratingView.maxRating = 5
-        self.ratingView.minRating = 1
+        self.ratingView.minRating = 0
         self.ratingView.rating = 2.5
         self.ratingView.editable = true
         self.ratingView.halfRatings = true
@@ -101,9 +101,6 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     }
     
     func postReview(){
-        let dateFormatter = ISO8601DateFormatter()
-        let timeStamp = dateFormatter.string(from: Date())
-        let timeCreated = timeStamp.description
         ref = Database.database().reference()
         ref.child("posts").child(User.current.uid).child("reviews").child(locationTextField.text!).setValue(["Rating":self.liveLabel.text, "Location": locationTextField.text, "Review": reviewTextView.text])
 
