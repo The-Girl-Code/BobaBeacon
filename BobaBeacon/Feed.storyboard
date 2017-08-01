@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7N3-QT-wxR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7N3-QT-wxR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,17 +112,28 @@
                                                     <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4x-Ou-Bdp">
+                                                    <rect key="frame" x="62" y="43" width="298" height="0.5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="Yw7-Ro-Udv"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="lbf-CU-Kzk" secondAttribute="bottom" constant="3.5" id="3Hx-33-qtt"/>
                                                 <constraint firstItem="wFE-7A-pNd" firstAttribute="top" secondItem="9yh-oO-YYa" secondAttribute="topMargin" constant="3" id="8TY-jc-jzC"/>
                                                 <constraint firstAttribute="trailing" secondItem="lbf-CU-Kzk" secondAttribute="trailing" constant="8" id="HWu-jO-lQX"/>
+                                                <constraint firstItem="Y4x-Ou-Bdp" firstAttribute="leading" secondItem="fVR-bH-fOU" secondAttribute="trailing" constant="15" id="Uhl-dI-gNw"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wFE-7A-pNd" secondAttribute="bottom" constant="3.5" id="Uyk-YQ-3S9"/>
+                                                <constraint firstItem="Y4x-Ou-Bdp" firstAttribute="centerX" secondItem="9yh-oO-YYa" secondAttribute="centerX" id="Wyc-K6-0by"/>
                                                 <constraint firstItem="fVR-bH-fOU" firstAttribute="top" secondItem="9yh-oO-YYa" secondAttribute="topMargin" id="gBf-dt-3XM"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fVR-bH-fOU" secondAttribute="bottom" constant="3.5" id="iTP-vq-M2B"/>
                                                 <constraint firstItem="lbf-CU-Kzk" firstAttribute="top" secondItem="9yh-oO-YYa" secondAttribute="top" constant="3" id="jHv-I9-p7P"/>
                                                 <constraint firstItem="wFE-7A-pNd" firstAttribute="leading" secondItem="fVR-bH-fOU" secondAttribute="trailing" constant="8" id="jnb-kG-fRO"/>
                                                 <constraint firstItem="fVR-bH-fOU" firstAttribute="leading" secondItem="9yh-oO-YYa" secondAttribute="leadingMargin" constant="15" id="mPh-Wo-awn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Y4x-Ou-Bdp" secondAttribute="trailing" constant="15" id="nb3-fW-j2i"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y4x-Ou-Bdp" secondAttribute="bottom" id="se8-pn-t0J"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -162,7 +173,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="7DU-5V-sfC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUh-Lh-0gN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUh-Lh-0gN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
