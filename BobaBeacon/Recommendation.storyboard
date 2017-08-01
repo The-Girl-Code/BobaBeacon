@@ -31,12 +31,13 @@
                                     <navigationItem title="Recommend a flavor" id="uU0-s7-yKv">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Yh-Qr-JXm">
                                             <connections>
-                                                <action selector="cancelButtonTapped:" destination="IZ4-fN-evD" id="GeI-mS-fce"/>
+                                                <action selector="cancelButtonTapped:" destination="IZ4-fN-evD" id="yR0-hV-aiS"/>
+                                                <segue destination="myp-l8-4uw" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="Njz-G4-aFX"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="Iw3-BA-TNv">
                                             <connections>
-                                                <action selector="postButtonTapped:" destination="IZ4-fN-evD" id="Mbg-qC-emO"/>
+                                                <segue destination="myp-l8-4uw" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="Fbp-y8-otK"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -121,7 +122,6 @@
                         <outlet property="drinkLabel" destination="Ilp-fr-jQb" id="aSW-dX-oid"/>
                         <outlet property="storeTextField" destination="UiE-N0-Yie" id="8cl-3q-rpY"/>
                         <outlet property="textView" destination="K0C-T3-Ouw" id="oiN-5A-TfR"/>
-                        <segue destination="myp-l8-4uw" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="klV-7H-kbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmq-oB-oMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
