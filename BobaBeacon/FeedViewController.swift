@@ -11,15 +11,18 @@ import Kingfisher
 
 class FeedViewController: UIViewController {
     
+
     
     var posts = [Post]()
+    let refreshControl = UIRefreshControl()
+
     
     @IBAction func unwindToFeed(segue: UIStoryboardSegue){
         
     }
     @IBOutlet weak var tableView: UITableView!
     
-    //@IBOutlet weak var timeAgoLabel: UILabel!
+    @IBOutlet weak var timeAgoLabel: UILabel!
     
     let timestampFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -32,25 +35,33 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        reloadTimeline()
+    }
+    
+    func reloadTimeline() {
+   
         UserService.posts(for: User.current) { (posts) in
             self.posts = posts
             self.tableView.reloadData()
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
         }
-       
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        UserService.posts(for: User.current) { (posts) in
-//            self.posts = posts
-//            self.tableView.reloadData()
-//        }
+        UserService.posts(for: User.current) { (posts) in
+            self.posts = posts
+            self.tableView.reloadData()
+        }
     }
     
     func configureTableView() {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     
@@ -71,31 +82,64 @@ class FeedViewController: UIViewController {
 
 }
 
-extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
+extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostActionCellDelegate {
+    
+    func didTapLikeButton(_ likeButton: UIButton, on cell: PostActionCell) {
+        print("did tap like button")
+        guard let indexPath = tableView.indexPath(for: cell)
+            else { return }
+        likeButton.isUserInteractionEnabled = false
+        let post = posts[indexPath.section]
+        
+        LikeService.setIsLiked(!post.isLiked, for: post) { (success) in
+
+            defer {
+                likeButton.isUserInteractionEnabled = true
+            }
+            
+            guard success else { return }
+            post.likeCount += !post.isLiked ? 1 : -1
+            post.isLiked = !post.isLiked
+            guard let cell = self.tableView.cellForRow(at: indexPath) as? PostActionCell
+                else { return }
+            
+            DispatchQueue.main.async {
+                self.configureCell(cell, with: post)
+            }
+        }
+    }
+    
+    func configureCell(_ cell: PostActionCell, with post: Post) {
+        cell.displayTime.text = timestampFormatter.string(from: post.creationDate)
+        cell.likeButton.isSelected = post.isLiked
+        cell.likeCountLabel.text = "\(post.likeCount) likes"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("this is post in table view \(posts)")
+
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.section]
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
-            cell.usernameLabel.text = User.current.username
+            //cell.usernameLabel.text = User.current.username
+            cell.usernameLabel.text = post.poster.username
             
             return cell
         case 1:
-            let post = posts[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostItemCell", for: indexPath) as! PostItemCell
             let imageURL = URL(string: post.imageURL)
             cell.postImageView.kf.setImage(with: imageURL)
-            cell.backgroundColor = .red
+
             
             return cell
         case 2:
-            //let post = posts[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell", for: indexPath) as! PostActionCell
-            //cell.likeCountLabel.text = "\(post.likeCount) likes"
+            configureCell(cell, with: post)
             
             return cell
         default:
@@ -112,11 +156,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
             let post = posts[indexPath.section]
             return post.imageHeight
         case 2:
-            return 124//PostActionCell.height
+            return PostActionCell.height
         default: break
             //fatalError()
         }
-        return 0
+        return 42
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

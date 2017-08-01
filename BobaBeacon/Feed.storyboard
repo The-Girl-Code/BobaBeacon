@@ -45,7 +45,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="C0k-X3-5IC"/>
                                                         <constraint firstAttribute="width" constant="44" id="C1N-nT-hQo"/>
                                                     </constraints>
-                                                    <state key="normal" image="btn_options_black"/>
+                                                    <state key="normal" image="dot"/>
                                                     <connections>
                                                         <action selector="optionsButtonTapped:" destination="Fls-aT-fEc" eventType="touchUpInside" id="9oP-To-Byy"/>
                                                     </connections>
@@ -95,7 +95,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-bH-fOU">
                                                     <rect key="frame" x="23" y="8" width="24" height="24"/>
-                                                    <state key="normal" image="heart_unfilled"/>
+                                                    <state key="normal" image="filled_heart"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="puV-ei-SLq" eventType="touchUpInside" id="3NQ-Ng-h7B"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 likes " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFE-7A-pNd">
                                                     <rect key="frame" x="55" y="11" width="53" height="21"/>
@@ -174,7 +177,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_options_black" width="24" height="24"/>
-        <image name="heart_unfilled" width="24" height="24"/>
+        <image name="dot" width="1000" height="1000"/>
+        <image name="filled_heart" width="24" height="24"/>
     </resources>
 </document>

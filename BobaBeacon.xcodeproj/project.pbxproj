@@ -22,6 +22,7 @@
 		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
 		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
 		C00271791F2FE978002DD25D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00271781F2FE978002DD25D /* MapViewController.swift */; };
+		C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002717A1F30F2F1002DD25D /* LikeService.swift */; };
 		C0513A111F290912000737A5 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A101F290912000737A5 /* FloatRatingView.swift */; };
 		C0513A1F1F2A4D8F000737A5 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A1E1F2A4D8F000737A5 /* PostHeaderCell.swift */; };
 		C0513A211F2A4D9A000737A5 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A201F2A4D9A000737A5 /* PostActionCell.swift */; };
@@ -66,6 +67,7 @@
 		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00271781F2FE978002DD25D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C002717A1F30F2F1002DD25D /* LikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
 		C0513A101F290912000737A5 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		C0513A1E1F2A4D8F000737A5 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
 		C0513A201F2A4D9A000737A5 /* PostActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				A66C3BC31F21163000648917 /* UserService.swift */,
 				C0CD7D871F2AA70600B53472 /* StorageService.swift */,
 				C0CD7D891F2AA76000B53472 /* PostService.swift */,
+				C002717A1F30F2F1002DD25D /* LikeService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */,
 				C0CD7D8C1F2AAC0600B53472 /* Post.swift in Sources */,
 				A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */,
+				C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */,
 				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
 				C0CD7D861F2AA5E900B53472 /* UIImage+Size.swift in Sources */,
 				C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */,
