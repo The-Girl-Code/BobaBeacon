@@ -8,14 +8,19 @@
 
 import UIKit
 
+
 class PostViewController: UIViewController {
     
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Reached Here")
         // Do any additional setup after loading the view.
+        
     }
+    
     
     var completionHandler: ((UIImage) -> Void)?
     

@@ -39,19 +39,86 @@ struct UserService {
         }
     }
     
+//    static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
+//        let ref = Database.database().reference().child("posts").child(user.uid)
+//        
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+//                return completion([])
+//            }
+//            
+//            let posts = snapshot.reversed().flatMap(Post.init)
+//            print("POSTS \(posts)")
+//            completion(posts)
+//        })
+//    }
+    
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
         let ref = Database.database().reference().child("posts").child(user.uid)
-        
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
             
-            let posts = snapshot.reversed().flatMap(Post.init)
-            completion(posts)
+            let dispatchGroup = DispatchGroup()
+            
+            let posts: [Post] =
+                snapshot
+                    .reversed()
+                    .flatMap {
+                        guard let post = Post(snapshot: $0)
+                            else { return nil }
+                        
+                        dispatchGroup.enter()
+                        
+                        LikeService.isPostLiked(post) { (isLiked) in
+                            post.isLiked = isLiked
+                            
+                            dispatchGroup.leave()
+                        }
+                        
+                        return post
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts)
+            })
         })
     }
     
+    static func timeline(completion: @escaping ([Post]) -> Void) {
+        let currentUser = User.current
+        
+        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+        timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion([]) }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            var posts = [Post]()
+            
+            for postSnap in snapshot {
+                guard let postDict = postSnap.value as? [String : Any],
+                    let posterUID = postDict["poster_uid"] as? String
+                    else { continue }
+                
+                dispatchGroup.enter()
+                
+                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+                    if let post = post {
+                        posts.append(post)
+                    }
+                    
+                    dispatchGroup.leave()
+                }
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts.reversed())
+            })
+        })
+    }
   
 
 }

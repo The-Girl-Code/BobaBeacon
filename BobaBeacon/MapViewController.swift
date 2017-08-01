@@ -89,15 +89,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         super.viewDidLoad()
         mapView?.settings.myLocationButton = true
         mapView?.isMyLocationEnabled = true
-//        if mapView?.isMyLocationEnabled == true{
-//            print("location is true")
-//        }else{
-//            print("location is false")
-//        }
+        if mapView?.isMyLocationEnabled == true{
+            print("location is true")
+        }else{
+            print("location is false")
+        }
         
         let mapInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 45.0, right: 0.0)
         mapView?.padding = mapInsets
-        
         locationManager.delegate = self
         locationManager.requestLocation()
         locationManager.requestWhenInUseAuthorization()
@@ -106,8 +105,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.startUpdatingLocation()
         //updateMarkers(location: CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578))
         places = appendData()
-
-        self.tabBarController?.tabBar.barTintColor = UIColor.init(red: 210/255, green: 230/255, blue: 210/255, alpha: 0.25)
 
     }
     
@@ -159,19 +156,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        //print("You long pressed at \(coordinate.latitude), \(coordinate.longitude)")
+        print("You long pressed at \(coordinate.latitude), \(coordinate.longitude)")
         self.addPlaceTarget = coordinate
         //self.performSegue(withIdentifier: "addplace", sender: self)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        //print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         
     }
     
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
                  name: String, location: CLLocationCoordinate2D) {
-        //print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
+        print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
     }
     
     override func didReceiveMemoryWarning() {

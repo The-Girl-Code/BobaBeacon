@@ -34,7 +34,11 @@
                                                 <segue destination="Xrz-VU-lCx" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="gIw-Ce-agh"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Post" id="bpZ-Q6-Xhb"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="bpZ-Q6-Xhb">
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="NfX-cN-8ZE" id="MaT-Ww-CSo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -83,6 +87,9 @@
                                 <color key="textColor" red="0.73116527326099634" green="0.73661102744106177" blue="0.74026411802030456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NfX-cN-8ZE" id="oEx-am-oD5"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,7 +117,7 @@
                         <outlet property="liveLabel" destination="yw7-ep-aeH" id="FNt-OM-nFo"/>
                         <outlet property="locationTextField" destination="cRz-ik-tp2" id="x3V-hq-Cqw"/>
                         <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
-                        <outlet property="reviewTextView" destination="MBY-D9-XKT" id="d26-qd-wyz"/>
+                        <outlet property="reviewTextView" destination="MBY-D9-XKT" id="X61-u6-Pui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PT6-nl-ETj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,12 +158,30 @@
                                     <outlet property="delegate" destination="8jz-e0-zYA" id="NXA-8A-Ca4"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-Rj-2Bb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DNc-rJ-EVH"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="aWr-T5-mxF">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lh8-MY-UNu">
+                                            <connections>
+                                                <segue destination="Gcm-8N-epv" kind="unwind" unwindAction="unwindFromSearchCancelWithSegue:" id="fLn-mw-Jld"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="98R-dS-Urg" firstAttribute="top" secondItem="Ucd-29-MBx" secondAttribute="top" constant="50" id="8Ut-TB-Qhq"/>
+                            <constraint firstItem="J4O-Rj-2Bb" firstAttribute="top" secondItem="Ucd-29-MBx" secondAttribute="top" id="NjS-OD-sFx"/>
                             <constraint firstItem="98R-dS-Urg" firstAttribute="leading" secondItem="Ucd-29-MBx" secondAttribute="leading" id="ZcS-og-Oc5"/>
                             <constraint firstAttribute="trailing" secondItem="98R-dS-Urg" secondAttribute="trailing" id="hqA-cA-ha9"/>
+                            <constraint firstItem="J4O-Rj-2Bb" firstAttribute="leading" secondItem="Ucd-29-MBx" secondAttribute="leading" id="qaH-3h-7pP"/>
+                            <constraint firstAttribute="trailing" secondItem="J4O-Rj-2Bb" secondAttribute="trailing" id="tLP-1I-ypd"/>
                             <constraint firstItem="cDA-uF-yrj" firstAttribute="top" secondItem="98R-dS-Urg" secondAttribute="bottom" id="tyf-jX-6vv"/>
                         </constraints>
                     </view>
