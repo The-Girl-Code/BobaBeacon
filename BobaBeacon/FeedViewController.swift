@@ -14,9 +14,9 @@ import Kingfisher
 //    func reloadData()
 //}
 
-class FeedViewController: UIViewController {
-    
+let notificationKey = "com.aastha.aditi"
 
+class FeedViewController: UIViewController {
     
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
@@ -41,12 +41,15 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         reloadTimeline()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(notificationKey), object: nil)
     }
     
     func reloadTimeline() {
    
         UserService.posts(for: User.current) { (posts) in
             self.posts = posts
+            print(posts.count)
             self.tableView.reloadData()
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
