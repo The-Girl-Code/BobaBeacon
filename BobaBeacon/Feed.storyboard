@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostHeaderCell" id="Fls-aT-fEc" customClass="PostHeaderCell" customModule="BobaBeacon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostHeaderCell" id="Fls-aT-fEc" customClass="PostHeaderCell" customModule="BobaBeacon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fls-aT-fEc" id="651-fe-BVZ">
@@ -86,7 +86,7 @@
                                             <outlet property="postImageView" destination="Mxp-gf-CsY" id="Wma-WM-N7i"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostActionCell" id="puV-ei-SLq" customClass="PostActionCell" customModule="BobaBeacon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostActionCell" id="puV-ei-SLq" customClass="PostActionCell" customModule="BobaBeacon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="puV-ei-SLq" id="9yh-oO-YYa">
@@ -95,7 +95,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVR-bH-fOU">
                                                     <rect key="frame" x="23" y="8" width="24" height="24"/>
-                                                    <state key="normal" image="filled_heart"/>
+                                                    <state key="normal" image="heart_unfilled"/>
                                                     <connections>
                                                         <action selector="likeButtonTapped:" destination="puV-ei-SLq" eventType="touchUpInside" id="3NQ-Ng-h7B"/>
                                                     </connections>
@@ -162,7 +162,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="7DU-5V-sfC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUh-Lh-0gN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUh-Lh-0gN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -178,6 +178,6 @@
     </scenes>
     <resources>
         <image name="dot" width="1000" height="1000"/>
-        <image name="filled_heart" width="24" height="24"/>
+        <image name="heart_unfilled" width="24" height="24"/>
     </resources>
 </document>

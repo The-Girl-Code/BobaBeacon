@@ -9,6 +9,11 @@
 import UIKit
 import Kingfisher
 
+
+//protocol RefreshFeedDelegate {
+//    func reloadData()
+//}
+
 class FeedViewController: UIViewController {
     
 
@@ -48,6 +53,10 @@ class FeedViewController: UIViewController {
             }
         }
     }
+    
+//    func reloadData() {
+//        reloadTimeline()
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,6 +122,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
         cell.displayTime.text = timestampFormatter.string(from: post.creationDate)
         cell.likeButton.isSelected = post.isLiked
         cell.likeCountLabel.text = "\(post.likeCount) likes"
+        if cell.likeButton.isSelected {
+            cell.likeButton.setImage(UIImage(named: "filled_heart"), for: .normal)
+        } else {
+            cell.likeButton.setImage(UIImage(named: "heart_unfilled"), for: .normal)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,6 +153,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostActionCell", for: indexPath) as! PostActionCell
+            cell.delegate = self
             configureCell(cell, with: post)
             
             return cell
