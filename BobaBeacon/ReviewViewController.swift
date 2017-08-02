@@ -107,18 +107,18 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     func textFieldDidEndEditing(_ textField: UITextField) {
         postButton.isEnabled = true
 
+
     }
+    
     
 
     func postReview(){
-        let userId = User.current.uid
         let location = locationTextField.text
         let rating = liveLabel.text
         let rev = reviewTextView.text
         
-        ref = Database.database().reference()
-        ref.child("posts").child("reviews").childByAutoId().setValue(["User ID": userId, "Rating": rating, "Location": location, "Review": rev])
-
+        PostService.createReview(rating: rating!, location: location!, review: rev!)
+        
     }
    
     func disablePost(){

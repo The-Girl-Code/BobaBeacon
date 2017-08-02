@@ -37,7 +37,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="Iw3-BA-TNv">
                                             <connections>
-                                                <segue destination="myp-l8-4uw" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="Fbp-y8-otK"/>
+                                                <action selector="postButtonTapped:" destination="IZ4-fN-evD" id="4na-3E-bUh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

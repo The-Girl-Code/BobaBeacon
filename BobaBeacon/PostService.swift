@@ -25,18 +25,40 @@ struct PostService {
         }
     }
     
+    static func createRec(drink: String, location: String, recommendation: String) {
+        let currentUser = User.current
+        let post = RecPost(drink: drink, location: location, recommendation: recommendation)
+        let dict = post.dictValue
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        postRef.updateChildValues(dict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        
+    }
+    
+
+    
+     static func createReview(rating: String, location: String, review: String) {
+        let currentUser = User.current
+        let post = ReviewPost(rating: rating, location: location, review: review)
+        let dict = post.dictValue
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        postRef.updateChildValues(dict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        
+    }
+    
     private static func create(forURLString urlString: String, aspectHeight: CGFloat) {
         let currentUser = User.current
         let post = Post(imageURL: urlString, imageHeight: aspectHeight)
         let dict = post.dictValue
-        let postRef = Database.database().reference().child("posts").child("photos").childByAutoId()
+        let postRef = Database.database().reference().child("posts").childByAutoId()
         postRef.updateChildValues(dict)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
 
     }
     
     static func show(forKey postKey: String, completion: @escaping (Post?) -> Void) {
-        let ref = Database.database().reference().child("posts").child("photos").child(postKey)
+        let ref = Database.database().reference().child("posts").child(postKey)
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let post = Post(snapshot: snapshot) else {

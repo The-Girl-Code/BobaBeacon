@@ -13,7 +13,14 @@ class PostItemCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     
     
+    @IBOutlet weak var postTextView: UITextView!
+    
+    //var postImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+
+
     }
 }

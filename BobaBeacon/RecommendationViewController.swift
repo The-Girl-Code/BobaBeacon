@@ -11,7 +11,10 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-class RecommendationViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class RecommendationViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIScrollViewDelegate {
+    //var scrollView: UIScrollView!
+    //var containerView = UIView()
+    
     
     @IBOutlet weak var storeTextField: UITextField!
     
@@ -34,11 +37,14 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         self.performSegue(withIdentifier: "unwindToFeed", sender: self)
     }
     
+
+    
     @IBAction func postButtonTapped(_ sender: UIBarButtonItem) {
         postRec()
+        print("post button was tapped")
         self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+     
     }
-    
     
     
     
@@ -77,9 +83,18 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
 
         storeTextField.delegate = self
         textView.delegate = self
+//        self.scrollView = UIScrollView()
+//        self.scrollView.delegate = self
+//        self.scrollView.contentSize = CGSize(width: 360, height: 550)
         
     }
     
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        scrollView.frame = view.bounds
+//        containerView.frame = CGRect(x: 0, y: 0, width: scrollView.contentSize.width, height: scrollView.contentSize.height)
+//    }
+//    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         performSegue(withIdentifier: "toStores", sender: self)
@@ -109,11 +124,11 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     
     func postRec(){
         ref = Database.database().reference()
-        let userId = User.current.uid
         let storeText = storeTextField.text
         let drink = drinkLabel.text
         let rec = textView.text
-        ref.child("posts").child("recommendations").childByAutoId().setValue(["User ID": userId,"Location": storeText, "Flavor" : drink, "Recommendation": rec])
+        
+        PostService.createRec(drink: drink!, location: storeText!, recommendation: rec!)
         }
 
     override func didReceiveMemoryWarning() {

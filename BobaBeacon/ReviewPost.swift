@@ -1,21 +1,22 @@
 //
-//  Post.swift
+//  TextPost.swift
 //  BobaBeacon
 //
-//  Created by TheGirlCode on 7/27/17.
+//  Created by Kodo on 8/2/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 
 import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
-class Post {
+class ReviewPost {
     var key: String?
-    let imageURL: String
-    let imageHeight: CGFloat
+    let rating: String
+    let location: String
+    let review: String
     let creationDate: Date
     var likeCount: Int
-    let photoPost: String
+    let reviewPost: String
     let poster: User
     var isLiked = false
     
@@ -23,45 +24,49 @@ class Post {
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
         let userDict = ["uid" : poster.uid, "username" : poster.username]
-        return ["image_url" : imageURL,
-                "image_height" : imageHeight,
+        return ["rating" : rating,
+                "location" : location,
+                "review" : review,
                 "created_at" : createdAgo,
                 "like_count": likeCount,
-                "type_of_post": photoPost,
+                "type_of_post": reviewPost,
                 "poster": userDict]
     }
     
-    init(imageURL: String, imageHeight: CGFloat) {
-        self.imageURL = imageURL
-        self.imageHeight = imageHeight
+    init(rating: String, location: String, review: String) {
+        self.rating = rating
+        self.location = location
+        self.review = review
         self.creationDate = Date()
         self.likeCount = 0
-        self.photoPost = "photo"
+        self.reviewPost = "review"
         self.poster = User.current
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let imageURL = dict["image_url"] as? String,
-            let imageHeight = dict["image_height"] as? CGFloat,
+            let rating = dict["rating"] as? String,
+            let location = dict["location"] as? String,
+            let review = dict["review"] as? String,
             let createdAgo = dict["created_at"] as? TimeInterval,
             let likeCount = dict["like_count"] as? Int,
-            let photoPost = dict["type_of_post"] as? String,
+            let reviewPost = dict["type_of_post"] as? String,
             let userDict = dict["poster"] as? [String : Any],
             let uid = userDict["uid"] as? String,
             let username = userDict["username"] as? String
             else { return nil }
         
         self.key = snapshot.key
-        self.imageURL = imageURL
-        self.imageHeight = imageHeight
+        self.rating = rating
+        self.location = location
+        self.review = review
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.likeCount = likeCount
-        self.photoPost = photoPost
+        self.reviewPost = reviewPost
         self.poster = User(uid: uid, username: username)
     }
     
-
-
+    
+    
     
 }
