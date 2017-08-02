@@ -17,6 +17,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var bobaImage: UIButton!
     @IBOutlet weak var drinkLabel: UILabel!
@@ -77,6 +78,8 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
 
         storeTextField.delegate = self
         textView.delegate = self
+        
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
         
     }
     
