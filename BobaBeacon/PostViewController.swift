@@ -18,7 +18,6 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         print("Reached Here")
         // Do any additional setup after loading the view.
-        
     }
     
     

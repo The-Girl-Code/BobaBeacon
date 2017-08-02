@@ -21,6 +21,9 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var bobaImage: UIButton!
     @IBOutlet weak var drinkLabel: UILabel!
     
+    @IBOutlet weak var postButton: UIBarButtonItem!
+    
+    
     var ref : DatabaseReference!
 
     
@@ -68,7 +71,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        disablePost()
         textView.text = "Write a short description about your favorite flavor here..."
         textView.textColor = UIColor.lightGray
 
@@ -85,6 +88,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        postButton.isEnabled = true
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
@@ -95,9 +99,13 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         if textView.text.isEmpty {
             textView.text = "Write a short description about your favorite flavor here..."
             textView.textColor = UIColor.lightGray
+            postButton.isEnabled = false
         }
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        postButton.isEnabled = true
+    }
     
     func postRec(){
         ref = Database.database().reference()
@@ -113,6 +121,11 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         // Dispose of any resources that can be recreated.
     }
     
+    func disablePost(){
+        if (storeTextField.text?.isEmpty)! {
+            postButton.isEnabled = false
+        }
+    }
  
 
     /*

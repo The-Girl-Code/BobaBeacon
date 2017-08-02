@@ -120,6 +120,7 @@
                     <connections>
                         <outlet property="bobaImage" destination="kOh-nY-47W" id="3x0-dn-Ag6"/>
                         <outlet property="drinkLabel" destination="Ilp-fr-jQb" id="aSW-dX-oid"/>
+                        <outlet property="postButton" destination="Iw3-BA-TNv" id="tAU-jC-TYg"/>
                         <outlet property="storeTextField" destination="UiE-N0-Yie" id="8cl-3q-rpY"/>
                         <outlet property="textView" destination="K0C-T3-Ouw" id="oiN-5A-TfR"/>
                     </connections>

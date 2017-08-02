@@ -24,6 +24,8 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
     @IBOutlet weak var locationTextField: UITextField!
     
+    @IBOutlet weak var postButton: UIBarButtonItem!
+
     var ref : DatabaseReference!
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
@@ -55,7 +57,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        disablePost()
         locationTextField.delegate = self
         reviewTextView.delegate = self
         
@@ -87,6 +89,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        postButton.isEnabled = true
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
             textView.textColor = UIColor.black
@@ -97,9 +100,16 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         if textView.text.isEmpty {
             textView.text = "How was your experience?"
             textView.textColor = UIColor.lightGray
+            postButton.isEnabled = false
         }
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        postButton.isEnabled = true
+
+    }
+    
+
     func postReview(){
         let userId = User.current.uid
         let location = locationTextField.text
@@ -111,6 +121,11 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
 
     }
    
+    func disablePost(){
+        if (locationTextField.text?.isEmpty)! {
+            postButton.isEnabled = false
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

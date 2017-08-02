@@ -149,8 +149,8 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostItemCell", for: indexPath) as! PostItemCell
-            let imageURL = URL(string: post.imageURL)
-            cell.postImageView.kf.setImage(with: imageURL)
+            //let imageURL = URL(string: post.imageURL)
+            //cell.postImageView.kf.setImage(with: imageURL)
 
             
             return cell

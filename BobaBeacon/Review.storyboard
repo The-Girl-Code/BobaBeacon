@@ -116,6 +116,7 @@
                     <connections>
                         <outlet property="liveLabel" destination="yw7-ep-aeH" id="FNt-OM-nFo"/>
                         <outlet property="locationTextField" destination="cRz-ik-tp2" id="x3V-hq-Cqw"/>
+                        <outlet property="postButton" destination="bpZ-Q6-Xhb" id="5Ts-cC-FU3"/>
                         <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
                         <outlet property="reviewTextView" destination="MBY-D9-XKT" id="X61-u6-Pui"/>
                     </connections>
