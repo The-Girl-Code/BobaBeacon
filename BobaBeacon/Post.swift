@@ -15,8 +15,15 @@ class Post {
     let imageHeight: CGFloat
     let creationDate: Date
     var likeCount: Int
+    let typeOfPost: String
     let poster: User
     var isLiked = false
+    let rating: String
+    let location: String
+    let review: String
+    let drink: String
+    let recommendation: String
+
     
     
     var dictValue: [String : Any] {
@@ -25,7 +32,13 @@ class Post {
         return ["image_url" : imageURL,
                 "image_height" : imageHeight,
                 "created_at" : createdAgo,
+                "rating" : rating,
+                "location" : location,
+                "review" : review,
+                "recommendation": recommendation,
+                "drink": drink,
                 "like_count": likeCount,
+                "type_of_post": typeOfPost,
                 "poster": userDict]
     }
     
@@ -34,7 +47,42 @@ class Post {
         self.imageHeight = imageHeight
         self.creationDate = Date()
         self.likeCount = 0
+        self.typeOfPost = "photo"
         self.poster = User.current
+        self.rating = ""
+        self.review = ""
+        self.location = ""
+        self.drink = ""
+        self.recommendation = ""
+        
+    }
+    
+    init(rating: String, location: String, review: String) {
+        self.rating = rating
+        self.location = location
+        self.review = review
+        self.creationDate = Date()
+        self.likeCount = 0
+        self.typeOfPost = "review"
+        self.poster = User.current
+        self.imageURL = ""
+        self.imageHeight = 0
+        self.recommendation = ""
+        self.drink = ""
+    }
+    
+    init(drink: String, location: String, recommendation: String) {
+        self.drink = drink
+        self.location = location
+        self.recommendation = recommendation
+        self.creationDate = Date()
+        self.likeCount = 0
+        self.typeOfPost = "recommendation"
+        self.poster = User.current
+        self.rating = ""
+        self.review = ""
+        self.imageURL = ""
+        self.imageHeight = 0
     }
     
     init?(snapshot: DataSnapshot) {
@@ -42,7 +90,13 @@ class Post {
             let imageURL = dict["image_url"] as? String,
             let imageHeight = dict["image_height"] as? CGFloat,
             let createdAgo = dict["created_at"] as? TimeInterval,
+            let rating = dict["rating"] as? String,
+            let location = dict["location"] as? String,
+            let review = dict["review"] as? String,
+            let recommendation = dict["recommendation"] as? String,
+            let drink = dict["drink"] as? String,
             let likeCount = dict["like_count"] as? Int,
+            let typeOfPost = dict["type_of_post"] as? String,
             let userDict = dict["poster"] as? [String : Any],
             let uid = userDict["uid"] as? String,
             let username = userDict["username"] as? String
@@ -53,10 +107,13 @@ class Post {
         self.imageHeight = imageHeight
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.likeCount = likeCount
+        self.typeOfPost = typeOfPost
         self.poster = User(uid: uid, username: username)
+        self.rating = rating
+        self.review = review
+        self.location = location
+        self.recommendation = recommendation
+        self.drink = drink
+        
     }
-    
-
-
-    
 }

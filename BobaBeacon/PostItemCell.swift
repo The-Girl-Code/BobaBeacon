@@ -13,7 +13,16 @@ class PostItemCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     
     
+    @IBOutlet weak var reviewTextView: UITextView!
+    
+    @IBOutlet weak var recommendationTextView: UITextView!
+    
+    @IBOutlet weak var drinkImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+
+
     }
 }

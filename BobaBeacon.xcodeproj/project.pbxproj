@@ -52,6 +52,7 @@
 		C0CD7D901F2AB4C800B53472 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD7D8F1F2AB4C800B53472 /* StorageReference.swift */; };
 		C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8CFEA1F26B04500475585 /* MainTabBarController.swift */; };
 		C0E8CFF31F26B1DC00475585 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8CFF21F26B1DC00475585 /* Add.storyboard */; };
+		C0F694A71F3234F300CB26F9 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F694A61F3234F300CB26F9 /* PlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		C0CD7D8F1F2AB4C800B53472 /* StorageReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
 		C0E8CFEA1F26B04500475585 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C0E8CFF21F26B1DC00475585 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		C0F694A61F3234F300CB26F9 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		C7135521FCB12812F68DE740 /* Pods-BobaBeacon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.release.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.release.xcconfig"; sourceTree = "<group>"; };
 		EC577DCFF6224C3320C9A63E /* Pods-BobaBeacon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BobaBeacon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BobaBeacon/Pods-BobaBeacon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				C0CD7D701F2A966F00B53472 /* LocationViewController.swift */,
 				C0CD7D7A1F2A975A00B53472 /* StoresViewController.swift */,
 				A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */,
+				C0F694A61F3234F300CB26F9 /* PlaceViewController.swift */,
 				A66C3BCA1F21219300648917 /* PostViewController.swift */,
 				A66C3BCC1F2121A600648917 /* ProfileViewController.swift */,
 				AE3F256E1F34DA5E00D57106 /* PlaceViewController.swift */,
@@ -415,6 +418,7 @@
 				C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */,
 				C0CD7D8C1F2AAC0600B53472 /* Post.swift in Sources */,
 				A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */,
+				C0F694A71F3234F300CB26F9 /* PlaceViewController.swift in Sources */,
 				C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */,
 				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
 				C0CD7D861F2AA5E900B53472 /* UIImage+Size.swift in Sources */,

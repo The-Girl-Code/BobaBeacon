@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +24,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lba-64-3RA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="892-eR-CPI"/>
+                                    <constraint firstAttribute="height" constant="50" id="Mf7-WD-UqF"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Recommend a flavor" id="uU0-s7-yKv">
@@ -37,90 +36,82 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Post" id="Iw3-BA-TNv">
                                             <connections>
-                                                <segue destination="myp-l8-4uw" kind="unwind" identifier="unwindToFeed" unwindAction="unwindToFeedWithSegue:" id="Fbp-y8-otK"/>
+                                                <action selector="postButtonTapped:" destination="IZ4-fN-evD" id="4na-3E-bUh"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiE-N0-Yie">
-                                <rect key="frame" x="8" y="110" width="305" height="30"/>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTG-oY-Sg4">
+                                <rect key="frame" x="0.0" y="50" width="320" height="518"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the button to select a flavor!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-zQ-Z0x">
+                                        <rect key="frame" x="35.5" y="95" width="250" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write about your favorite flavor here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0C-T3-Ouw">
+                                        <rect key="frame" x="14" y="303" width="293" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-nY-47W">
+                                        <rect key="frame" x="98" y="159" width="124" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Other"/>
+                                        <connections>
+                                            <segue destination="i7C-1D-CgS" kind="show" identifier="toFlavors" id="nCe-FG-8sg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilp-fr-jQb">
+                                        <rect key="frame" x="120" y="56" width="0.0" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Store" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UiE-N0-Yie">
+                                        <rect key="frame" x="35.5" y="45" width="250" height="30"/>
+                                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="fCr-IE-gw8"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <segue destination="UFk-Hq-O8A" kind="show" identifier="toStores" id="PJC-0g-DaY"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="hp3-PX-aVp"/>
+                                    <constraint firstItem="NZE-zQ-Z0x" firstAttribute="width" secondItem="UiE-N0-Yie" secondAttribute="width" id="7nN-RZ-WQz"/>
+                                    <constraint firstItem="UiE-N0-Yie" firstAttribute="centerX" secondItem="DTG-oY-Sg4" secondAttribute="centerX" id="LSF-yV-Uvm"/>
+                                    <constraint firstItem="UiE-N0-Yie" firstAttribute="top" secondItem="DTG-oY-Sg4" secondAttribute="top" constant="45" id="SEy-Vs-2LZ"/>
+                                    <constraint firstItem="NZE-zQ-Z0x" firstAttribute="centerX" secondItem="UiE-N0-Yie" secondAttribute="centerX" id="cJZ-lP-aRg"/>
+                                    <constraint firstItem="NZE-zQ-Z0x" firstAttribute="top" secondItem="UiE-N0-Yie" secondAttribute="bottom" constant="20" id="oCD-V9-nuv"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <segue destination="UFk-Hq-O8A" kind="show" identifier="toStores" id="PJC-0g-DaY"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the button to select a flavor!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-zQ-Z0x">
-                                <rect key="frame" x="32" y="185" width="257" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="257" id="AGa-o2-0aF"/>
-                                    <constraint firstAttribute="height" constant="20.5" id="BHr-wW-aoU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write about your favorite flavor here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0C-T3-Ouw">
-                                <rect key="frame" x="13.5" y="379" width="293" height="128"/>
-                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="293" id="VWF-wR-vOX"/>
-                                    <constraint firstAttribute="height" constant="128" id="f39-hh-HCj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-nY-47W">
-                                <rect key="frame" x="98" y="228" width="124" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="1Yh-lc-V7a"/>
-                                    <constraint firstAttribute="width" constant="124" id="8pp-DG-4w1"/>
-                                </constraints>
-                                <state key="normal" image="Other"/>
-                                <connections>
-                                    <segue destination="i7C-1D-CgS" kind="show" identifier="toFlavors" id="nCe-FG-8sg"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilp-fr-jQb">
-                                <rect key="frame" x="160" y="339" width="0.0" height="15"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="IgB-3d-ZAz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="3fI-vM-uC5"/>
-                            <constraint firstItem="NZE-zQ-Z0x" firstAttribute="top" secondItem="UiE-N0-Yie" secondAttribute="bottom" constant="45" id="7Fw-KK-SBJ"/>
-                            <constraint firstItem="K0C-T3-Ouw" firstAttribute="top" secondItem="kOh-nY-47W" secondAttribute="bottom" constant="41" id="8TL-Vi-WR8"/>
-                            <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="AaY-gl-7kB"/>
-                            <constraint firstItem="UiE-N0-Yie" firstAttribute="top" secondItem="lba-64-3RA" secondAttribute="bottom" constant="60" id="C9p-5S-cfw"/>
-                            <constraint firstItem="kOh-nY-47W" firstAttribute="centerX" secondItem="Pj3-f4-6bt" secondAttribute="centerX" id="IEg-S4-GeI"/>
-                            <constraint firstItem="UiE-N0-Yie" firstAttribute="centerX" secondItem="Pj3-f4-6bt" secondAttribute="centerX" id="NEJ-KM-Aae"/>
-                            <constraint firstItem="kOh-nY-47W" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leadingMargin" constant="82" id="POL-wY-iyC"/>
-                            <constraint firstItem="K0C-T3-Ouw" firstAttribute="top" secondItem="Ilp-fr-jQb" secondAttribute="bottom" constant="25" id="SZP-Po-o7Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kOh-nY-47W" secondAttribute="trailing" constant="82" id="Tnq-be-Adx"/>
-                            <constraint firstItem="kOh-nY-47W" firstAttribute="top" secondItem="NZE-zQ-Z0x" secondAttribute="bottom" constant="22.5" id="bkS-fw-bgY"/>
-                            <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="h6o-Tt-78F"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NZE-zQ-Z0x" secondAttribute="trailing" constant="15" id="hZC-Zq-FF1"/>
-                            <constraint firstItem="K0C-T3-Ouw" firstAttribute="centerX" secondItem="Pj3-f4-6bt" secondAttribute="centerX" id="hiO-pu-BUV"/>
-                            <constraint firstItem="NZE-zQ-Z0x" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leadingMargin" constant="16" id="oHd-ey-Ezi"/>
-                            <constraint firstItem="Ilp-fr-jQb" firstAttribute="centerX" secondItem="Pj3-f4-6bt" secondAttribute="centerX" id="q4B-bo-Yj8"/>
+                            <constraint firstAttribute="trailing" secondItem="lba-64-3RA" secondAttribute="trailing" id="2X2-vW-go0"/>
+                            <constraint firstItem="9vT-8K-kfU" firstAttribute="top" secondItem="DTG-oY-Sg4" secondAttribute="bottom" id="5xa-rh-Sad"/>
+                            <constraint firstAttribute="trailing" secondItem="DTG-oY-Sg4" secondAttribute="trailing" id="6sK-vB-WkX"/>
+                            <constraint firstItem="DTG-oY-Sg4" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="Bly-G6-4eD"/>
+                            <constraint firstItem="DTG-oY-Sg4" firstAttribute="top" secondItem="lba-64-3RA" secondAttribute="bottom" id="c11-sW-56d"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="top" secondItem="Pj3-f4-6bt" secondAttribute="top" id="iKF-or-noS"/>
+                            <constraint firstItem="lba-64-3RA" firstAttribute="leading" secondItem="Pj3-f4-6bt" secondAttribute="leading" id="ski-Cx-JCB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bobaImage" destination="kOh-nY-47W" id="3x0-dn-Ag6"/>
                         <outlet property="drinkLabel" destination="Ilp-fr-jQb" id="aSW-dX-oid"/>
                         <outlet property="postButton" destination="Iw3-BA-TNv" id="tAU-jC-TYg"/>
+                        <outlet property="scrollView" destination="DTG-oY-Sg4" id="Ob3-W1-DkH"/>
                         <outlet property="storeTextField" destination="UiE-N0-Yie" id="8cl-3q-rpY"/>
                         <outlet property="textView" destination="K0C-T3-Ouw" id="oiN-5A-TfR"/>
                     </connections>

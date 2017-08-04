@@ -14,6 +14,12 @@ class PostHeaderCell: UITableViewCell {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -26,3 +32,5 @@ class PostHeaderCell: UITableViewCell {
     
     
 }
+
+

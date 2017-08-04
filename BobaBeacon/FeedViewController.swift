@@ -14,7 +14,7 @@ import Kingfisher
 //    func reloadData()
 //}
 
-let notificationKey = "com.aastha.aditi"
+let notificationKey = "com.thegirlcode"
 
 class FeedViewController: UIViewController {
     
@@ -43,6 +43,7 @@ class FeedViewController: UIViewController {
         reloadTimeline()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(notificationKey), object: nil)
+        
     }
     
     func reloadTimeline() {
@@ -57,10 +58,7 @@ class FeedViewController: UIViewController {
         }
     }
     
-//    func reloadData() {
-//        reloadTimeline()
-//    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UserService.posts(for: User.current) { (posts) in
@@ -143,15 +141,42 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
-            //cell.usernameLabel.text = User.current.username
             cell.usernameLabel.text = post.poster.username
+            let image = UIImage(named: "Thai")
+            cell.profileImageView.image = image
+            cell.profileImageView.setRounded()
             
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostItemCell", for: indexPath) as! PostItemCell
-            //let imageURL = URL(string: post.imageURL)
-            //cell.postImageView.kf.setImage(with: imageURL)
-
+            if post.typeOfPost == "photo"{
+                let imageURL = URL(string: post.imageURL)
+                cell.postImageView.kf.setImage(with: imageURL)
+                cell.postImageView.isHidden = false
+                cell.reviewTextView.isHidden = true
+                cell.recommendationTextView.isHidden = true
+                cell.drinkImage.isHidden = true
+            } else if post.typeOfPost == "review"{
+                let review = post.review
+                let location = post.location
+                let rating = post.rating
+                cell.reviewTextView.text = "Location:\(location) \nRating: \(rating) \n\n\(review)"
+                cell.postImageView.isHidden = true
+                cell.reviewTextView.isHidden = false
+                cell.recommendationTextView.isHidden = true
+                cell.drinkImage.isHidden = true
+            } else if post.typeOfPost == "recommendation" {
+                let recommendation = post.recommendation
+                let location = post.location
+                let drink = post.drink
+                cell.recommendationTextView.text = "Location:\(location) \nDrink: \(drink) \n\n\(recommendation) "
+                cell.drinkImage.image = UIImage(named: drink)
+                cell.postImageView.isHidden = true
+                cell.reviewTextView.isHidden = true
+                cell.recommendationTextView.isHidden = false
+                cell.drinkImage.isHidden = false
+            }
+            
             
             return cell
         case 2:
@@ -167,12 +192,22 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let post = posts[indexPath.section]
         switch indexPath.row {
         case 0:
             return PostHeaderCell.height
         case 1:
-            let post = posts[indexPath.section]
-            return post.imageHeight
+            var height : CGFloat?
+            if post.typeOfPost == "photo" {
+                height = post.imageHeight
+            }
+            else if post.typeOfPost == "review" {
+                height = 100
+            }
+            else if post.typeOfPost == "recommendation" {
+                height = 100
+            }
+            return height!
         case 2:
             return PostActionCell.height
         default: break
