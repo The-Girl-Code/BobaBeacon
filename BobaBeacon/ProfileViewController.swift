@@ -13,6 +13,7 @@ import Firebase
 
 class ProfileViewController: UIViewController, UITextFieldDelegate{
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -125,6 +126,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         profileImage.addGestureRecognizer(tapGestureRecognizer)
 
         // Do any additional setup after loading the view.
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
