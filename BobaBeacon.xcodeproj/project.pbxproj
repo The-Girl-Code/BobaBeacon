@@ -21,6 +21,9 @@
 		A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCE1F21222800648917 /* FeedViewController.swift */; };
 		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
 		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
+		AE3F256D1F34D7CE00D57106 /* FaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */; };
+		AE3F256F1F34DA5E00D57106 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F256E1F34DA5E00D57106 /* PlaceViewController.swift */; };
+		AE3F25711F34E03A00D57106 /* CollectionViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */; };
 		C00271791F2FE978002DD25D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00271781F2FE978002DD25D /* MapViewController.swift */; };
 		C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002717A1F30F2F1002DD25D /* LikeService.swift */; };
 		C0513A111F290912000737A5 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A101F290912000737A5 /* FloatRatingView.swift */; };
@@ -65,6 +68,9 @@
 		A66C3BCE1F21222800648917 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A66C3BD31F21239100648917 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveViewController.swift; sourceTree = "<group>"; };
+		AE3F256E1F34DA5E00D57106 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceViewController.swift; path = ../../PlaceViewController.swift; sourceTree = "<group>"; };
+		AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewImageCell.swift; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00271781F2FE978002DD25D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C002717A1F30F2F1002DD25D /* LikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
@@ -160,7 +166,9 @@
 				A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */,
 				A66C3BCA1F21219300648917 /* PostViewController.swift */,
 				A66C3BCC1F2121A600648917 /* ProfileViewController.swift */,
+				AE3F256E1F34DA5E00D57106 /* PlaceViewController.swift */,
 				A66C3BCE1F21222800648917 /* FeedViewController.swift */,
+				AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 				C0513A201F2A4D9A000737A5 /* PostActionCell.swift */,
 				C0513A221F2A4DA5000737A5 /* PostItemCell.swift */,
 				C092EE861F2F9AA1002A403E /* PostThumbImageCell.swift */,
+				AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -387,8 +396,11 @@
 			files = (
 				C0CD7D8A1F2AA76000B53472 /* PostService.swift in Sources */,
 				C0513A1F1F2A4D8F000737A5 /* PostHeaderCell.swift in Sources */,
+				AE3F25711F34E03A00D57106 /* CollectionViewImageCell.swift in Sources */,
+				AE3F256D1F34D7CE00D57106 /* FaveViewController.swift in Sources */,
 				A66C3BC41F21163000648917 /* UserService.swift in Sources */,
 				C0CD7D7B1F2A975A00B53472 /* StoresViewController.swift in Sources */,
+				AE3F256F1F34DA5E00D57106 /* PlaceViewController.swift in Sources */,
 				C0CD7D771F2A96CA00B53472 /* ReviewViewController.swift in Sources */,
 				A66C3BBA1F21158A00648917 /* LoginViewController.swift in Sources */,
 				C0CD7D7D1F2A978C00B53472 /* RecommendationViewController.swift in Sources */,

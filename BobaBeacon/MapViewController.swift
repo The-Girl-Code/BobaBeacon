@@ -105,7 +105,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.startUpdatingLocation()
         //updateMarkers(location: CLLocationCoordinate2D(latitude: 37.381531, longitude: -121.958578))
         places = appendData()
-        self.tabBarController?.tabBar.barTintColor = UIColor.init(red: 210/255, green: 230/255, blue: 210/255, alpha: 0.25)
 
     }
     
