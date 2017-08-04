@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ryu-XZ-SZa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ryu-XZ-SZa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="eI2-jV-0jf">
             <objects>
                 <viewController id="ryu-XZ-SZa" customClass="ProfileViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,9 @@
                             <constraint firstItem="qA2-gw-NOs" firstAttribute="centerX" secondItem="qc9-8q-qpq" secondAttribute="centerX" id="zZC-ie-U5P"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Profile" id="OdP-Yg-wQ0"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="profile" id="OdP-Yg-wQ0">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bobaImage" destination="d4F-Ag-Amm" id="4GM-lt-pda"/>
@@ -255,5 +257,6 @@
     </scenes>
     <resources>
         <image name="Other" width="124" height="124"/>
+        <image name="profile" width="35" height="35"/>
     </resources>
 </document>

@@ -200,6 +200,9 @@
                             <constraint firstItem="KCu-Mb-YJW" firstAttribute="top" secondItem="qbW-D5-iHN" secondAttribute="top" id="cMz-OV-SiG"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="feed" id="AHw-OT-Lq9">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="Fkm-pS-zhH"/>
                     <connections>
                         <outlet property="tableView" destination="KCu-Mb-YJW" id="prx-vF-TXo"/>
@@ -232,6 +235,7 @@
     </scenes>
     <resources>
         <image name="dot" width="1000" height="1000"/>
+        <image name="feed" width="35" height="35"/>
         <image name="heart_unfilled" width="24" height="24"/>
     </resources>
 </document>
