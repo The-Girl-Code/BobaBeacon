@@ -25,6 +25,8 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     @IBOutlet weak var locationTextField: UITextField!
     
     @IBOutlet weak var postButton: UIBarButtonItem!
+    
+    @IBOutlet weak var reviewScrollView: UIScrollView!
 
     var ref : DatabaseReference!
     
@@ -79,6 +81,9 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         reviewTextView.text = "How was your experience?"
         reviewTextView.textColor = UIColor.lightGray
         reviewTextView.delegate = self
+        
+        reviewScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
+
 
     }
 
