@@ -17,7 +17,7 @@ class PostHeaderCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     
     
-    
+    var didTapOptionsButtonForCell: ((PostHeaderCell) -> Void)?
     
     
     override func awakeFromNib() {
@@ -28,6 +28,9 @@ class PostHeaderCell: UITableViewCell {
     
     @IBAction func optionsButtonTapped(_ sender: Any) {
         print("option buttons tapped")
+        if let closure = didTapOptionsButtonForCell {
+            closure(self)
+        }
     }
     
     

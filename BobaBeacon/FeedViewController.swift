@@ -74,6 +74,38 @@ class FeedViewController: UIViewController {
         tableView.addSubview(refreshControl)
     }
     
+    func handleOptionsButtonTap(from cell: PostHeaderCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let post = posts[indexPath.section]
+        let poster = post.poster
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        if poster.uid != User.current.uid {
+            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
+                PostService.flag(post)
+                
+                let okAlert = UIAlertController(title: nil, message: "The post has been flagged.", preferredStyle: .alert)
+                okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(okAlert, animated: true)
+            }
+            
+            alertController.addAction(flagAction)
+        }
+        if poster.uid == User.current.uid {
+            let flagAction = UIAlertAction(title: "Delete Post", style: .default) { _ in
+                PostService.flag(post)
+                
+                let okAlert = UIAlertController(title: nil, message: "This post has been deleted.", preferredStyle: .alert)
+                okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(okAlert, animated: true)
+            }
+            
+            alertController.addAction(flagAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -145,6 +177,7 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
             let image = UIImage(named: "Thai")
             cell.profileImageView.image = image
             cell.profileImageView.setRounded()
+            cell.didTapOptionsButtonForCell = handleOptionsButtonTap(from:)
             
             return cell
         case 1:
