@@ -142,6 +142,9 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
             cell.usernameLabel.text = post.poster.username
+            let image = UIImage(named: "Thai")
+            cell.profileImageView.image = image
+            cell.profileImageView.setRounded()
             
             return cell
         case 1:
