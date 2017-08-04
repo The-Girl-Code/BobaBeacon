@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,75 +41,68 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1U-X1-2OM" customClass="FloatRatingView" customModule="BobaBeacon" customModuleProvider="target">
-                                <rect key="frame" x="19" y="76" width="338" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="338" id="EzX-Ju-o5x"/>
-                                    <constraint firstAttribute="height" constant="50" id="VCb-Tt-bBa"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Cs-vMU">
-                                <rect key="frame" x="21" y="131" width="84" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="84" id="aZU-2X-xQ1"/>
-                                    <constraint firstAttribute="height" constant="36" id="i56-oj-XVa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw7-ep-aeH">
-                                <rect key="frame" x="101" y="131" width="79" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="EHG-Nz-8DF"/>
-                                    <constraint firstAttribute="width" constant="79" id="MbJ-aR-B5g"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Look for the store you're reviewing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-ik-tp2">
-                                <rect key="frame" x="16" y="199" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.9695063035" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Y97-M8-Mb0"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <segue destination="8jz-e0-zYA" kind="show" identifier="openSearch" id="LeF-o4-mEN"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  How was your experience? " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MBY-D9-XKT">
-                                <rect key="frame" x="16" y="274" width="343" height="235"/>
-                                <color key="backgroundColor" white="0.96950630346933997" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.73116527326099634" green="0.73661102744106177" blue="0.74026411802030456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="NfX-cN-8ZE" id="oEx-am-oD5"/>
-                                </connections>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0d-kB-Xkq">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PE-Cs-vMU">
+                                        <rect key="frame" x="18" y="146" width="84" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw7-ep-aeH">
+                                        <rect key="frame" x="110" y="143" width="79" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="EHG-Nz-8DF"/>
+                                            <constraint firstAttribute="width" constant="79" id="MbJ-aR-B5g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Look for the store you're reviewing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-ik-tp2">
+                                        <rect key="frame" x="18" y="241" width="343" height="30"/>
+                                        <color key="backgroundColor" white="0.9695063035" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Y97-M8-Mb0"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <segue destination="8jz-e0-zYA" kind="show" identifier="openSearch" id="LeF-o4-mEN"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="  How was your experience? " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MBY-D9-XKT">
+                                        <rect key="frame" x="18" y="339" width="343" height="235"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.96950630346933997" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.73116527326099634" green="0.73661102744106177" blue="0.74026411802030456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="NfX-cN-8ZE" id="oEx-am-oD5"/>
+                                        </connections>
+                                    </textView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1U-X1-2OM" customClass="FloatRatingView" customModule="BobaBeacon" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="77" width="338" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="338" id="EzX-Ju-o5x"/>
+                                            <constraint firstAttribute="height" constant="50" id="VCb-Tt-bBa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cRz-ik-tp2" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" id="5TN-5k-PbB"/>
-                            <constraint firstItem="cRz-ik-tp2" firstAttribute="top" secondItem="yw7-ep-aeH" secondAttribute="bottom" constant="25" id="6Xp-Qi-aaW"/>
-                            <constraint firstItem="w1U-X1-2OM" firstAttribute="top" secondItem="Pab-tK-oBu" secondAttribute="bottom" constant="26" id="8Jj-m4-qnc"/>
-                            <constraint firstItem="2PE-Cs-vMU" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" constant="5" id="BMA-OT-Y7m"/>
-                            <constraint firstItem="MBY-D9-XKT" firstAttribute="top" secondItem="cRz-ik-tp2" secondAttribute="bottom" constant="45" id="Bw4-fT-5AV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cRz-ik-tp2" secondAttribute="trailing" id="IfB-uh-cH3"/>
-                            <constraint firstItem="MBY-D9-XKT" firstAttribute="trailing" secondItem="0CO-J0-sBN" secondAttribute="trailingMargin" id="L0i-Zm-AQh"/>
+                            <constraint firstItem="j0d-kB-Xkq" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leading" id="91D-iK-r08"/>
+                            <constraint firstAttribute="trailing" secondItem="j0d-kB-Xkq" secondAttribute="trailing" id="BHU-m4-27e"/>
                             <constraint firstAttribute="trailing" secondItem="Pab-tK-oBu" secondAttribute="trailing" id="MtJ-YJ-HOF"/>
-                            <constraint firstItem="LOa-Gh-aiQ" firstAttribute="top" secondItem="MBY-D9-XKT" secondAttribute="bottom" constant="158" id="PWt-wL-JYV"/>
-                            <constraint firstItem="yw7-ep-aeH" firstAttribute="top" secondItem="w1U-X1-2OM" secondAttribute="bottom" constant="5" id="Pyc-cn-HBl"/>
-                            <constraint firstItem="2PE-Cs-vMU" firstAttribute="top" secondItem="w1U-X1-2OM" secondAttribute="bottom" constant="5" id="QZU-Ba-f8y"/>
                             <constraint firstItem="Pab-tK-oBu" firstAttribute="top" secondItem="0CO-J0-sBN" secondAttribute="top" id="TEu-v2-jWK"/>
-                            <constraint firstItem="MBY-D9-XKT" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" id="YPh-hZ-f31"/>
+                            <constraint firstItem="LOa-Gh-aiQ" firstAttribute="top" secondItem="j0d-kB-Xkq" secondAttribute="bottom" id="Y06-Xu-om6"/>
                             <constraint firstItem="Pab-tK-oBu" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leading" id="Zkf-Lo-c9k"/>
-                            <constraint firstItem="w1U-X1-2OM" firstAttribute="centerX" secondItem="0CO-J0-sBN" secondAttribute="centerX" id="bob-g6-Fc8"/>
-                            <constraint firstItem="cRz-ik-tp2" firstAttribute="centerX" secondItem="0CO-J0-sBN" secondAttribute="centerX" id="cu0-XG-yeY"/>
-                            <constraint firstItem="yw7-ep-aeH" firstAttribute="leading" secondItem="0CO-J0-sBN" secondAttribute="leadingMargin" constant="85" id="lft-Ms-6UG"/>
+                            <constraint firstItem="j0d-kB-Xkq" firstAttribute="top" secondItem="Pab-tK-oBu" secondAttribute="bottom" id="bRb-a7-KsE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -118,6 +110,7 @@
                         <outlet property="locationTextField" destination="cRz-ik-tp2" id="x3V-hq-Cqw"/>
                         <outlet property="postButton" destination="bpZ-Q6-Xhb" id="5Ts-cC-FU3"/>
                         <outlet property="ratingView" destination="w1U-X1-2OM" id="3Nk-DS-tjr"/>
+                        <outlet property="reviewScrollView" destination="j0d-kB-Xkq" id="AbO-Ew-Pvx"/>
                         <outlet property="reviewTextView" destination="MBY-D9-XKT" id="X61-u6-Pui"/>
                     </connections>
                 </viewController>
