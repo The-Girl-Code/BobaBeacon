@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add-->
+        <!--Post View Controller-->
         <scene sceneID="caB-3K-zzP">
             <objects>
                 <viewController id="Ffj-5c-mer" customClass="PostViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97184327410000004" green="0.54034043669999998" blue="0.57275153700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Add" id="3nO-15-ztZ"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="add" id="3nO-15-ztZ">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7h-hm-XWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,4 +50,7 @@
             <point key="canvasLocation" x="3876" y="470.91454272863569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="35" height="35"/>
+    </resources>
 </document>

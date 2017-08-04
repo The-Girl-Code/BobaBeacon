@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.82352941176470584" green="0.85882352941176465" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="vVR-OV-CnG" kind="relationship" relationship="viewControllers" id="lhU-6v-CWX"/>
@@ -34,7 +35,9 @@
         <scene sceneID="ivd-AR-rX8">
             <objects>
                 <viewControllerPlaceholder storyboardName="Search" id="B7O-f3-VOV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KRU-yH-TgV"/>
+                    <tabBarItem key="tabBarItem" title="" image="search" selectedImage="search" id="KRU-yH-TgV">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQC-iE-Svr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,7 +47,9 @@
         <scene sceneID="tc9-SW-82s">
             <objects>
                 <viewControllerPlaceholder storyboardName="Add" id="Z5q-Jr-iDw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="d6D-5q-xpr"/>
+                    <tabBarItem key="tabBarItem" title="" image="add" selectedImage="add" id="d6D-5q-xpr">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPw-h7-wYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +59,10 @@
         <scene sceneID="2dK-cr-LBa">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="pfN-dT-Kcq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BVW-3B-JHL"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profile" id="BVW-3B-JHL">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCc-KX-BDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,11 +72,19 @@
         <scene sceneID="3y7-eE-isP">
             <objects>
                 <viewControllerPlaceholder storyboardName="Feed" id="vVR-OV-CnG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VgH-XN-x6F"/>
+                    <tabBarItem key="tabBarItem" title="" image="feed" selectedImage="feed" id="VgH-XN-x6F">
+                        <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSu-db-H0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-482" y="550"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add" width="35" height="35"/>
+        <image name="feed" width="35" height="35"/>
+        <image name="profile" width="35" height="35"/>
+        <image name="search" width="35" height="35"/>
+    </resources>
 </document>
