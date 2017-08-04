@@ -22,8 +22,8 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     
     @IBOutlet weak var scrollView: UIScrollView!
 
-    @IBOutlet weak var bobaImage: UIButton!
     @IBOutlet weak var drinkLabel: UILabel!
+    @IBOutlet weak var bobaImage: UIButton!
     
     @IBOutlet weak var postButton: UIBarButtonItem!
     
