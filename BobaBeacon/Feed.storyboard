@@ -72,31 +72,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP2-Kd-gfG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP2-Kd-gfG">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jFu-aN-zCS">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFu-aN-zCS">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV6-PU-dPg">
+                                                    <rect key="frame" x="125" y="0.0" width="250" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCQ-fW-VLj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="43.5"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="vV6-PU-dPg" firstAttribute="leading" secondItem="KCQ-fW-VLj" secondAttribute="trailing" id="3As-tK-Xh1"/>
                                                 <constraint firstAttribute="trailing" secondItem="eP2-Kd-gfG" secondAttribute="trailing" id="61u-uS-AR7"/>
+                                                <constraint firstItem="KCQ-fW-VLj" firstAttribute="top" secondItem="ZJH-8Q-Zdv" secondAttribute="top" id="ADn-4K-rMG"/>
                                                 <constraint firstAttribute="trailing" secondItem="jFu-aN-zCS" secondAttribute="trailing" id="Dcy-dQ-iLj"/>
+                                                <constraint firstItem="vV6-PU-dPg" firstAttribute="top" secondItem="ZJH-8Q-Zdv" secondAttribute="top" id="MOg-24-jzv"/>
+                                                <constraint firstAttribute="bottom" secondItem="vV6-PU-dPg" secondAttribute="bottom" id="MvG-xa-g1F"/>
                                                 <constraint firstItem="jFu-aN-zCS" firstAttribute="leading" secondItem="ZJH-8Q-Zdv" secondAttribute="leading" id="QgD-h1-Qig"/>
                                                 <constraint firstAttribute="bottom" secondItem="eP2-Kd-gfG" secondAttribute="bottom" id="SBZ-eZ-l33"/>
                                                 <constraint firstItem="eP2-Kd-gfG" firstAttribute="top" secondItem="ZJH-8Q-Zdv" secondAttribute="top" id="Vpd-Lu-0Bc"/>
                                                 <constraint firstAttribute="bottom" secondItem="jFu-aN-zCS" secondAttribute="bottom" id="cZY-CX-45v"/>
+                                                <constraint firstAttribute="bottom" secondItem="KCQ-fW-VLj" secondAttribute="bottom" id="cqj-IW-cmz"/>
                                                 <constraint firstItem="eP2-Kd-gfG" firstAttribute="leading" secondItem="ZJH-8Q-Zdv" secondAttribute="leading" id="f6J-m5-vF4"/>
+                                                <constraint firstItem="KCQ-fW-VLj" firstAttribute="leading" secondItem="ZJH-8Q-Zdv" secondAttribute="leading" id="hS9-Rj-bqC"/>
+                                                <constraint firstAttribute="trailing" secondItem="KCQ-fW-VLj" secondAttribute="trailing" constant="250" id="nu2-lM-GAY"/>
                                                 <constraint firstItem="jFu-aN-zCS" firstAttribute="top" secondItem="ZJH-8Q-Zdv" secondAttribute="top" id="vIX-3H-VHX"/>
+                                                <constraint firstAttribute="trailing" secondItem="vV6-PU-dPg" secondAttribute="trailing" id="xJr-C9-eGr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="drinkImage" destination="KCQ-fW-VLj" id="thZ-VN-i5n"/>
                                             <outlet property="postImageView" destination="eP2-Kd-gfG" id="ma3-rm-W7a"/>
-                                            <outlet property="postTextView" destination="jFu-aN-zCS" id="Gd5-A2-j9T"/>
+                                            <outlet property="recommendationTextView" destination="vV6-PU-dPg" id="vx9-ik-7KX"/>
+                                            <outlet property="reviewTextView" destination="jFu-aN-zCS" id="1ZT-iF-A6p"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostActionCell" id="puV-ei-SLq" customClass="PostActionCell" customModule="BobaBeacon" customModuleProvider="target">

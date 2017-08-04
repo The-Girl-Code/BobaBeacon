@@ -26,12 +26,13 @@ struct LikeService {
                 return success(false)
             }
             
-            let likeCountRef = Database.database().reference().child("posts").child(post.poster.uid).child(key).child("like_count")
+            let likeCountRef = Database.database().reference().child("posts").child(key).child("like_count")
             likeCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
                 let currentCount = mutableData.value as? Int ?? 0
                 
                 mutableData.value = currentCount + 1
-                
+                print("THIS IS LIKES COUNT CURRENTLY \(currentCount)")
+                print("THIS IS MUTABLE DATA COUNT CURRENTLY \(mutableData.value)")
                 return TransactionResult.success(withValue: mutableData)
             }, andCompletionBlock: { (error, _, _) in
                 if let error = error {
@@ -82,7 +83,7 @@ struct LikeService {
                 return success(false)
             }
             
-            let likeCountRef = Database.database().reference().child("posts").child(post.poster.uid).child(key).child("like_count")
+            let likeCountRef = Database.database().reference().child("posts").child(key).child("like_count")
             likeCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
                 let currentCount = mutableData.value as? Int ?? 0
                 

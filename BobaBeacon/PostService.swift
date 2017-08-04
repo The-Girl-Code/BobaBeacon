@@ -27,7 +27,7 @@ struct PostService {
     
     static func createRec(drink: String, location: String, recommendation: String) {
         let currentUser = User.current
-        let post = RecPost(drink: drink, location: location, recommendation: recommendation)
+        let post = Post(drink: drink, location: location, recommendation: recommendation)
         let dict = post.dictValue
         let postRef = Database.database().reference().child("posts").childByAutoId()
         postRef.updateChildValues(dict)
@@ -39,7 +39,7 @@ struct PostService {
     
      static func createReview(rating: String, location: String, review: String) {
         let currentUser = User.current
-        let post = ReviewPost(rating: rating, location: location, review: review)
+        let post = Post(rating: rating, location: location, review: review)
         let dict = post.dictValue
         let postRef = Database.database().reference().child("posts").childByAutoId()
         postRef.updateChildValues(dict)
