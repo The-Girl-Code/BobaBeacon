@@ -17,6 +17,19 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var storeTextField: UITextField!
+    @IBOutlet weak var drinkLabel: UILabel!
+    @IBOutlet weak var bobaImage: UIButton!
+    
+    var flavorSelected: String? {
+        willSet {
+            drinkLabel.text = "\(newValue!)"
+            bobaImage.setImage(UIImage(named: newValue!), for: .normal)
+        }
+    }
+    
+    @IBAction func unwindFromCancelToProf(segue: UIStoryboardSegue){
+        
+    }
     
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -43,6 +56,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBAction func unwind2Profile(segue: UIStoryboardSegue){
         if let sourceViewController = segue.source as? PlaceViewController {
             dataRecieved = sourceViewController.dataPassed
+        }
+        else if let sourceViewController = segue.source as? FaveViewController {
+            flavorSelected = (sourceViewController.flavor)!
+            print(flavorSelected!)
         }
     }
     
