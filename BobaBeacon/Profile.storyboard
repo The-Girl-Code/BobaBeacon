@@ -257,6 +257,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="phH-dj-rRR" kind="unwind" identifier="unwind2Profile" unwindAction="unwind2ProfileWithSegue:" id="lqn-bj-In0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
