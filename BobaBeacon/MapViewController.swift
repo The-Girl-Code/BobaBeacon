@@ -94,7 +94,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }else{
             print("location is false")
         }
-        
+       //mapView?.
         let mapInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 45.0, right: 0.0)
         mapView?.padding = mapInsets
         locationManager.delegate = self
@@ -120,12 +120,37 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     }
     
     func updateMarkers(name: String, address: String, location: CLLocationCoordinate2D) {
+        
+//        let flavorImages: [UIImage] = [
+//            UIImage(named: "Regular")!,
+//            UIImage(named: "Peach")!,
+//            UIImage(named: "Coffee")!,
+//            UIImage(named: "Green Tea")!,
+//            UIImage(named: "Strawberry")!,
+//            UIImage(named: "Jasmine")!,
+//            UIImage(named: "Thai")!,
+//            UIImage(named: "Honeydew")!,
+//            UIImage(named: "Taro")!,
+//            UIImage(named: "Almond")!,
+//            UIImage(named: "Chocolate")!,
+//            UIImage(named: "Lychee")!,
+//            UIImage(named: "Black Tea")!,
+//            UIImage(named: "Oolong")!,
+//            UIImage(named: "Passion Fruit")!,
+//            UIImage(named: "Hazelnut")!,
+//            UIImage(named: "Mango")!]
+//        let randomIndex = Int(arc4random_uniform(UInt32(flavorImages.count)))
+//        let image = flavorImages[randomIndex]
+        
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: (location.latitude),longitude: (location.longitude))
         marker.title = "\(name)"
         marker.snippet = "\(address)"
-        marker.icon = UIImage(named: "boba3.png")
+        //marker.icon = image
+        marker.icon = UIImage(named: "boba3")
         marker.map = self.mapView
+        mapView?.selectedMarker = marker
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
