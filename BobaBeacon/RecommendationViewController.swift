@@ -89,7 +89,8 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
 //        self.scrollView.contentSize = CGSize(width: 360, height: 550)
         
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
-        
+        self.hideKeyboardWhenTappedAround()
+
     }
     
 //    override func viewDidLayoutSubviews() {

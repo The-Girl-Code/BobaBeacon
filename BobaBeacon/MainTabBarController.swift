@@ -29,6 +29,8 @@ class MainTabBarController: UITabBarController {
             print("handle image")
             PostService.create(for: image)
         }
+        
+        
 
         
         delegate = self as! UITabBarControllerDelegate
@@ -72,3 +74,4 @@ extension MainTabBarController: UITabBarControllerDelegate {
         return true
     }
 }
+

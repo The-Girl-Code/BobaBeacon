@@ -83,6 +83,7 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
         reviewTextView.delegate = self
         
         reviewScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
+        self.hideKeyboardWhenTappedAround()
 
 
     }
@@ -153,4 +154,16 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     }
     */
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

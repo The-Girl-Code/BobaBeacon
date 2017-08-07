@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lba-64-3RA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Mf7-WD-UqF"/>
+                                    <constraint firstAttribute="height" constant="55" id="Mf7-WD-UqF"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Recommend a flavor" id="uU0-s7-yKv">
@@ -150,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Am4-6h-SF9">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="d3j-Ef-Udq">
@@ -171,9 +171,9 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYM-T9-OAi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="bWV-kA-oLN"/>
+                                    <constraint firstAttribute="height" constant="55" id="bWV-kA-oLN"/>
                                 </constraints>
                                 <items>
                                     <navigationItem id="ndm-jX-Y7S">
@@ -191,8 +191,8 @@
                             <constraint firstItem="UYM-T9-OAi" firstAttribute="leading" secondItem="iTW-e7-yI5" secondAttribute="leading" id="3Q9-6j-iek"/>
                             <constraint firstItem="UYM-T9-OAi" firstAttribute="top" secondItem="iTW-e7-yI5" secondAttribute="top" id="7pa-xl-t9S"/>
                             <constraint firstAttribute="trailing" secondItem="UYM-T9-OAi" secondAttribute="trailing" id="8Kv-Bh-aLy"/>
-                            <constraint firstItem="Am4-6h-SF9" firstAttribute="top" secondItem="iTW-e7-yI5" secondAttribute="top" constant="50" id="8S2-d3-5ZD"/>
                             <constraint firstAttribute="trailing" secondItem="Am4-6h-SF9" secondAttribute="trailing" id="U6a-Ls-vOz"/>
+                            <constraint firstItem="Am4-6h-SF9" firstAttribute="top" secondItem="UYM-T9-OAi" secondAttribute="bottom" id="jFA-Bt-pEF"/>
                             <constraint firstItem="P1y-1V-rVy" firstAttribute="top" secondItem="Am4-6h-SF9" secondAttribute="bottom" id="qnX-oq-AS4"/>
                             <constraint firstItem="Am4-6h-SF9" firstAttribute="leading" secondItem="iTW-e7-yI5" secondAttribute="leading" id="yov-eU-rcS"/>
                         </constraints>
@@ -204,7 +204,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT5-Lb-yLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="za1-Lr-6WS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4654" y="471"/>
+            <point key="canvasLocation" x="4653.6000000000004" y="470.91454272863569"/>
         </scene>
         <!--Flavors-->
         <scene sceneID="sE9-77-dpc">

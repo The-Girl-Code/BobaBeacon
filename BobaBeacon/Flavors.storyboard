@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Yd-pQ-7d2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Yd-pQ-7d2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,9 +22,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oq-iQ-TIZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="zux-ar-7j7"/>
+                                    <constraint firstAttribute="height" constant="55" id="zux-ar-7j7"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Select a Drink" id="dnu-eY-QuY">
@@ -37,7 +37,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGA-vU-6ju">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VJk-ky-BaZ">
                                     <size key="itemSize" width="50" height="50"/>
@@ -92,11 +92,11 @@
                         <constraints>
                             <constraint firstItem="HGA-vU-6ju" firstAttribute="leading" secondItem="x1o-T7-Ux2" secondAttribute="leading" id="9mV-qX-N6o"/>
                             <constraint firstAttribute="trailing" secondItem="4Oq-iQ-TIZ" secondAttribute="trailing" id="PBG-f8-ugy"/>
-                            <constraint firstItem="HGA-vU-6ju" firstAttribute="top" secondItem="4Oq-iQ-TIZ" secondAttribute="bottom" id="Sia-QE-dBS"/>
                             <constraint firstItem="4Oq-iQ-TIZ" firstAttribute="leading" secondItem="x1o-T7-Ux2" secondAttribute="leading" id="XoP-5o-d1D"/>
                             <constraint firstAttribute="trailing" secondItem="HGA-vU-6ju" secondAttribute="trailing" id="ky0-dP-3YO"/>
                             <constraint firstItem="GYJ-5y-6QL" firstAttribute="top" secondItem="HGA-vU-6ju" secondAttribute="bottom" id="v2B-dx-d0i"/>
                             <constraint firstItem="4Oq-iQ-TIZ" firstAttribute="top" secondItem="x1o-T7-Ux2" secondAttribute="top" id="vMH-KI-fzu"/>
+                            <constraint firstItem="HGA-vU-6ju" firstAttribute="top" secondItem="4Oq-iQ-TIZ" secondAttribute="bottom" id="xaz-BB-aIy"/>
                         </constraints>
                     </view>
                     <connections>

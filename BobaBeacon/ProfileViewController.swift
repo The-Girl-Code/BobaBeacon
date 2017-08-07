@@ -32,6 +32,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+    @IBAction func unwindFromOtherCancelToProf(segue: UIStoryboardSegue){
+        
+    }
+
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
@@ -127,6 +131,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
 
         // Do any additional setup after loading the view.
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
+
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
