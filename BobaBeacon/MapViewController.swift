@@ -121,33 +121,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func updateMarkers(name: String, address: String, location: CLLocationCoordinate2D) {
         
-//        let flavorImages: [UIImage] = [
-//            UIImage(named: "Regular")!,
-//            UIImage(named: "Peach")!,
-//            UIImage(named: "Coffee")!,
-//            UIImage(named: "Green Tea")!,
-//            UIImage(named: "Strawberry")!,
-//            UIImage(named: "Jasmine")!,
-//            UIImage(named: "Thai")!,
-//            UIImage(named: "Honeydew")!,
-//            UIImage(named: "Taro")!,
-//            UIImage(named: "Almond")!,
-//            UIImage(named: "Chocolate")!,
-//            UIImage(named: "Lychee")!,
-//            UIImage(named: "Black Tea")!,
-//            UIImage(named: "Oolong")!,
-//            UIImage(named: "Passion Fruit")!,
-//            UIImage(named: "Hazelnut")!,
-//            UIImage(named: "Mango")!]
-//        let randomIndex = Int(arc4random_uniform(UInt32(flavorImages.count)))
-//        let image = flavorImages[randomIndex]
+        let flavorImages: [UIImage] = [
+            UIImage(named: "Regular2")!,
+            UIImage(named: "Peach2")!,
+            UIImage(named: "Coffee2")!,
+            UIImage(named: "Green-Tea2")!,
+            UIImage(named: "Strawberry2")!,
+            UIImage(named: "Jasmine2")!,
+            UIImage(named: "Thai2")!,
+            UIImage(named: "Honeydew2")!,
+            UIImage(named: "Taro2")!,
+            UIImage(named: "Almond2")!,
+            UIImage(named: "Chocolate2")!,
+            UIImage(named: "Lychee2")!,
+            UIImage(named: "Black-Tea2")!,
+            UIImage(named: "Oolong2")!,
+            UIImage(named: "Passion-Fruit2")!,
+            UIImage(named: "Hazelnut2")!,
+            UIImage(named: "Mango2")!]
+        let randomIndex = Int(arc4random_uniform(UInt32(flavorImages.count)))
+        let image = flavorImages[randomIndex]
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: (location.latitude),longitude: (location.longitude))
         marker.title = "\(name)"
         marker.snippet = "\(address)"
-        //marker.icon = image
-        marker.icon = UIImage(named: "boba3")
+        marker.icon = image
+//        marker.icon = UIImage(named: "boba3")
         marker.map = self.mapView
         mapView?.selectedMarker = marker
 
