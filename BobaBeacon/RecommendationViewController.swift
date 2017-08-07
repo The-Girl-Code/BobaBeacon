@@ -81,7 +81,8 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         disablePost()
         textView.text = "Write a short description about your favorite flavor here..."
         textView.textColor = UIColor.lightGray
-
+        bobaImage.imageView?.image = (UIImage(named: "Other"))
+        drinkLabel.text = "Other"
         storeTextField.delegate = self
         textView.delegate = self
 //        self.scrollView = UIScrollView()
@@ -130,6 +131,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
         ref = Database.database().reference()
         let storeText = storeTextField.text
         let drink = drinkLabel.text
+        
         let rec = textView.text
         
         PostService.createRec(drink: drink!, location: storeText!, recommendation: rec!)
