@@ -115,5 +115,6 @@ extension PostViewController: UINavigationControllerDelegate, UIImagePickerContr
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
+
     }
 }
