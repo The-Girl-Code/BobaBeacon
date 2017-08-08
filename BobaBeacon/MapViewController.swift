@@ -62,7 +62,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         }
     }
     
-    
+    @IBAction func unwindFromCancelToMap(segue: UIStoryboardSegue){
+        
+    }
     
     
     func appendData() -> [[String : String]] {

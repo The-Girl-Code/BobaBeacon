@@ -58,9 +58,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Ttu-Df-e0F" kind="unwind" identifier="unwind2Profile" unwindAction="unwind2ProfileWithSegue:" id="Uge-Ps-KbI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -77,7 +74,7 @@
                                     <navigationItem title="Search" id="p5t-Ql-2Lg">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wtj-br-ddh">
                                             <connections>
-                                                <segue destination="Ttu-Df-e0F" kind="unwind" unwindAction="unwindFromOtherCancelToProfWithSegue:" id="u8L-0I-W9s"/>
+                                                <segue destination="Ttu-Df-e0F" kind="unwind" unwindAction="unwindFromCancelToMapWithSegue:" id="opd-qb-kj2"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
