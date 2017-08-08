@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var gifView: UIImageView!
+    
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         guard let authUI = FUIAuth.defaultAuthUI()
             else { return }
@@ -30,6 +33,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gifView.loadGif(name: "bobagif2")
         //testing github
         //more tests
         // Do any additional setup after loading the view, typically from a nib.

@@ -10,17 +10,12 @@ import UIKit
 import Kingfisher
 
 
-//protocol RefreshFeedDelegate {
-//    func reloadData()
-//}
-
 let notificationKey = "com.thegirlcode"
 
 class FeedViewController: UIViewController {
     
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
-
     
     @IBAction func unwindToFeed(segue: UIStoryboardSegue){
         
@@ -44,6 +39,41 @@ class FeedViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTimeline), name: NSNotification.Name(notificationKey), object: nil)
         
+        let recognizer = UITapGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(didDoubleTap(recognizer:)))
+        recognizer.numberOfTapsRequired = 2
+        self.tableView.addGestureRecognizer(recognizer)
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.black,
+             NSFontAttributeName: UIFont(name: "Avenir", size: 21)!]
+        
+    }
+    
+    func didDoubleTap(recognizer: UIGestureRecognizer) {
+        if recognizer.state == UIGestureRecognizerState.ended {
+            let swipeLocation = recognizer.location(in: self.tableView)
+            if let swipedIndexPath = tableView.indexPathForRow(at: swipeLocation) {
+                if let tappedCell = self.tableView.cellForRow(at: swipedIndexPath) as? PostItemCell {
+                    print("did tap like button")
+                    guard let indexPath = tableView.indexPath(for: tappedCell)
+                        else { return }
+                    let post = posts[indexPath.section]
+                    
+                    LikeService.setIsLiked(!post.isLiked, for: post) { (success) in
+                        
+                        
+                        guard success else { return }
+                        post.likeCount += !post.isLiked ? 1 : -1
+                        post.isLiked = !post.isLiked
+                        self.tableView.reloadData()
+
+                    }
+
+
+                }
+            }
+        }
     }
     
     func reloadTimeline() {
@@ -66,6 +96,8 @@ class FeedViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+
     
     func configureTableView() {
         tableView.tableFooterView = UIView()
@@ -210,6 +242,11 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
                 cell.drinkImage.isHidden = false
             }
             
+//            let tap = UITapGestureRecognizer(target: self, action: #selector(PostActionCell.doubleTapped))
+////            let tap = UITapGestureRecognizer(target: self, action: #selector(self.printSomething))
+//            tap.numberOfTapsRequired = 2
+////            view.addGestureRecognizer(tap)
+//            cell.addGestureRecognizer(tap)
             
             return cell
         case 2:
@@ -251,6 +288,10 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
+    }
+    
+    func printSomething() {
+        print("Printing")
     }
     
 }

@@ -28,7 +28,12 @@ class PostActionCell: UITableViewCell {
     @IBAction func likeButtonTapped(_ sender: UIButton) {
         delegate?.didTapLikeButton(sender, on: self)
     }
-
+    
+    func doubleTapped() {
+        //numberLikes += 1
+        //delegate?.didTapLikeButton(likeButton, on: self)
+        print("ayyyy")
+    }
     
     
 }

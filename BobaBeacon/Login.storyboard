@@ -22,22 +22,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drM-DB-Q9Q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fu-By-bWn">
-                                        <rect key="frame" x="89" y="496" width="142" height="34"/>
+                                        <rect key="frame" x="48" y="402" width="224" height="51"/>
                                         <color key="backgroundColor" red="0.63800052452314537" green="0.97287436548223349" blue="0.61167334479198354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="OhW-SJ-ib2"/>
+                                            <constraint firstAttribute="width" constant="224" id="gOA-5s-gd9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                                         <state key="normal" title="Register or Log In"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="mAC-qV-uZ3" eventType="touchUpInside" id="6Rw-KR-Ls5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boba Beacon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hE-lc-FSd">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7oW-TF-Np8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bobagif2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-qm-4K6">
+                                        <rect key="frame" x="17" y="108" width="286" height="260"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="260" id="k78-vu-LOU"/>
+                                            <constraint firstAttribute="width" constant="286" id="n7e-AU-FpF"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.78082006047218433" green="0.79254387224132383" blue="0.9649230647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="0fu-By-bWn" secondAttribute="bottom" id="FP4-KS-0dG"/>
-                                    <constraint firstAttribute="height" constant="530" id="fQW-g6-lVs"/>
-                                    <constraint firstItem="0fu-By-bWn" firstAttribute="centerX" secondItem="drM-DB-Q9Q" secondAttribute="centerX" id="fVa-q2-MVP"/>
+                                    <constraint firstItem="8ID-qm-4K6" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" constant="17" id="0K3-bz-JNi"/>
+                                    <constraint firstItem="8hE-lc-FSd" firstAttribute="top" secondItem="drM-DB-Q9Q" secondAttribute="top" constant="50" id="1j2-M8-MbN"/>
+                                    <constraint firstAttribute="trailing" secondItem="0fu-By-bWn" secondAttribute="trailing" constant="48" id="2uA-dU-6UW"/>
+                                    <constraint firstAttribute="trailing" secondItem="8hE-lc-FSd" secondAttribute="trailing" id="4BB-T0-pfD"/>
+                                    <constraint firstItem="0fu-By-bWn" firstAttribute="top" secondItem="8ID-qm-4K6" secondAttribute="bottom" constant="34" id="Ah8-T4-vPj"/>
+                                    <constraint firstItem="0fu-By-bWn" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" constant="48" id="IpJ-dT-Zxl"/>
+                                    <constraint firstItem="8hE-lc-FSd" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" id="ORe-cM-zxx"/>
+                                    <constraint firstAttribute="trailing" secondItem="8ID-qm-4K6" secondAttribute="trailing" constant="17" id="QmX-4b-PBj"/>
+                                    <constraint firstAttribute="height" constant="568" id="fQW-g6-lVs"/>
+                                    <constraint firstItem="8ID-qm-4K6" firstAttribute="top" secondItem="8hE-lc-FSd" secondAttribute="bottom" constant="28" id="lyd-WL-jzL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -50,13 +78,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="2NA-BZ-aCB"/>
                     <connections>
+                        <outlet property="gifView" destination="8ID-qm-4K6" id="gln-z9-LOq"/>
                         <outlet property="loginButton" destination="0fu-By-bWn" id="u2k-14-uzN"/>
                         <segue destination="yFQ-Ur-RcX" kind="show" identifier="toCreateUsername" id="LTV-iV-zMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEe-iy-er6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="-52.623688155922046"/>
+            <point key="canvasLocation" x="723.75" y="-52.816901408450704"/>
         </scene>
         <!--Create Username View Controller-->
         <scene sceneID="Usg-bs-KMe">
@@ -117,4 +146,7 @@
             <point key="canvasLocation" x="-215.19999999999999" y="-52.623688155922046"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bobagif2.gif" width="260" height="260"/>
+    </resources>
 </document>
