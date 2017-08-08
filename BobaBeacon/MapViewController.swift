@@ -33,6 +33,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var mapView: GMSMapView? = nil
     var lastPosition: CLLocationCoordinate2D? = nil
     var addPlaceTarget: CLLocationCoordinate2D? = nil
+    var currentPlace = ""
+    var currentPlaceAddress = ""
     
     var places : [[String:String]] = []
     
@@ -40,6 +42,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     lazy var geocoder = CLGeocoder()
     
 
+    @IBAction func unwind2Map(segue: UIStoryboardSegue){
+        if let sourceViewController = segue.source as? SearchPlaceViewController {
+            dataRecieved = sourceViewController.dataPassed
+            addressDataRecieved = sourceViewController.addressPassed
+            getCoordinatesMoveMap(address: addressDataRecieved!, name: dataRecieved!)
+        }
+    }
+    
+    var addressDataRecieved: String? {
+        willSet {
+            currentPlace = "  \(newValue!)"
+        }
+    }
+    
+    var dataRecieved: String? {
+        willSet {
+            currentPlaceAddress = "  \(newValue!)"
+        }
+    }
+    
+    
+    
+    
     func appendData() -> [[String : String]] {
         var places = [[String: String]]()
         Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -57,11 +82,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 nameString = nameString.substring(from: nameIndex)
                 places.append([addressString: nameString])
                 self.getCoordinatesAndUpdateMap(address: addressString, name: nameString)
+                
             }
         })
         return places
     }
     
+    func getCoordinatesMoveMap(address: String, name: String) {
+        let addressString = address.replacingOccurrences(of: " ", with: "+")
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addressString)&key=AIzaSyCqrOwp8IQL05noo4vfdMs0nrDUrv0_jy0"
+        
+        Alamofire.request(urlString).validate().responseJSON() { response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    self.json = JSON(value)
+                    let latitude = self.json?["results"][0]["geometry"]["location"]["lat"].doubleValue
+                    let longitude = self.json?["results"][0]["geometry"]["location"]["lng"].doubleValue
+                    
+                    var camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: 25)
+                    let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+                    mapView.clear()
+                    self.updateMarkers(name: name, address: address, location: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!))
+                    camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: 18.0)
+                    self.mapView?.camera = camera
+                    
+                    
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     
     func getCoordinatesAndUpdateMap(address: String, name: String) {
@@ -95,7 +147,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             print("location is false")
         }
        //mapView?.
-        let mapInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 45.0, right: 0.0)
+        let mapInsets = UIEdgeInsets(top: 55.0, left: 0.0, bottom: 45.0, right: 0.0)
         mapView?.padding = mapInsets
         locationManager.delegate = self
         locationManager.requestLocation()
@@ -150,6 +202,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
 //        marker.icon = UIImage(named: "boba3")
         marker.map = self.mapView
         mapView?.selectedMarker = marker
+        
+
 
     }
     
@@ -160,14 +214,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 37.393678, longitude: -122.079944, zoom: 14.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 37.389763, longitude: -121.960193, zoom: 14.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView!.isMyLocationEnabled = true
         mapView!.delegate = self
         view = mapView
+        self.setNavigationBar()
+
     }
     
+
+    func setNavigationBar() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navItem = UINavigationItem(title: "Boba Beacon")
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 55))
+        navBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir", size: 21.0)!]
+        let searchItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: nil, action: #selector(search))
+        navItem.rightBarButtonItem = searchItem
+        navBar.setItems([navItem], animated: false)
+        self.view.addSubview(navBar)
+    }
+    func search(){
+        performSegue(withIdentifier: "toSearchPlace", sender: self)
+    }
+    
+    
+    
+
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition){
         if(lastPosition == nil) {
             lastPosition = position.target
