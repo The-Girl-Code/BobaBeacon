@@ -44,6 +44,10 @@ class FeedViewController: UIViewController {
         recognizer.numberOfTapsRequired = 2
         self.tableView.addGestureRecognizer(recognizer)
         
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.black,
+             NSFontAttributeName: UIFont(name: "Avenir", size: 21)!]
+        
     }
     
     func didDoubleTap(recognizer: UIGestureRecognizer) {

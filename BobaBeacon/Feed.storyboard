@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed View Controller-->
+        <!--Boba Beacon-->
         <scene sceneID="LXt-wU-VMU">
             <objects>
                 <viewController id="IoL-0D-Al7" customClass="FeedViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                     <tabBarItem key="tabBarItem" title="" image="feed" id="AHw-OT-Lq9">
                         <inset key="imageInsets" minX="0.0" minY="7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="Fkm-pS-zhH"/>
+                    <navigationItem key="navigationItem" title="Boba Beacon" id="Fkm-pS-zhH"/>
                     <connections>
                         <outlet property="tableView" destination="KCu-Mb-YJW" id="prx-vF-TXo"/>
                     </connections>
@@ -219,7 +219,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="7DU-5V-sfC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUh-Lh-0gN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUh-Lh-0gN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
