@@ -52,20 +52,20 @@
                                             <constraint firstAttribute="width" constant="250" id="8xv-Ai-Qyk"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <segue destination="UFk-Hq-O8A" kind="show" identifier="toStores" id="PJC-0g-DaY"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the button to select a flavor!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZE-zQ-Z0x">
-                                        <rect key="frame" x="62.5" y="95" width="250" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="62.5" y="95" width="250" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-nY-47W">
-                                        <rect key="frame" x="125" y="135.5" width="124" height="124"/>
+                                        <rect key="frame" x="125" y="164.5" width="124" height="124"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="124" id="7lz-Qd-qeb"/>
                                             <constraint firstAttribute="width" constant="124" id="DLs-qy-RQg"/>
@@ -76,17 +76,17 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Write about your favorite flavor here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0C-T3-Ouw">
-                                        <rect key="frame" x="42.5" y="331.5" width="290" height="150"/>
+                                        <rect key="frame" x="42.5" y="360.5" width="290" height="150"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="290" id="JeQ-Su-Jdp"/>
                                             <constraint firstAttribute="height" constant="150" id="apY-G1-fj4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZB-W5-hh0">
-                                        <rect key="frame" x="112.5" y="279.5" width="150" height="22"/>
+                                        <rect key="frame" x="112.5" y="308.5" width="150" height="22"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="idf-iP-11N"/>
