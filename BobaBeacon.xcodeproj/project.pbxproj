@@ -21,6 +21,8 @@
 		A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66C3BCE1F21222800648917 /* FeedViewController.swift */; };
 		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
 		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
+		AE117E5C1F3A152600F9CF9B /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE117E5B1F3A152600F9CF9B /* SearchPlaceViewController.swift */; };
+		AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE117E5D1F3A3C0000F9CF9B /* Gif.swift */; };
 		AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */; };
 		AE3F256D1F34D7CE00D57106 /* FaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */; };
 		AE3F25711F34E03A00D57106 /* CollectionViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */; };
@@ -68,6 +70,8 @@
 		A66C3BCE1F21222800648917 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A66C3BD31F21239100648917 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		AE117E5B1F3A152600F9CF9B /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
+		AE117E5D1F3A3C0000F9CF9B /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gif.swift; path = ../../../Downloads/Gif.swift; sourceTree = "<group>"; };
 		AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveViewController.swift; sourceTree = "<group>"; };
 		AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewImageCell.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				A66C3BBB1F21159A00648917 /* CreateUsernameViewController.swift */,
 				A66C3BCA1F21219300648917 /* PostViewController.swift */,
 				AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */,
+				AE117E5B1F3A152600F9CF9B /* SearchPlaceViewController.swift */,
 				A66C3BCC1F2121A600648917 /* ProfileViewController.swift */,
 				A66C3BCE1F21222800648917 /* FeedViewController.swift */,
 				AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */,
@@ -176,6 +181,7 @@
 		A66C3BBE1F2115D300648917 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AE117E5D1F3A3C0000F9CF9B /* Gif.swift */,
 				C0A674821F1FDA7F0029985C /* Info.plist */,
 				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
 				A66C3BC51F211D1300648917 /* Constants.swift */,
@@ -420,12 +426,14 @@
 				C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */,
 				AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */,
 				C0CD7D901F2AB4C800B53472 /* StorageReference.swift in Sources */,
+				AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */,
 				C0CD7D711F2A966F00B53472 /* LocationViewController.swift in Sources */,
 				C092EE871F2F9AA1002A403E /* PostThumbImageCell.swift in Sources */,
 				C0513A211F2A4D9A000737A5 /* PostActionCell.swift in Sources */,
 				A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */,
 				A66C3BC61F211D1300648917 /* Constants.swift in Sources */,
 				C00271791F2FE978002DD25D /* MapViewController.swift in Sources */,
+				AE117E5C1F3A152600F9CF9B /* SearchPlaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
