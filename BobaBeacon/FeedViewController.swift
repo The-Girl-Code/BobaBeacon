@@ -107,7 +107,7 @@ class FeedViewController: UIViewController {
     
     func handleOptionsButtonTap(from cell: PostHeaderCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let post = posts[indexPath.section]
+        var post = posts[indexPath.section]
         let poster = post.poster
         let ref = Database.database().reference()
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

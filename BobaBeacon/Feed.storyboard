@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7N3-QT-wxR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7N3-QT-wxR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,7 +40,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="C0k-X3-5IC"/>
                                                         <constraint firstAttribute="width" constant="44" id="C1N-nT-hQo"/>
                                                     </constraints>
-                                                    <state key="normal" image="dot"/>
+                                                    <state key="normal" image="optionsbuttondot"/>
                                                     <connections>
                                                         <action selector="optionsButtonTapped:" destination="Fls-aT-fEc" eventType="touchUpInside" id="9oP-To-Byy"/>
                                                     </connections>
@@ -234,8 +234,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dot" width="1000" height="1000"/>
         <image name="feed" width="35" height="35"/>
         <image name="heart_unfilled" width="24" height="24"/>
+        <image name="optionsbuttondot" width="24" height="24"/>
     </resources>
 </document>

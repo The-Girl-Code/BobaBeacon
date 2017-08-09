@@ -73,7 +73,10 @@ struct PostService {
     }
     
     static func flag(_ post: Post) {
+        print("got here!")
+
         guard let postKey = post.key else { return }
+        print("got here!2")
         let flaggedPostRef = Database.database().reference().child("flaggedPosts").child(postKey)
         let flaggedDict = ["image_url": post.imageURL,
                            "poster_uid": post.poster.uid,
@@ -84,7 +87,10 @@ struct PostService {
             let currentCount = mutableData.value as? Int ?? 0
             
             mutableData.value = currentCount + 1
-            
+            if ((currentCount + 1) > 2) {
+                let ref = Database.database().reference()
+                ref.child("posts").child(post.key!).removeValue()
+            }
             return TransactionResult.success(withValue: mutableData)
         })
     }
