@@ -26,7 +26,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var places : [Place] = []
         Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
             let count = snapshot.childrenCount
-            print("snapshot: \(snapshot)")
             for i in 1...count {
                 let place = snapshot.childSnapshot(forPath: String(i))
                 
@@ -49,28 +48,6 @@ class StoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         })
         return places
     }
-    
-    //    func appendAddresses() -> [String]{
-    //        var addresses : [String] = []
-    //        Database.database().reference().child("places").observeSingleEvent(of: .value, with: { (snapshot) in
-    //            let count = snapshot.childrenCount
-    //            //print("snapshot: \(snapshot)")
-    //            for i in 1...count {
-    //                let place = snapshot.childSnapshot(forPath: String(i))
-    //
-    //                let address = place.childSnapshot(forPath: "address")
-    //                var addressString = String(describing: address)
-    //                let addressIndex = addressString.index(addressString.startIndex, offsetBy: 15)
-    //                addressString = addressString.substring(from: addressIndex)
-    //                //print("name: \(nameString)")
-    //                addresses.append(addressString)
-    //            }
-    //            self.placeAddresses = addresses
-    //            print(self.placeAddresses)
-    //            self.tableView.reloadData()
-    //        })
-    //        return addresses
-    //    }
     
     
     var filteredPlaces = [Place]()

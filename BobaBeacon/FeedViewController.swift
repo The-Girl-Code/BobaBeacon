@@ -56,7 +56,6 @@ class FeedViewController: UIViewController {
             let swipeLocation = recognizer.location(in: self.tableView)
             if let swipedIndexPath = tableView.indexPathForRow(at: swipeLocation) {
                 if let tappedCell = self.tableView.cellForRow(at: swipedIndexPath) as? PostItemCell {
-                    print("did tap like button")
                     guard let indexPath = tableView.indexPath(for: tappedCell)
                         else { return }
                     let post = posts[indexPath.section]
@@ -81,7 +80,6 @@ class FeedViewController: UIViewController {
    
         UserService.posts(for: User.current) { (posts) in
             self.posts = posts
-            print(posts.count)
             self.tableView.reloadData()
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
@@ -167,7 +165,6 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostActionCellDelegate {
     
     func didTapLikeButton(_ likeButton: UIButton, on cell: PostActionCell) {
-        print("did tap like button")
         guard let indexPath = tableView.indexPath(for: cell)
             else { return }
         likeButton.isUserInteractionEnabled = false
@@ -203,7 +200,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("this is post in table view \(posts)")
 
         return 3
     }
@@ -296,10 +292,6 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
-    }
-    
-    func printSomething() {
-        print("Printing")
     }
     
 }

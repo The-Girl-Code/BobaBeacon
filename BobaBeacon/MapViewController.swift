@@ -164,7 +164,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         if(lastlocation == nil || manager.location!.distance(from: lastlocation!) > 508) {
             lastlocation = manager.location
             let locValue:CLLocationCoordinate2D = manager.location!.coordinate

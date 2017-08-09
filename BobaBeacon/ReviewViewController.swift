@@ -47,8 +47,17 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
     
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
-        postReview()
-        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+        if (reviewTextView.text.isEmpty){
+            print("more ug")
+        }
+        if (locationTextField.text?.isEmpty == false) && (reviewTextView.text.isEmpty == false){
+            print("done button was tapped")
+            postReview()
+            print("UGGGGGGG")
+            self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+        }else{
+            postButton.isEnabled = false
+        }
     }
     
     var dataRecieved: String? {
@@ -100,13 +109,17 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
             textView.text = nil
             textView.textColor = UIColor.black
         }
+        if (locationTextField.text?.isEmpty == false){
+            postButton.isEnabled = true
+        }else{
+            postButton.isEnabled = false
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "How was your experience?"
             textView.textColor = UIColor.lightGray
-            postButton.isEnabled = false
         }
     }
     
@@ -119,11 +132,17 @@ class ReviewViewController: UIViewController, FloatRatingViewDelegate, UITextFie
     
 
     func postReview(){
-        let location = locationTextField.text
-        let rating = liveLabel.text
-        let rev = reviewTextView.text
         
-        PostService.createReview(rating: rating!, location: location!, review: rev!)
+        if (locationTextField.text?.isEmpty == false) && (reviewTextView.text.isEmpty == false){
+            let location = locationTextField.text
+            let rating = liveLabel.text
+            let rev = reviewTextView.text
+            
+            PostService.createReview(rating: rating!, location: location!, review: rev!)
+        }else{
+            postButton.isEnabled = false
+        }
+        
         
     }
    

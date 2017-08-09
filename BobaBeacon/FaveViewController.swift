@@ -86,7 +86,6 @@ extension FaveViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentCell = collectionView.cellForItem(at: indexPath)!
         flavor = flavorLabels[indexPath.item]
-        print("FLA: \(flavor!)")
         performSegue(withIdentifier: "onSelectToProfile", sender: currentCell)
         
     }

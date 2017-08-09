@@ -41,9 +41,13 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
 
     
     @IBAction func postButtonTapped(_ sender: UIBarButtonItem) {
-        postRec()
-        print("post button was tapped")
-        self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+        if (storeTextField.text?.isEmpty == false) && (textView.text.isEmpty == false){
+            postRec()
+            self.performSegue(withIdentifier: "unwindToFeed", sender: self)
+        }else{
+            postButton.isEnabled = false
+        }
+       
      
     }
     
@@ -52,12 +56,10 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
     @IBAction func unwind2Recommendation(segue: UIStoryboardSegue){
        if let sourceViewController = segue.source as? StoresViewController {
             dataRecieved = sourceViewController.dataPassed
-        print(dataRecieved)
         }
         
         else if let sourceViewController = segue.source as? FlavorsViewController {
             flavorSelected = sourceViewController.flavor
-            print(flavorSelected)
         }
     }
     
@@ -113,6 +115,11 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
             textView.text = nil
             textView.textColor = UIColor.black
         }
+        if (storeTextField.text?.isEmpty == false){
+            postButton.isEnabled = true
+        }else{
+            postButton.isEnabled = false
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -121,6 +128,7 @@ class RecommendationViewController: UIViewController, UITextFieldDelegate, UITex
             textView.textColor = UIColor.lightGray
             postButton.isEnabled = false
         }
+        
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {

@@ -64,7 +64,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         }
         else if let sourceViewController = segue.source as? FaveViewController {
             flavorSelected = (sourceViewController.flavor)!
-            print(flavorSelected!)
         }
     }
     

@@ -43,7 +43,6 @@ class SearchPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                 
             }
             self.allPlaces = places
-            print(places)
             self.filteredPlaces = self.allPlaces
             self.tableView.reloadData()
         })
