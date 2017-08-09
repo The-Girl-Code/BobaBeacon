@@ -26,7 +26,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fu-By-bWn">
                                         <rect key="frame" x="48" y="402" width="224" height="51"/>
-                                        <color key="backgroundColor" red="0.63800052452314537" green="0.97287436548223349" blue="0.61167334479198354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.81568627449999997" green="0.8980392157" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="OhW-SJ-ib2"/>
                                             <constraint firstAttribute="width" constant="224" id="gOA-5s-gd9"/>
@@ -46,7 +46,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bobagif2.gif" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-qm-4K6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boba-login" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-qm-4K6">
                                         <rect key="frame" x="17" y="108" width="286" height="260"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="260" id="k78-vu-LOU"/>
@@ -147,6 +147,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bobagif2.gif" width="260" height="260"/>
+        <image name="boba-login" width="300" height="300"/>
     </resources>
 </document>
