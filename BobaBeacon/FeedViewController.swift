@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 
 let notificationKey = "com.thegirlcode"
@@ -110,6 +111,7 @@ class FeedViewController: UIViewController {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let post = posts[indexPath.section]
         let poster = post.poster
+        let ref = Database.database().reference()
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if poster.uid != User.current.uid {
             let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
@@ -125,6 +127,11 @@ class FeedViewController: UIViewController {
         if poster.uid == User.current.uid {
             let flagAction = UIAlertAction(title: "Delete Post", style: .default) { _ in
                 PostService.flag(post)
+                ref.child("posts").child(post.key!).removeValue { error in
+                    if error != nil {
+                        print("error \(error)")
+                    }
+                }
                 
                 let okAlert = UIAlertController(title: nil, message: "This post has been deleted.", preferredStyle: .alert)
                 okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
@@ -139,6 +146,7 @@ class FeedViewController: UIViewController {
     }
     
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
