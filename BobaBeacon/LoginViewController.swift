@@ -33,8 +33,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //gifView.loadGif(name: "bobagif2")
-        gifView.image = UIImage(named: "boba-login")
+        gifView.loadGif(name: "BOBAGIFFF4")
+        //gifView.image = UIImage(named: "boba-login")
         //testing github
         //more tests
         // Do any additional setup after loading the view, typically from a nib.
