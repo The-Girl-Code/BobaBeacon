@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var drinkLabel: UILabel!
     @IBOutlet weak var bobaImage: UIButton!
     
+    
     var flavorSelected: String? {
         willSet {
             drinkLabel.text = "\(newValue!)"
@@ -61,9 +62,15 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBAction func unwind2Profile(segue: UIStoryboardSegue){
         if let sourceViewController = segue.source as? PlaceViewController {
             dataRecieved = sourceViewController.dataPassed
+            let ref = Database.database().reference().child("users").child("\(User.current.uid)")
+            let value = ["fav_store" : dataRecieved]
+            ref.updateChildValues(value)
         }
         else if let sourceViewController = segue.source as? FaveViewController {
             flavorSelected = (sourceViewController.flavor)!
+            let ref = Database.database().reference().child("users").child("\(User.current.uid)")
+            let value = ["fav_drink" : flavorSelected]
+            ref.updateChildValues(value)
         }
     }
     
@@ -72,6 +79,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
             storeTextField.text = "  \(newValue!)"
         }
     }
+
     
     func presentActionSheet(from viewController: UIViewController) {
         // 1
@@ -119,6 +127,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let username = snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "username").value
                 self.usernameLabel.text = "\(username!)"
+            let place = snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "fav_store").value
+            self.storeTextField.text = "\(place!)"
+            let drink = snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "fav_drink").value
+            self.drinkLabel.text = "\(drink!)"
+            self.bobaImage.setImage(UIImage(named: drink as! String), for: .normal)
         })
         storeTextField.delegate = self
         
