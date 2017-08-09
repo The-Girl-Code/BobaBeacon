@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,15 +37,6 @@
                                             <action selector="loginButtonTapped:" destination="mAC-qV-uZ3" eventType="touchUpInside" id="6Rw-KR-Ls5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boba Beacon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hE-lc-FSd">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="7oW-TF-Np8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="31"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boba-login" translatesAutoresizingMaskIntoConstraints="NO" id="8ID-qm-4K6">
                                         <rect key="frame" x="17" y="154" width="286" height="260"/>
                                         <constraints>
@@ -53,16 +44,18 @@
                                             <constraint firstAttribute="width" constant="286" id="n7e-AU-FpF"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="label-white" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-xf-pFh">
+                                        <rect key="frame" x="10" y="44" width="300" height="100"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.85490196080000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="8ID-qm-4K6" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" constant="17" id="0K3-bz-JNi"/>
                                     <constraint firstAttribute="trailing" secondItem="0fu-By-bWn" secondAttribute="trailing" constant="48" id="2uA-dU-6UW"/>
-                                    <constraint firstAttribute="trailing" secondItem="8hE-lc-FSd" secondAttribute="trailing" id="4BB-T0-pfD"/>
-                                    <constraint firstItem="8ID-qm-4K6" firstAttribute="top" secondItem="8hE-lc-FSd" secondAttribute="bottom" constant="60" id="Dki-w8-JeF"/>
                                     <constraint firstItem="0fu-By-bWn" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" constant="48" id="IpJ-dT-Zxl"/>
-                                    <constraint firstItem="8hE-lc-FSd" firstAttribute="leading" secondItem="drM-DB-Q9Q" secondAttribute="leading" id="ORe-cM-zxx"/>
+                                    <constraint firstItem="8ID-qm-4K6" firstAttribute="top" secondItem="Oax-xf-pFh" secondAttribute="bottom" constant="10" id="Mcp-Mu-56V"/>
                                     <constraint firstAttribute="trailing" secondItem="8ID-qm-4K6" secondAttribute="trailing" constant="17" id="QmX-4b-PBj"/>
+                                    <constraint firstItem="Oax-xf-pFh" firstAttribute="centerX" secondItem="drM-DB-Q9Q" secondAttribute="centerX" id="vHm-0R-e3d"/>
                                     <constraint firstItem="8ID-qm-4K6" firstAttribute="centerY" secondItem="drM-DB-Q9Q" secondAttribute="centerY" id="vTJ-NJ-hhO"/>
                                     <constraint firstItem="0fu-By-bWn" firstAttribute="top" secondItem="8ID-qm-4K6" secondAttribute="bottom" constant="60" id="yaz-8o-nKo"/>
                                 </constraints>
@@ -161,5 +154,6 @@
     </scenes>
     <resources>
         <image name="boba-login" width="300" height="300"/>
+        <image name="label-white" width="300" height="100"/>
     </resources>
 </document>
