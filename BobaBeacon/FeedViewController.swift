@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Firebase
+import SCLAlertView
 
 
 let notificationKey = "com.thegirlcode"
@@ -35,6 +36,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureTableView()
         reloadTimeline()
         
@@ -90,12 +92,46 @@ class FeedViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let ref = Database.database().reference().child("users").child(User.current.uid)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard snapshot.exists() else{
+                print("User doesn't exist")
+                    self.makeUsername()
+                return
+            }
+            print("User \(snapshot.value) exists")
+        })
         UserService.posts(for: User.current) { (posts) in
             self.posts = posts
             self.tableView.reloadData()
         }
     }
-    
+
+    func makeUsername(){
+        
+        let alertViewIcon = UIImage(named: "Regular") //Replace the IconImage text with the image name
+        
+        let app = SCLAlertView.SCLAppearance(kCircleIconHeight: 50, kTitleFont: UIFont(name: "Avenir", size: 20)!, kTextFont: UIFont(name: "Avenir", size: 14)!, kButtonFont: UIFont(name: "Avenir", size: 14)!, showCloseButton: false,  contentViewColor: UIColor.gray, contentViewBorderColor: UIColor.gray, titleColor: UIColor.white)
+        
+        let alert = SCLAlertView(appearance: app)
+        
+        let txt = alert.addTextField("Enter your username")
+        alert.addButton("Done") {
+            if txt.text == "" {
+                self.makeUsername()
+            } else {
+                guard let firUser = Auth.auth().currentUser,
+                    let username = txt.text,
+                    !username.isEmpty else {return}
+                
+                UserService.create(firUser, username: username) { (user) in
+                    guard let user = user else { return }
+                    User.setCurrent(user, writeToUserDefaults: true)
+                }
+            }
+        }
+        alert.showTitle("Enter Username", subTitle: "Please enter your username", style: .success)
+    }
 
     
     func configureTableView() {
@@ -210,7 +246,28 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate, PostAc
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostHeaderCell", for: indexPath) as! PostHeaderCell
             cell.usernameLabel.text = post.poster.username
-            let image = UIImage(named: "Thai")
+            
+            let flavorImages: [UIImage] = [
+                UIImage(named: "Regular")!,
+                UIImage(named: "Peach")!,
+                UIImage(named: "Coffee")!,
+                UIImage(named: "Green Tea")!,
+                UIImage(named: "Strawberry")!,
+                UIImage(named: "Jasmine")!,
+                UIImage(named: "Thai")!,
+                UIImage(named: "Honeydew")!,
+                UIImage(named: "Taro")!,
+                UIImage(named: "Almond")!,
+                UIImage(named: "Chocolate")!,
+                UIImage(named: "Lychee")!,
+                UIImage(named: "Black Tea")!,
+                UIImage(named: "Oolong")!,
+                UIImage(named: "Passion Fruit")!,
+                UIImage(named: "Hazelnut")!,
+                UIImage(named: "Mango")!]
+            let randomIndex = Int(arc4random_uniform(UInt32(flavorImages.count)))
+            let image = flavorImages[randomIndex]
+            cell.borderImageView.setRounded()
             cell.profileImageView.image = image
             cell.profileImageView.setRounded()
             cell.didTapOptionsButtonForCell = handleOptionsButtonTap(from:)

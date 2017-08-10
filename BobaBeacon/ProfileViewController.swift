@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var borderImageView: UIImageView!
+
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var storeTextField: UITextField!
     @IBOutlet weak var drinkLabel: UILabel!
@@ -123,14 +125,37 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         storeTextField.delegate = self
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        profileImage.isUserInteractionEnabled = true
-        profileImage.setRounded()
-
-        profileImage.addGestureRecognizer(tapGestureRecognizer)
-
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
-
+        
+        
+        let flavorImages: [UIImage] = [
+            UIImage(named: "Regular")!,
+            UIImage(named: "Peach")!,
+            UIImage(named: "Coffee")!,
+            UIImage(named: "Green Tea")!,
+            UIImage(named: "Strawberry")!,
+            UIImage(named: "Jasmine")!,
+            UIImage(named: "Thai")!,
+            UIImage(named: "Honeydew")!,
+            UIImage(named: "Taro")!,
+            UIImage(named: "Almond")!,
+            UIImage(named: "Chocolate")!,
+            UIImage(named: "Lychee")!,
+            UIImage(named: "Black Tea")!,
+            UIImage(named: "Oolong")!,
+            UIImage(named: "Passion Fruit")!,
+            UIImage(named: "Hazelnut")!,
+            UIImage(named: "Mango")!]
+        let randomIndex = Int(arc4random_uniform(UInt32(flavorImages.count)))
+        profileImage.image = flavorImages[randomIndex]
+        
+        profileImage.isUserInteractionEnabled = true
+        borderImageView.setRounded()
+        profileImage.setRounded()
+        
+        profileImage.addGestureRecognizer(tapGestureRecognizer)
+        self.view.bringSubview(toFront: profileImage)
     }
     
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)

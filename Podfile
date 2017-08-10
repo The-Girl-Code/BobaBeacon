@@ -20,6 +20,7 @@ target 'BobaBeacon' do
     pod ’SwiftyJSON’
     pod ‘AlamofireImage’
     pod ‘AlamofireNetworkActivityIndicator’
+    pod ‘SCLAlertView’
 
 
 end

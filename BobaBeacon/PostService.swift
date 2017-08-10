@@ -57,6 +57,17 @@ struct PostService {
 
     }
     
+    private static func createProfilePic(forURLString urlString: String, aspectHeight: CGFloat) {
+        let currentUser = User.current
+        let post = Post(imageURL: urlString, imageHeight: aspectHeight)
+        let dict = post.dictValue
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        postRef.updateChildValues(dict)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        
+    }
+
+    
     static func show(forKey postKey: String, completion: @escaping (Post?) -> Void) {
         let ref = Database.database().reference().child("posts").child(postKey)
         

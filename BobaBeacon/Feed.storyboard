@@ -34,6 +34,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BzZ-tM-7QH" userLabel="borderImageView">
+                                                    <rect key="frame" x="8.5" y="5" width="33" height="33"/>
+                                                    <color key="backgroundColor" red="0.81486070160000001" green="0.89730525019999996" blue="0.66667664049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="YFa-g5-oqk"/>
+                                                        <constraint firstAttribute="height" constant="33" id="s5W-pI-KcQ"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTn-64-XcV">
                                                     <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                                                     <constraints>
@@ -60,6 +68,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BzZ-tM-7QH" firstAttribute="leading" secondItem="Sq1-NV-vv1" secondAttribute="leading" constant="-1.5" id="6GZ-1f-9Ye"/>
+                                                <constraint firstItem="Sq1-NV-vv1" firstAttribute="top" secondItem="BzZ-tM-7QH" secondAttribute="bottom" constant="-31.5" id="Bns-e3-EdE"/>
                                                 <constraint firstItem="Sq1-NV-vv1" firstAttribute="leading" secondItem="651-fe-BVZ" secondAttribute="leading" constant="10" id="P51-Zi-2jQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="RTn-64-XcV" secondAttribute="bottom" id="V8Q-M6-jeg"/>
                                                 <constraint firstItem="Sq1-NV-vv1" firstAttribute="centerY" secondItem="651-fe-BVZ" secondAttribute="centerY" id="bxC-ck-WDq"/>
@@ -71,6 +81,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="borderImageView" destination="BzZ-tM-7QH" id="uab-aC-aCW"/>
                                             <outlet property="profileImageView" destination="Sq1-NV-vv1" id="1Yd-Ue-bH2"/>
                                             <outlet property="usernameLabel" destination="AsY-vy-Dza" id="DQR-ve-df6"/>
                                         </connections>
@@ -219,7 +230,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" id="7DU-5V-sfC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YUh-Lh-0gN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUh-Lh-0gN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

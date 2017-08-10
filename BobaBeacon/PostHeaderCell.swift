@@ -16,6 +16,7 @@ class PostHeaderCell: UITableViewCell {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var borderImageView: UIImageView!
     
     var didTapOptionsButtonForCell: ((PostHeaderCell) -> Void)?
     

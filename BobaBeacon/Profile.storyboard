@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ryu-XZ-SZa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ryu-XZ-SZa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,12 +30,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unset_profile" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-gw-NOs">
-                                        <rect key="frame" x="87.5" y="50" width="200" height="200"/>
-                                        <color key="backgroundColor" red="0.86666666670000003" green="0.85490196080000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-px-383" userLabel="borderImageView">
+                                        <rect key="frame" x="75" y="37.5" width="225" height="225"/>
+                                        <color key="backgroundColor" red="0.81486070160000001" green="0.89730525019999996" blue="0.66667664049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="7Iz-yv-mk1"/>
-                                            <constraint firstAttribute="width" constant="200" id="lCS-Sb-KbT"/>
+                                            <constraint firstAttribute="width" constant="225" id="oAO-PA-bfI"/>
+                                            <constraint firstAttribute="height" constant="225" id="yYy-Y8-RmG"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4F-Ag-Amm">
@@ -66,6 +66,14 @@
                                             <segue destination="MRm-L9-Aae" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="QVG-F3-bqD"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unset_profile" translatesAutoresizingMaskIntoConstraints="NO" id="qA2-gw-NOs">
+                                        <rect key="frame" x="87" y="50" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.86666666670000003" green="0.85490196080000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="7Iz-yv-mk1"/>
+                                            <constraint firstAttribute="width" constant="200" id="lCS-Sb-KbT"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the boba to select your fave!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9y-E6-SKl">
                                         <rect key="frame" x="58" y="424" width="260" height="59"/>
                                         <constraints>
@@ -101,11 +109,13 @@
                                     <constraint firstItem="qA2-gw-NOs" firstAttribute="top" secondItem="eEs-q1-cxW" secondAttribute="top" constant="50" id="LkR-CS-CZF"/>
                                     <constraint firstItem="rI1-v7-idE" firstAttribute="top" secondItem="qA2-gw-NOs" secondAttribute="bottom" constant="30" id="Qxe-No-EUZ"/>
                                     <constraint firstItem="d4F-Ag-Amm" firstAttribute="centerX" secondItem="eEs-q1-cxW" secondAttribute="centerX" id="UB4-ue-PdA"/>
+                                    <constraint firstItem="Y6o-px-383" firstAttribute="centerX" secondItem="eEs-q1-cxW" secondAttribute="centerX" id="UGh-4L-s46"/>
                                     <constraint firstItem="d4F-Ag-Amm" firstAttribute="top" secondItem="rI1-v7-idE" secondAttribute="bottom" constant="20" id="bf6-jp-JDP"/>
                                     <constraint firstItem="C9y-E6-SKl" firstAttribute="top" secondItem="rI1-v7-idE" secondAttribute="bottom" constant="111" id="d3G-PS-hVi"/>
                                     <constraint firstItem="d4F-Ag-Amm" firstAttribute="centerX" secondItem="qA2-gw-NOs" secondAttribute="centerX" id="dO4-xz-Gef"/>
                                     <constraint firstItem="eCf-MO-Q0k" firstAttribute="top" secondItem="MYm-Fn-5zZ" secondAttribute="bottom" constant="40" id="doD-5M-vLU"/>
                                     <constraint firstItem="C9y-E6-SKl" firstAttribute="centerX" secondItem="eEs-q1-cxW" secondAttribute="centerX" id="h4m-fa-qP2"/>
+                                    <constraint firstItem="Y6o-px-383" firstAttribute="top" secondItem="qA2-gw-NOs" secondAttribute="bottom" constant="-212.5" id="hdy-gA-aL9"/>
                                     <constraint firstItem="eCf-MO-Q0k" firstAttribute="centerX" secondItem="qA2-gw-NOs" secondAttribute="centerX" id="mGL-LH-W7g"/>
                                     <constraint firstItem="eCf-MO-Q0k" firstAttribute="centerX" secondItem="eEs-q1-cxW" secondAttribute="centerX" id="tbt-ob-SRt"/>
                                     <constraint firstItem="MYm-Fn-5zZ" firstAttribute="centerX" secondItem="qA2-gw-NOs" secondAttribute="centerX" id="uFX-u4-anQ"/>
@@ -127,6 +137,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bobaImage" destination="d4F-Ag-Amm" id="4GM-lt-pda"/>
+                        <outlet property="borderImageView" destination="Y6o-px-383" id="DkL-FN-y4Q"/>
                         <outlet property="drinkLabel" destination="C9y-E6-SKl" id="BCq-bj-z9U"/>
                         <outlet property="logoutButton" destination="eCf-MO-Q0k" id="QAO-4X-J1I"/>
                         <outlet property="profileImage" destination="qA2-gw-NOs" id="2YH-bD-rYI"/>
