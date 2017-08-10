@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var drinkLabel: UILabel!
     @IBOutlet weak var bobaImage: UIButton!
     
+    @IBOutlet weak var infoImageView: UIImageView!
     
     var flavorSelected: String? {
         willSet {
@@ -138,8 +139,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         })
         storeTextField.delegate = self
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-                // Do any additional setup after loading the view.
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//                // Do any additional setup after loading the view.
+        
+         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoTapped(tapGestureRecognizer:)))
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
         
         
@@ -167,11 +170,20 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         profileImage.isUserInteractionEnabled = true
         borderImageView.setRounded()
         profileImage.setRounded()
-        
-        profileImage.addGestureRecognizer(tapGestureRecognizer)
+        infoImageView.isUserInteractionEnabled = true
+        //profileImage.addGestureRecognizer(tapGestureRecognizer)
+        infoImageView.addGestureRecognizer(tapGestureRecognizer)
         self.view.bringSubview(toFront: profileImage)
     }
     
+    func infoTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedInfo = tapGestureRecognizer.view as! UIImageView
+        print("tapped info")
+        performSegue(withIdentifier: "toInfo", sender: self)
+        // Your action
+    }
+    /*
     func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
@@ -179,6 +191,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
 
         // Your action
     }
+ */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
