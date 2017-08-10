@@ -126,6 +126,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         Database.database().reference().child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let username = snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "username").value
                 self.usernameLabel.text = "\(username!)"
