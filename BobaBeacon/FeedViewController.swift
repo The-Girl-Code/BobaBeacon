@@ -111,12 +111,12 @@ class FeedViewController: UIViewController {
         
         let alertViewIcon = UIImage(named: "Regular") //Replace the IconImage text with the image name
         
-        let app = SCLAlertView.SCLAppearance(kCircleIconHeight: 50, kTitleFont: UIFont(name: "Avenir", size: 20)!, kTextFont: UIFont(name: "Avenir", size: 14)!, kButtonFont: UIFont(name: "Avenir", size: 14)!, showCloseButton: false,  contentViewColor: UIColor.gray, contentViewBorderColor: UIColor.gray, titleColor: UIColor.white)
+        let app = SCLAlertView.SCLAppearance(kCircleIconHeight: 50, kTitleFont: UIFont(name: "Avenir", size: 20)!, kTextFont: UIFont(name: "Avenir", size: 14)!, kButtonFont: UIFont(name: "Avenir", size: 14)!, showCloseButton: false,  contentViewColor: UIColor(red: 208, green: 229, blue: 170, alpha: 0.0), contentViewBorderColor: UIColor.gray, titleColor: UIColor.white)
         
         let alert = SCLAlertView(appearance: app)
         
         let txt = alert.addTextField("Enter your username")
-        alert.addButton("Done") {
+        alert.addButton("Done", backgroundColor: UIColor(red: 200, green: 200, blue: 200, alpha: 0.5), textColor: UIColor.black) {
             if txt.text == "" {
                 self.makeUsername()
             } else {
@@ -130,10 +130,23 @@ class FeedViewController: UIViewController {
                 }
             }
         }
-        alert.showTitle("Enter Username", subTitle: "Please enter your username", style: .success)
+        alert.showCustom("Enter Username", subTitle: "", color: UIColor.black, icon: alertViewIcon!)
+        
+        
+        
+        /*
+ 
+ alert.addButton("Hide Meme", backgroundColor: UIColor.purple, textColor: UIColor.white, showDurationStatus: false) {
+ NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
+ }
+ alert.addButton("Cancel", backgroundColor: UIColor.purple, textColor: UIColor.white, showDurationStatus: false) {
+ print("cancel")
+ }
+ alert.showInfo("Action", subTitle: "Are you sure you want to hide this meme?", circleIconImage: alertViewIcon)
+ */
     }
 
-    
+ 
     func configureTableView() {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
