@@ -25,6 +25,7 @@
 		AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE117E5D1F3A3C0000F9CF9B /* Gif.swift */; };
 		AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */; };
 		AE1985E71F3BB1E000778095 /* BOBAGIFFF4.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE1985E61F3BB1E000778095 /* BOBAGIFFF4.gif */; };
+		AE1985EB1F3C286900778095 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1985EA1F3C286900778095 /* InfoViewController.swift */; };
 		AE3F256D1F34D7CE00D57106 /* FaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */; };
 		AE3F25711F34E03A00D57106 /* CollectionViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */; };
 		C00271791F2FE978002DD25D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00271781F2FE978002DD25D /* MapViewController.swift */; };
@@ -75,6 +76,7 @@
 		AE117E5D1F3A3C0000F9CF9B /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gif.swift; path = ../../../Downloads/Gif.swift; sourceTree = "<group>"; };
 		AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		AE1985E61F3BB1E000778095 /* BOBAGIFFF4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = BOBAGIFFF4.gif; path = ../../BOBAGIFFF4.gif; sourceTree = "<group>"; };
+		AE1985EA1F3C286900778095 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveViewController.swift; sourceTree = "<group>"; };
 		AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewImageCell.swift; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				A66C3BCC1F2121A600648917 /* ProfileViewController.swift */,
 				A66C3BCE1F21222800648917 /* FeedViewController.swift */,
 				AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */,
+				AE1985EA1F3C286900778095 /* InfoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
 				C0CD7D861F2AA5E900B53472 /* UIImage+Size.swift in Sources */,
 				C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */,
+				AE1985EB1F3C286900778095 /* InfoViewController.swift in Sources */,
 				AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */,
 				C0CD7D901F2AB4C800B53472 /* StorageReference.swift in Sources */,
 				AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */,
