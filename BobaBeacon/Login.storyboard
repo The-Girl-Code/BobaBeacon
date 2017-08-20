@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VQP-Tv-IZz">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,7 +74,7 @@
                     <connections>
                         <outlet property="gifView" destination="8ID-qm-4K6" id="gln-z9-LOq"/>
                         <outlet property="loginButton" destination="0fu-By-bWn" id="u2k-14-uzN"/>
-                        <segue destination="yFQ-Ur-RcX" kind="show" identifier="toCreateUsername" id="LTV-iV-zMd"/>
+                        <segue destination="p6b-5z-KC6" kind="show" identifier="toTermsAndConditions" id="w45-xj-0rT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEe-iy-er6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +132,105 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdq-dv-0eE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392.8" y="-50.824587706146929"/>
+            <point key="canvasLocation" x="2423" y="-76"/>
+        </scene>
+        <!--Terms And Conditions View Controller-->
+        <scene sceneID="dNs-Yl-4gi">
+            <objects>
+                <viewController id="p6b-5z-KC6" customClass="TermsAndConditionsViewController" customModule="BobaBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kEc-2T-pdR"/>
+                        <viewControllerLayoutGuide type="bottom" id="1hG-WR-EKx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sIz-LD-Epr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Conditions and Use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUR-Rl-EfJ">
+                                <rect key="frame" x="31" y="40" width="258" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="fTd-4K-p3H"/>
+                                    <constraint firstAttribute="width" secondItem="cUR-Rl-EfJ" secondAttribute="height" multiplier="129:46" id="qOO-Tt-wQj"/>
+                                    <constraint firstAttribute="height" constant="92" id="st3-X3-UXg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ou-y9-tj0">
+                                <rect key="frame" x="16" y="142" width="288" height="226"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.79781740899999998" green="0.90223848819999997" blue="0.63963276150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Ou-y9-tj0" secondAttribute="height" multiplier="144:113" id="GDW-QK-hDD"/>
+                                </constraints>
+                                <mutableString key="text">Terms and ConditionsLast updated: August 20, 2017Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the BobaBeacon mobile application (the "Service") operated by TheGirlCode ("us", "we", or "our").Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.CommunicationsBy creating an Account on our service, you agree to subscribe to newsletters, marketing or promotional materials and other information we may send. However, you may opt out of receiving any, or all, of these communications from us by following the unsubscribe link or instructions provided in any email we send.ContentOur Service allows you to post, link, store, share and otherwise make available certain information, text, graphics, videos, or other material ("Content"). You are responsible for the Content that you post on or through the Service, including its legality, reliability, and appropriateness.By posting Content on or through the Service, You represent and warrant that: (i) the Content is yours (you own it) and/or you have the right to use it and the right to grant us the rights and license as provided in these Terms, and (ii) that the posting of your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person or entity. We reserve the right to terminate the account of anyone found to be infringing on a copyright.You retain any and all of your rights to any Content you submit, post or display on or through the Service and you are responsible for protecting those rights. We take no responsibility and assume no liability for Content you or any third party posts on or through the Service. However, by posting Content using the Service you grant us the right and license to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service. You agree that this license includes the right for us to make your Content available to other users of the Service, who may also use your Content subject to these Terms.TheGirlCode has the right but not the obligation to monitor and edit all Content provided by users.In addition, Content found on or through this Service are the property of TheGirlCode or used with permission. You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole or in part, for commercial purposes or for personal gain, without express advance written permission from us.
+ AccountsWhen you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on the Service.You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password, whether your password is with our Service or a third-party service. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than you, without appropriate authorization. You may not use as a username any name that is offensive, vulgar or obscene.Copyright PolicyWe respect the intellectual property rights of others. It is our policy to respond to any claim that Content posted on the Service infringes on the copyright or other intellectual property rights ("Infringement") of any person or entity.If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been copied in a way that constitutes copyright infringement, please submit your claim via email to thegirlcode.ca@gmail.com, with the subject line: "Copyright Infringement" and include in your claim a detailed description of the alleged Infringement as detailed below, under "DMCA Notice and Procedure for Copyright Infringement Claims"You may be held accountable for damages (including costs and attorneys' fees) for misrepresentation or bad-faith claims on the infringement of any Content found on and/or through the Service on your copyright.DMCA Notice and Procedure for Copyright Infringement ClaimsYou may submit a notification pursuant to the Digital Millennium Copyright Act (DMCA) by providing our Copyright Agent with the following information in writing (see 17 U.S.C 512(c)(3) for further detail):an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright's interest;a description of the copyrighted work that you claim has been infringed, including the URL (i.e., web page address) of the location where the copyrighted work exists or a copy of the copyrighted work;identification of the URL or other specific location on the Service where the material that you claim is infringing is located;your address, telephone number, and email address;
+ a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law;a statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.You can contact our Copyright Agent via email at thegirlcode.ca@gmail.comIntellectual PropertyThe Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of TheGirlCode and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of TheGirlCode.Links To Other Web SitesOur Service may contain links to third party web sites or services that are not owned or controlled by TheGirlCode.TheGirlCode has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.You acknowledge and agree that TheGirlCode shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such third party web sites or services.We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.TerminationWe may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.If you wish to terminate your account, you may simply discontinue using the Service.All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.IndemnificationYou agree to defend, indemnify and hold harmless TheGirlCode and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Service,
+ by you or any person using your account and password; b) a breach of these Terms, or c) Content posted on the Service.Limitation Of LiabilityIn no event shall TheGirlCode, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.DisclaimerYour use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.TheGirlCode its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.ExclusionsSome jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.Governing LawThese Terms shall be governed and construed in accordance with the laws of California, United States, without regard to its conflict of law provisions.Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service.ChangesWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.
+ Contact UsIf you have any questions about these Terms, please contact us.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh9-Z6-Gty">
+                                <rect key="frame" x="31" y="443" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.79781740899999998" green="0.90223848819999997" blue="0.63963276150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.79781740899999998" green="0.90223848819999997" blue="0.63963276150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptButton:" destination="p6b-5z-KC6" eventType="touchUpInside" id="S8a-ck-cLe"/>
+                                    <segue destination="yFQ-Ur-RcX" kind="show" id="yoA-EG-ZKR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="By clicking Accept, you agree to the Terms and Conditions of BobaBeacon." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBy-BN-MDz">
+                                <rect key="frame" x="24" y="378" width="273" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="IqY-KV-yI4"/>
+                                    <constraint firstAttribute="width" constant="273" id="pUP-FR-LGY"/>
+                                    <constraint firstAttribute="width" secondItem="NBy-BN-MDz" secondAttribute="height" multiplier="91:16" id="wnK-kR-717"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.333293438" green="0.33335629109999998" blue="0.33328947419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJK-UG-bG8">
+                                <rect key="frame" x="187" y="443" width="102" height="30"/>
+                                <color key="backgroundColor" red="0.79781740899999998" green="0.90223848819999997" blue="0.63963276150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.79781740899999998" green="0.90223848819999997" blue="0.63963276150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="declineButton:" destination="p6b-5z-KC6" eventType="touchUpInside" id="pUf-ih-VSy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.85490196078431369" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.86666666670000003" green="0.85490196080000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NBy-BN-MDz" firstAttribute="centerX" secondItem="sIz-LD-Epr" secondAttribute="centerX" id="EkR-fg-n2E"/>
+                            <constraint firstItem="1hG-WR-EKx" firstAttribute="top" secondItem="Rh9-Z6-Gty" secondAttribute="bottom" constant="95" id="GCO-zC-xHg"/>
+                            <constraint firstItem="7Ou-y9-tj0" firstAttribute="centerX" secondItem="sIz-LD-Epr" secondAttribute="centerX" id="OQq-yl-8vq"/>
+                            <constraint firstItem="Rh9-Z6-Gty" firstAttribute="width" secondItem="cJK-UG-bG8" secondAttribute="height" multiplier="17:5" id="S0h-0L-Rzt"/>
+                            <constraint firstItem="NBy-BN-MDz" firstAttribute="top" secondItem="7Ou-y9-tj0" secondAttribute="bottom" constant="10" id="TMm-m5-vNf"/>
+                            <constraint firstItem="7Ou-y9-tj0" firstAttribute="top" secondItem="cUR-Rl-EfJ" secondAttribute="bottom" constant="10" id="XGY-AM-PcD"/>
+                            <constraint firstItem="cUR-Rl-EfJ" firstAttribute="top" secondItem="kEc-2T-pdR" secondAttribute="bottom" constant="20" id="XMd-HO-FjG"/>
+                            <constraint firstItem="1hG-WR-EKx" firstAttribute="top" secondItem="cJK-UG-bG8" secondAttribute="bottom" constant="95" id="Zte-4E-OsU"/>
+                            <constraint firstItem="Rh9-Z6-Gty" firstAttribute="height" secondItem="cJK-UG-bG8" secondAttribute="height" id="aBZ-VG-7YI"/>
+                            <constraint firstItem="cJK-UG-bG8" firstAttribute="leading" secondItem="Rh9-Z6-Gty" secondAttribute="trailing" constant="54" id="bFf-oD-lMl"/>
+                            <constraint firstItem="Rh9-Z6-Gty" firstAttribute="width" secondItem="cJK-UG-bG8" secondAttribute="width" id="wOi-1Z-5L2"/>
+                            <constraint firstItem="cUR-Rl-EfJ" firstAttribute="centerX" secondItem="sIz-LD-Epr" secondAttribute="centerX" id="wxX-ZK-oK2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="termsText" destination="7Ou-y9-tj0" id="CUz-SE-UnF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bef-fW-55S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="-76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jsl-PP-VUO">

@@ -134,16 +134,6 @@ class FeedViewController: UIViewController {
         
         
         
-        /*
- 
- alert.addButton("Hide Meme", backgroundColor: UIColor.purple, textColor: UIColor.white, showDurationStatus: false) {
- NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
- }
- alert.addButton("Cancel", backgroundColor: UIColor.purple, textColor: UIColor.white, showDurationStatus: false) {
- print("cancel")
- }
- alert.showInfo("Action", subTitle: "Are you sure you want to hide this meme?", circleIconImage: alertViewIcon)
- */
     }
 
  
