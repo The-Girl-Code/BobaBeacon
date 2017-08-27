@@ -70,9 +70,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             User.setCurrent(user)
             
+            //if username exists
+            
             initialViewController = UIStoryboard.initialViewController(for: .main)
             
-        }else{
+        
+            
+        } else {
             initialViewController = UIStoryboard.initialViewController(for: .login)
         }
         

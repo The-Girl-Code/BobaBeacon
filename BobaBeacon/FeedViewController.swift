@@ -154,7 +154,7 @@ class FeedViewController: UIViewController {
             let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
                 PostService.flag(post)
                 
-                let okAlert = UIAlertController(title: nil, message: "The post has been flagged.", preferredStyle: .alert)
+                let okAlert = UIAlertController(title: nil, message: "The post has been flagged. Administrators will address this issue shortly.", preferredStyle: .alert)
                 okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
                 self.present(okAlert, animated: true)
             }
