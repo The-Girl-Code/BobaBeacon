@@ -2,7 +2,7 @@
 //  PostThumbImageCell.swift
 //  BobaBeacon
 //
-//  Created by Kodo on 7/31/17.
+//  Created by TheGirlCode on 7/31/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  LikeService.swift
 //  BobaBeacon
 //
-//  Created by Kodo on 8/1/17.
+//  Created by TheGirlCode on 8/1/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 

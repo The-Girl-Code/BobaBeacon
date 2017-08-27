@@ -202,7 +202,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         marker.icon = image
 //        marker.icon = UIImage(named: "boba3")
         marker.map = self.mapView
-        mapView?.selectedMarker = marker
+       // mapView?.selectedMarker = marker
         
 
 

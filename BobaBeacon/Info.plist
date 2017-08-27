@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Location is a key functionality for all your boba desires!</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location is a key functionality to be able to track you at your boba adventures!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Location is a key functionality to be able to track you at your boba adventures!</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +22,10 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Take photos of your boba.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location is a key functionality to be able to track you at your boba adventures!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location is a key functionality to be able to track you at your boba adventures!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Post photos of your boba.</string>
 	<key>UILaunchStoryboardName</key>

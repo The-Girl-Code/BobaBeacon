@@ -82,10 +82,7 @@ struct UserService {
                         
             }
             
-            print("COUNT: \(posts.count)")
-           // let displayPosts = posts.filter{$0.deleted != true || $0.reportedBy != User.current.uid}
-            
-            
+                    
             dispatchGroup.notify(queue: .main, execute: {
                 completion(posts)
             })

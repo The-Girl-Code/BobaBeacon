@@ -23,8 +23,7 @@ class Post {
     let review: String
     let drink: String
     let recommendation: String
-    let deleted : Bool
-    let reportedBy : String
+
 
     
     
@@ -41,9 +40,7 @@ class Post {
                 "drink": drink,
                 "like_count": likeCount,
                 "type_of_post": typeOfPost,
-                "poster": userDict,
-                "deleted" : deleted,
-                "reportedBy": reportedBy]
+                "poster": userDict]
     }
     
     init(imageURL: String, imageHeight: CGFloat) {
@@ -58,9 +55,6 @@ class Post {
         self.location = ""
         self.drink = ""
         self.recommendation = ""
-        self.deleted = false
-        self.reportedBy = ""
-        
     }
     
     init(rating: String, location: String, review: String) {
@@ -75,8 +69,6 @@ class Post {
         self.imageHeight = 0
         self.recommendation = ""
         self.drink = ""
-        self.deleted = false
-        self.reportedBy = ""
     }
     
     init(drink: String, location: String, recommendation: String) {
@@ -91,8 +83,6 @@ class Post {
         self.review = ""
         self.imageURL = ""
         self.imageHeight = 0
-        self.deleted = false
-        self.reportedBy = ""
     }
     
     init?(snapshot: DataSnapshot) {
@@ -109,9 +99,7 @@ class Post {
             let typeOfPost = dict["type_of_post"] as? String,
             let userDict = dict["poster"] as? [String : Any],
             let uid = userDict["uid"] as? String,
-            let username = userDict["username"] as? String,
-            let deleted = dict["deleted"] as? Bool,
-            let reportedBy = dict["reportedBy"] as? String
+            let username = userDict["username"] as? String
             else { return nil }
         
         self.key = snapshot.key
@@ -126,8 +114,7 @@ class Post {
         self.location = location
         self.recommendation = recommendation
         self.drink = drink
-        self.deleted = deleted
-        self.reportedBy = reportedBy
+
         
     }
 }

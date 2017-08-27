@@ -2,7 +2,7 @@
 //  PostService.swift
 //  BobaBeacon
 //
-//  Created by Kodo on 7/27/17.
+//  Created by TheGirlCode on 7/27/17.
 //  Copyright © 2017 The Girl Code. All rights reserved.
 //
 
@@ -98,22 +98,12 @@ struct PostService {
             let currentCount = mutableData.value as? Int ?? 0
             
             mutableData.value = currentCount + 1
-            if ((currentCount + 1) > 0) {
-                let ref = Database.database().reference().child("posts").child(postKey).child("reportedBy").child(User.current.uid)
-                ref.setValue(true) { (error, _) in
-                    if let error = error {
-                        assertionFailure(error.localizedDescription)
-                    }
-                }
-                
-            }
             if ((currentCount + 1) > 2) {
+                let ref = Database.database().reference()
+                ref.child("posts").child(post.key!).removeValue()
                 
-                let ref = Database.database().reference().child("posts").child(postKey)
-                let value = ["deleted" : true]
-                ref.updateChildValues(value)
-            
             }
+
             return TransactionResult.success(withValue: mutableData)
         })
     }

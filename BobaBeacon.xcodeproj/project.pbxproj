@@ -22,14 +22,13 @@
 		A66C3BD41F21239100648917 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD31F21239100648917 /* Search.storyboard */; };
 		A66C3BD91F2123C000648917 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66C3BD81F2123C000648917 /* Profile.storyboard */; };
 		AE117E5C1F3A152600F9CF9B /* SearchPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE117E5B1F3A152600F9CF9B /* SearchPlaceViewController.swift */; };
-		AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE117E5D1F3A3C0000F9CF9B /* Gif.swift */; };
 		AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */; };
-		AE1985E71F3BB1E000778095 /* BOBAGIFFF4.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE1985E61F3BB1E000778095 /* BOBAGIFFF4.gif */; };
 		AE1985EB1F3C286900778095 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1985EA1F3C286900778095 /* InfoViewController.swift */; };
 		AE3F256D1F34D7CE00D57106 /* FaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */; };
 		AE3F25711F34E03A00D57106 /* CollectionViewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */; };
 		C00271791F2FE978002DD25D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00271781F2FE978002DD25D /* MapViewController.swift */; };
 		C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C002717A1F30F2F1002DD25D /* LikeService.swift */; };
+		C03765AE1F4A16C000D8132A /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03765AD1F4A16C000D8132A /* TermsAndConditionsViewController.swift */; };
 		C0513A111F290912000737A5 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A101F290912000737A5 /* FloatRatingView.swift */; };
 		C0513A1F1F2A4D8F000737A5 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A1E1F2A4D8F000737A5 /* PostHeaderCell.swift */; };
 		C0513A211F2A4D9A000737A5 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0513A201F2A4D9A000737A5 /* PostActionCell.swift */; };
@@ -42,6 +41,8 @@
 		C0A674741F1FDA7F0029985C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A674731F1FDA7F0029985C /* AppDelegate.swift */; };
 		C0A6747C1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A6747A1F1FDA7F0029985C /* BobaBeacon.xcdatamodeld */; };
 		C0A6747E1F1FDA7F0029985C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A6747D1F1FDA7F0029985C /* Assets.xcassets */; };
+		C0C3208D1F3CFC690015EB26 /* BOBAGIFFF4.gif in Resources */ = {isa = PBXBuildFile; fileRef = C0C3208C1F3CFC690015EB26 /* BOBAGIFFF4.gif */; };
+		C0C3208F1F3CFC730015EB26 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C3208E1F3CFC730015EB26 /* Gif.swift */; };
 		C0CD7D711F2A966F00B53472 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD7D701F2A966F00B53472 /* LocationViewController.swift */; };
 		C0CD7D751F2A96AF00B53472 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CD7D741F2A96AF00B53472 /* Review.storyboard */; };
 		C0CD7D771F2A96CA00B53472 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD7D761F2A96CA00B53472 /* ReviewViewController.swift */; };
@@ -73,15 +74,14 @@
 		A66C3BD31F21239100648917 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A66C3BD81F2123C000648917 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		AE117E5B1F3A152600F9CF9B /* SearchPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewController.swift; sourceTree = "<group>"; };
-		AE117E5D1F3A3C0000F9CF9B /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gif.swift; path = ../../../Downloads/Gif.swift; sourceTree = "<group>"; };
 		AE1401F41F34FCF700A32EAA /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
-		AE1985E61F3BB1E000778095 /* BOBAGIFFF4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = BOBAGIFFF4.gif; path = ../../BOBAGIFFF4.gif; sourceTree = "<group>"; };
 		AE1985EA1F3C286900778095 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveViewController.swift; sourceTree = "<group>"; };
 		AE3F25701F34E03A00D57106 /* CollectionViewImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewImageCell.swift; sourceTree = "<group>"; };
 		BBD3F1E27D56F25A4333FF0D /* Pods_BobaBeacon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobaBeacon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00271781F2FE978002DD25D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C002717A1F30F2F1002DD25D /* LikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		C03765AD1F4A16C000D8132A /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		C0513A101F290912000737A5 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		C0513A1E1F2A4D8F000737A5 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
 		C0513A201F2A4D9A000737A5 /* PostActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
@@ -96,6 +96,8 @@
 		C0A6747B1F1FDA7F0029985C /* BobaBeacon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BobaBeacon.xcdatamodel; sourceTree = "<group>"; };
 		C0A6747D1F1FDA7F0029985C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A674821F1FDA7F0029985C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0C3208C1F3CFC690015EB26 /* BOBAGIFFF4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BOBAGIFFF4.gif; sourceTree = "<group>"; };
+		C0C3208E1F3CFC730015EB26 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		C0CD7D701F2A966F00B53472 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C0CD7D741F2A96AF00B53472 /* Review.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
 		C0CD7D761F2A96CA00B53472 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				A66C3BCE1F21222800648917 /* FeedViewController.swift */,
 				AE3F256C1F34D7CE00D57106 /* FaveViewController.swift */,
 				AE1985EA1F3C286900778095 /* InfoViewController.swift */,
+				C03765AD1F4A16C000D8132A /* TermsAndConditionsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -186,9 +189,9 @@
 		A66C3BBE1F2115D300648917 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE117E5D1F3A3C0000F9CF9B /* Gif.swift */,
+				C0C3208C1F3CFC690015EB26 /* BOBAGIFFF4.gif */,
 				C0A674821F1FDA7F0029985C /* Info.plist */,
-				AE1985E61F3BB1E000778095 /* BOBAGIFFF4.gif */,
+				C0C3208E1F3CFC730015EB26 /* Gif.swift */,
 				A66C3BB31F20047C00648917 /* GoogleService-Info.plist */,
 				A66C3BC51F211D1300648917 /* Constants.swift */,
 			);
@@ -336,7 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE1985E71F3BB1E000778095 /* BOBAGIFFF4.gif in Resources */,
+				C0C3208D1F3CFC690015EB26 /* BOBAGIFFF4.gif in Resources */,
 				A66C3BB41F20047C00648917 /* GoogleService-Info.plist in Resources */,
 				C0513A251F2A5C2C000737A5 /* Feed.storyboard in Resources */,
 				C0513A271F2A5C56000737A5 /* Main.storyboard in Resources */,
@@ -426,6 +429,7 @@
 				A66C3BCD1F2121A600648917 /* ProfileViewController.swift in Sources */,
 				C0E8CFEB1F26B04500475585 /* MainTabBarController.swift in Sources */,
 				C0CD7D8C1F2AAC0600B53472 /* Post.swift in Sources */,
+				C0C3208F1F3CFC730015EB26 /* Gif.swift in Sources */,
 				A66C3BBC1F21159A00648917 /* CreateUsernameViewController.swift in Sources */,
 				C002717B1F30F2F1002DD25D /* LikeService.swift in Sources */,
 				A66C3BC81F211D3900648917 /* Storyboard+Utility.swift in Sources */,
@@ -434,11 +438,11 @@
 				AE1985EB1F3C286900778095 /* InfoViewController.swift in Sources */,
 				AE1401F51F34FCF700A32EAA /* PlaceViewController.swift in Sources */,
 				C0CD7D901F2AB4C800B53472 /* StorageReference.swift in Sources */,
-				AE117E5E1F3A3C0000F9CF9B /* Gif.swift in Sources */,
 				C0CD7D711F2A966F00B53472 /* LocationViewController.swift in Sources */,
 				C092EE871F2F9AA1002A403E /* PostThumbImageCell.swift in Sources */,
 				C0513A211F2A4D9A000737A5 /* PostActionCell.swift in Sources */,
 				A66C3BCF1F21222800648917 /* FeedViewController.swift in Sources */,
+				C03765AE1F4A16C000D8132A /* TermsAndConditionsViewController.swift in Sources */,
 				A66C3BC61F211D1300648917 /* Constants.swift in Sources */,
 				C00271791F2FE978002DD25D /* MapViewController.swift in Sources */,
 				AE117E5C1F3A152600F9CF9B /* SearchPlaceViewController.swift in Sources */,
@@ -554,7 +558,7 @@
 				INFOPLIST_FILE = BobaBeacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kodo.BobaBeacon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.BobaBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -573,7 +577,7 @@
 				INFOPLIST_FILE = BobaBeacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kodo.BobaBeacon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TheGirlCode.BobaBeacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

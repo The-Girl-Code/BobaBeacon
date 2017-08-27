@@ -117,9 +117,11 @@ class FeedViewController: UIViewController {
         
         let txt = alert.addTextField("Enter your username")
         alert.addButton("Done", backgroundColor: UIColor(red: 200, green: 200, blue: 200, alpha: 0.5), textColor: UIColor.black) {
+            
             if txt.text == "" {
                 self.makeUsername()
-            } else {
+            }
+            else {
                 guard let firUser = Auth.auth().currentUser,
                     let username = txt.text,
                     !username.isEmpty else {return}
@@ -130,9 +132,7 @@ class FeedViewController: UIViewController {
                 }
             }
         }
-        alert.showCustom("Enter Username", subTitle: "", color: UIColor.black, icon: alertViewIcon!)
-        
-        
+        alert.showCustom("You have not completed the registration process.", subTitle: "By clicking done, you are also accepting our Terms and Conditions.", color: UIColor.black, icon: alertViewIcon!)
         
     }
 
