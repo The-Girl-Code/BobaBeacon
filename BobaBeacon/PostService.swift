@@ -25,6 +25,20 @@ struct PostService {
         }
     }
     
+    static func createProfilePic(for image: UIImage) {
+        let imageRef = StorageReference.newPostImageReference()
+        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
+            guard let downloadURL = downloadURL else {
+                return
+            }
+            
+            let urlString = downloadURL.absoluteString
+            let aspectHeight = image.aspectHeight
+            create(forURLString: urlString, aspectHeight: aspectHeight)
+            
+        }
+    }
+    
     static func createRec(drink: String, location: String, recommendation: String) {
         let currentUser = User.current
         let post = Post(drink: drink, location: location, recommendation: recommendation)
@@ -61,7 +75,7 @@ struct PostService {
         let currentUser = User.current
         let post = Post(imageURL: urlString, imageHeight: aspectHeight)
         let dict = post.dictValue
-        let postRef = Database.database().reference().child("posts").childByAutoId()
+        let postRef = Database.database().reference().child("users").child(currentUser.uid).child("profilePic")
         postRef.updateChildValues(dict)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationKey), object: nil)
         

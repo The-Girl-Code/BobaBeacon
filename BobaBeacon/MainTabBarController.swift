@@ -21,6 +21,7 @@ extension UIImage {
 class MainTabBarController: UITabBarController {
     
     let photoHelper = PostViewController()
+    let profileHelper = ProfileViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,12 @@ class MainTabBarController: UITabBarController {
         photoHelper.completionHandler = { image in
             PostService.create(for: image)
         }
+        profileHelper.completionHandler = { image in
+            print("1")
+            PostService.createProfilePic(for: image)
+            print("2")
+        }
         
-        
-
         
         delegate = self as! UITabBarControllerDelegate
         

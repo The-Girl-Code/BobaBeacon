@@ -136,13 +136,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
             let drink = snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "fav_drink").value
             self.drinkLabel.text = "\(drink!)"
             self.bobaImage.setImage(UIImage(named: drink as! String), for: .normal)
+            //self.profileImage.image = (UIImage(snapshot.childSnapshot(forPath: (Auth.auth().currentUser?.uid)!).childSnapshot(forPath: "profilePic").value))
+            self.drinkLabel.text = "\(drink!)"
         })
         storeTextField.delegate = self
         
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-//                // Do any additional setup after loading the view.
-        
-         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoTapped(tapGestureRecognizer:)))
+        let tapImageGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapImageGestureRecognizer:)))
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoTapped(tapGestureRecognizer:)))
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 750)
         
         
@@ -171,7 +172,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         borderImageView.setRounded()
         profileImage.setRounded()
         infoImageView.isUserInteractionEnabled = true
-        //profileImage.addGestureRecognizer(tapGestureRecognizer)
+        profileImage.addGestureRecognizer(tapImageGestureRecognizer)
         infoImageView.addGestureRecognizer(tapGestureRecognizer)
         self.view.bringSubview(toFront: profileImage)
     }
@@ -183,15 +184,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         performSegue(withIdentifier: "toInfo", sender: self)
         // Your action
     }
-    /*
-    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    
+    func imageTapped(tapImageGestureRecognizer: UITapGestureRecognizer)
     {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        print("Yolanda")
+        let tappedImage = tapImageGestureRecognizer.view as! UIImageView
         self.presentImagePickerController(with: .photoLibrary, from: self)
 
         // Your action
     }
- */
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
